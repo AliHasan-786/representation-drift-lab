@@ -1,0 +1,30 @@
+{
+  "artifacts": [
+    {
+      "bytes": 5466,
+      "path": "drift_analysis_final_submission_v2/results/final_metrics.csv",
+      "role": "23000-step-metrics",
+      "sha256": "d07c6a6b5442048317c9aa97e58fe366fafdba4acadea3263af3702ed7d3680e"
+    },
+    {
+      "bytes": 408,
+      "path": "drift_analysis_final_submission_v2/results/final_report_text.txt",
+      "role": "23000-step-summary",
+      "sha256": "11ce414aaa6bec1344fb082eaaa8430d63ff05afc089beaf3343afc1c9823c8c"
+    }
+  ],
+  "config_hash": "d07c6a6b54420483",
+  "datasets": {
+    "adaptation": {
+      "name": "food101",
+      "sample_count": 1000
+    },
+    "retained": {
+      "name": "cifar10",
+      "sample_count": 2000
+    }
+  },
+  "run_id": "legacy-family-b-23000-steps",
+  "schema_version": "1.0.0",
+  "status": "historical-unreproduced"
+}

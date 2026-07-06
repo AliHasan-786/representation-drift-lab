@@ -1,0 +1,294 @@
+{
+  "artifacts": [
+    {
+      "bytes": 892781,
+      "path": "outputs/seed_41_alpha_0.00_adaptation.npz",
+      "sha256": "56fea96a47909e08aae088c503e0c25cf3f7a33c42247405051da9013ac22312"
+    },
+    {
+      "bytes": 1110090,
+      "path": "outputs/seed_41_alpha_0.00_retained.npz",
+      "sha256": "be96364a4584d5cb94015d02fa7e92bf488ea6ce3260f6e0ef53cd1e583bcc76"
+    },
+    {
+      "bytes": 892686,
+      "path": "outputs/seed_41_alpha_0.25_adaptation.npz",
+      "sha256": "ea1804a9c9b40692d930852991cc35444835cd25d29f4c755e925464c4128ebb"
+    },
+    {
+      "bytes": 1110128,
+      "path": "outputs/seed_41_alpha_0.25_retained.npz",
+      "sha256": "d21c6be43d913e44362a5b19003908ceae26080980f1a14c926d3b4ce0e77ac7"
+    },
+    {
+      "bytes": 892714,
+      "path": "outputs/seed_41_alpha_0.50_adaptation.npz",
+      "sha256": "d3e1c5baa6bb4b75095c9b40164a46c4f9007bb20175c7dbb4b0b03def8d137d"
+    },
+    {
+      "bytes": 1110272,
+      "path": "outputs/seed_41_alpha_0.50_retained.npz",
+      "sha256": "ca8a75cc2d4a4a69511d9ab5dea004698202b2905299c7689afd3e5ba9bd20a8"
+    },
+    {
+      "bytes": 892887,
+      "path": "outputs/seed_41_alpha_0.75_adaptation.npz",
+      "sha256": "536591620a6a3176bd459d4c901ede5e390ca701a76fe69f1662b7d09a73df0b"
+    },
+    {
+      "bytes": 1110354,
+      "path": "outputs/seed_41_alpha_0.75_retained.npz",
+      "sha256": "4414b07b1dd73e8682e5728da1403349c14e7211c7367090d8ad76250467d598"
+    },
+    {
+      "bytes": 892718,
+      "path": "outputs/seed_41_alpha_1.00_adaptation.npz",
+      "sha256": "81210da3c9b2ee739df84856b1b159b66c9cab724d6d8759458baac4ceba4fa6"
+    },
+    {
+      "bytes": 1110216,
+      "path": "outputs/seed_41_alpha_1.00_retained.npz",
+      "sha256": "71a595cf32f7bd2d09a4a9d0164498d4a8930cd08437cc5a17423b227d6053eb"
+    },
+    {
+      "bytes": 892449,
+      "path": "outputs/seed_42_alpha_0.00_adaptation.npz",
+      "sha256": "cff566b6b2863121d2db29ab63a06fa8b221b7a8807e7991c75d8a88a3ded462"
+    },
+    {
+      "bytes": 1110090,
+      "path": "outputs/seed_42_alpha_0.00_retained.npz",
+      "sha256": "be96364a4584d5cb94015d02fa7e92bf488ea6ce3260f6e0ef53cd1e583bcc76"
+    },
+    {
+      "bytes": 892498,
+      "path": "outputs/seed_42_alpha_0.25_adaptation.npz",
+      "sha256": "47d33af3a50fde448df83c1bf701673f9f36fbaaffc55dc43fb4bd338797f9ac"
+    },
+    {
+      "bytes": 1110231,
+      "path": "outputs/seed_42_alpha_0.25_retained.npz",
+      "sha256": "8435820480bf973b858de5c71e4e543a7e4fce7c0853dd121f0f4a7d6a259f4f"
+    },
+    {
+      "bytes": 892544,
+      "path": "outputs/seed_42_alpha_0.50_adaptation.npz",
+      "sha256": "ee7b75420d4407e99a113e5bca60784b2decf56de7bdd40a20cc867e5513b8ab"
+    },
+    {
+      "bytes": 1110199,
+      "path": "outputs/seed_42_alpha_0.50_retained.npz",
+      "sha256": "f3c70ace0a6dd302663df48f52b8e441f3a57a7265f08ba5ff432fac3fe2198f"
+    },
+    {
+      "bytes": 892648,
+      "path": "outputs/seed_42_alpha_0.75_adaptation.npz",
+      "sha256": "851d05fac569dd96bfbb1dea1a0710a0027891e1f4d0af0bae8eae2ca942c17e"
+    },
+    {
+      "bytes": 1110181,
+      "path": "outputs/seed_42_alpha_0.75_retained.npz",
+      "sha256": "79bb66feea619210b5458f5fdc6ec78b4b7f1a46a291e3cf9a5b6fc1bd13ca3f"
+    },
+    {
+      "bytes": 892624,
+      "path": "outputs/seed_42_alpha_1.00_adaptation.npz",
+      "sha256": "e8bc0482b517f32af827c79bc9100bf2c2122fc9f058754f23925940f31c7734"
+    },
+    {
+      "bytes": 1110259,
+      "path": "outputs/seed_42_alpha_1.00_retained.npz",
+      "sha256": "396fc06919b01da0c77d95e23a1d8884fb0d040dcd5393e7dd51aa5e0d0b894e"
+    },
+    {
+      "bytes": 892607,
+      "path": "outputs/seed_43_alpha_0.00_adaptation.npz",
+      "sha256": "18ad4f2621ce7c4bb7b71916ce006f117122c73e1689652c582fc1b787a3d7bc"
+    },
+    {
+      "bytes": 1110090,
+      "path": "outputs/seed_43_alpha_0.00_retained.npz",
+      "sha256": "be96364a4584d5cb94015d02fa7e92bf488ea6ce3260f6e0ef53cd1e583bcc76"
+    },
+    {
+      "bytes": 892499,
+      "path": "outputs/seed_43_alpha_0.25_adaptation.npz",
+      "sha256": "1977f91cc4d955317cbe412522edd43a70e7ff304355d52ee7f68eb65809d804"
+    },
+    {
+      "bytes": 1110119,
+      "path": "outputs/seed_43_alpha_0.25_retained.npz",
+      "sha256": "45eed7fb24b1f847e84f73fc1b0289ddae7c0f35e56f6545c0d628950ddfbd8c"
+    },
+    {
+      "bytes": 892697,
+      "path": "outputs/seed_43_alpha_0.50_adaptation.npz",
+      "sha256": "b8d08745265d5e384b5f58feec3751966e29cd7aa29796efee86b88cd71b6dff"
+    },
+    {
+      "bytes": 1110214,
+      "path": "outputs/seed_43_alpha_0.50_retained.npz",
+      "sha256": "5f6ef56f2f9c157f80bf5a015bff5600d03ad382584c4467bf1c1880710021e3"
+    },
+    {
+      "bytes": 892673,
+      "path": "outputs/seed_43_alpha_0.75_adaptation.npz",
+      "sha256": "a54f4a3f1ba6b1c95ba9667af290a79807914d662e21843c01bff4df7e1243d9"
+    },
+    {
+      "bytes": 1110105,
+      "path": "outputs/seed_43_alpha_0.75_retained.npz",
+      "sha256": "54921f39fb434f890550a3dac38bbf0cd7181ca8ee55587ac114dc63c4236e0f"
+    },
+    {
+      "bytes": 892730,
+      "path": "outputs/seed_43_alpha_1.00_adaptation.npz",
+      "sha256": "469c161a1ddd307c0c1c14433e5c700b1c29a33e34133790f36fb8e53ff58293"
+    },
+    {
+      "bytes": 1110089,
+      "path": "outputs/seed_43_alpha_1.00_retained.npz",
+      "sha256": "d53f8a21954079807db7f011e6281cf5aa3c62ad1fdb790f8096a2228a7028a0"
+    }
+  ],
+  "completed_steps": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "config": {
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "base_config": "reproduction-local.yaml",
+    "base_scientific_payload": {
+      "analysis": {
+        "collect_vision_hidden_states": true,
+        "covariance_projection_dim": 16,
+        "diagnostics_version": "layerwise-cross-modal-v1"
+      },
+      "datasets": {
+        "adaptation": {
+          "class_count": 6,
+          "config": "default",
+          "eval_per_class": 4,
+          "image_field": "image",
+          "repository": "ethz/food101",
+          "server_window": 64,
+          "split": "train",
+          "train_per_class": 4
+        },
+        "loading_mode": "dataset-server-stratified",
+        "retained": {
+          "config": "plain_text",
+          "eval_size": 30,
+          "eval_start": 0,
+          "image_field": "img",
+          "repository": "uoft-cs/cifar10",
+          "split": "test"
+        }
+      },
+      "method": {
+        "alpha": 16,
+        "dropout": 0.1,
+        "expected_trainable_parameters": 294912,
+        "fidelity": "corrected-local-pipeline-validation",
+        "name": "lora",
+        "rank": 8,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "model": {
+        "family": "openai-clip-vit-b-32",
+        "revision": "openai/clip-vit-base-patch32"
+      },
+      "name": "clip-food101-cifar10-local",
+      "runtime": {
+        "device": "auto"
+      },
+      "seed": 42,
+      "tier": "research",
+      "training": {
+        "batch_size": 4,
+        "checkpoint_steps": [
+          0,
+          5,
+          10,
+          20
+        ],
+        "evaluation_batch_size": 8,
+        "learning_rate": 0.0005,
+        "total_steps": 20
+      }
+    },
+    "fidelity": "wise-ft-inspired-adapter-output-interpolation",
+    "name": "clip-food101-cifar10-lora-interpolation-local",
+    "seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "config_hash": "47267e1ec31336dd",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "clip-food101-cifar10-lora-interpolation-local-47267e1ec31336dd",
+  "schema_version": "1.0.0",
+  "source_runs": [
+    {
+      "checkpoint_sha256": "ab8e46335f50b033b0d59b9a4c23ca83d1f4f382113a26fceab716e8d4b3d6d9",
+      "config_hash": "7c59fc5ef223f7a2",
+      "manifest_sha256": "225c710291a4d13d464d93119d420661363691e4bd0a3fb4139f82bd0028bb61",
+      "model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "run_id": "clip-food101-cifar10-local-7c59fc5ef223f7a2-s41",
+      "seed": 41
+    },
+    {
+      "checkpoint_sha256": "4e4827a8fbd93e8b5106508d8102ae1eff43e8d7bb9a03d7539716ae564c1344",
+      "config_hash": "a3410b237d0c5b79",
+      "manifest_sha256": "d1fa80010724303b5a9f3faa4c65324df245a251765199aa93105c272b0586b9",
+      "model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "run_id": "clip-food101-cifar10-local-a3410b237d0c5b79-s42",
+      "seed": 42
+    },
+    {
+      "checkpoint_sha256": "fc73b8cbdd8e7884f95837b571053ae4e0a463d27538f787eadb5e13bbdb36f4",
+      "config_hash": "361b4c1129721112",
+      "manifest_sha256": "cbbec69648106de5a260797fe7e10ce4e329286d2281c71c506263829a48ad57",
+      "model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "run_id": "clip-food101-cifar10-local-361b4c1129721112-s43",
+      "seed": 43
+    }
+  ],
+  "started_at": "2026-07-03T17:13:32.431023Z",
+  "status": "complete"
+}

@@ -1,0 +1,95 @@
+{
+  "artifacts": [
+    {
+      "bytes": 82663,
+      "path": "metrics/checkpoints.json",
+      "sha256": "7b3ecc64fc1f518e40a2d89b939bbd7ab7a43eea1fc1b0f5292ae1fecc0bb415"
+    },
+    {
+      "bytes": 667,
+      "path": "metrics/summary.csv",
+      "sha256": "1cb02f3c0d16aa19ff10c83e51708bb55c741e15b7f4e55a18c6deb074cc4e86"
+    }
+  ],
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "analysis": {},
+    "datasets": {
+      "adaptation": "synthetic-rotated-v1",
+      "adaptation_rotation_degrees": 85.0,
+      "generator_revision": "v1",
+      "retained": "synthetic-reference-v1"
+    },
+    "method": {
+      "fidelity": "native-smoke-baseline",
+      "name": "full-finetune"
+    },
+    "model": {
+      "family": "synthetic-dual-encoder",
+      "revision": "v1"
+    },
+    "name": "synthetic-drift-smoke",
+    "runtime": {},
+    "seed": 42,
+    "tier": "smoke",
+    "training": {
+      "batch_size": 24,
+      "checkpoint_steps": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "learning_rate": 0.08,
+      "total_steps": 20
+    }
+  },
+  "config_hash": "81c6a895d32401a5",
+  "datasets": {
+    "adaptation_eval": {
+      "fingerprint": "ad16b844fe7a1de9ec74af471f73b97af3426753b8f7b6d667d02ba616babeef",
+      "name": "synthetic-rotated-v1",
+      "samples": 90,
+      "split": "eval"
+    },
+    "adaptation_train": {
+      "fingerprint": "85accac04b920e94f6c82981c209b0f6e5e3b63b839084930a96886227257323",
+      "name": "synthetic-rotated-v1",
+      "samples": 144,
+      "split": "train"
+    },
+    "retained_eval": {
+      "fingerprint": "5a3bfb7b5a9bd7afe628f1bc95571b9df87c41e4731ed66d21dd9f6bdc105094",
+      "name": "synthetic-reference-v1",
+      "samples": 90,
+      "split": "eval"
+    }
+  },
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numpy": "2.4.3",
+      "scipy": "1.17.1",
+      "torch": "2.11.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "synthetic-drift-smoke-81c6a895d32401a5-s42",
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "started_at": "2026-07-03T16:31:28.282510Z",
+  "status": "complete"
+}

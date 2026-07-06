@@ -1,0 +1,85 @@
+{
+  "completed_steps": [
+    0
+  ],
+  "config": {
+    "name": "clip-lora-domain-comparison-local",
+    "scenarios": [
+      {
+        "config_hash": "13c5baa85a5a513c",
+        "id": "food101-cifar10"
+      },
+      {
+        "config_hash": "ee3a69a7f2247981",
+        "id": "eurosat-cifar100"
+      },
+      {
+        "config_hash": "1a4ae89402350982",
+        "id": "pets-mnist"
+      }
+    ]
+  },
+  "config_hash": "79e5b05c661a821f",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "clip-lora-domain-comparison-local-79e5b05c661a821f",
+  "schema_version": "1.0.0",
+  "source_runs": [
+    {
+      "artifact_path": "public/data/benchmark-local.json",
+      "artifact_sha256": "3699f2d6b41351d50d51a58958614a0d892d73676b18f419bf8350d0022c2331",
+      "config_hash": "13c5baa85a5a513c",
+      "run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c",
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-local-multiseed-13c5baa85a5a513c.json",
+        "run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c",
+        "sha256": "ec202de88a21289bbe5187f8a28e38df3f8adfb8fc67525cc14d2a78f01e1f75"
+      }
+    },
+    {
+      "artifact_path": "public/data/benchmark-eurosat-cifar100-local.json",
+      "artifact_sha256": "5c3c7b7d5afb0b90c955c3f647892798d95a01a3e4d8ca04280e4d46d607119c",
+      "config_hash": "ee3a69a7f2247981",
+      "run_id": "clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981",
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981.json",
+        "run_id": "clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981",
+        "sha256": "55a1ec4eb5f2044c92d9264dedb21af2634612a24b7d31eaab99de5ccecb4234"
+      }
+    },
+    {
+      "artifact_path": "public/data/benchmark-pets-mnist-local.json",
+      "artifact_sha256": "58dde9719149b78dce2173f798856bdd5e6030338bc48b26a2b4cb1fb23a979c",
+      "config_hash": "1a4ae89402350982",
+      "run_id": "clip-pets-mnist-local-multiseed-1a4ae89402350982",
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-pets-mnist-local-multiseed-1a4ae89402350982.json",
+        "run_id": "clip-pets-mnist-local-multiseed-1a4ae89402350982",
+        "sha256": "e9734c0a1f7cdfcab78882004c1c6356fbff5a2b44240827728c8722c687a6ea"
+      }
+    }
+  ],
+  "started_at": "2026-07-03T22:19:13.924597Z",
+  "status": "complete"
+}

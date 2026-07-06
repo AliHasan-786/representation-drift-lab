@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-lp-ft-local-multiseed
+base_config: reproduction-local-lp-ft.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-lp-ft-local.json

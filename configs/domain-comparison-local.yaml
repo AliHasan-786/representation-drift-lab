@@ -1,0 +1,19 @@
+name: clip-lora-domain-comparison-local
+evidence_status: local-multidomain-preliminary
+scenarios:
+  - id: food101-cifar10
+    label: Food-101 → CIFAR-10
+    adaptation_domain: Food-101
+    retained_domain: CIFAR-10
+    artifact: public/data/benchmark-local.json
+  - id: eurosat-cifar100
+    label: EuroSAT → CIFAR-100
+    adaptation_domain: EuroSAT
+    retained_domain: CIFAR-100
+    artifact: public/data/benchmark-eurosat-cifar100-local.json
+  - id: pets-mnist
+    label: Oxford Pets → MNIST
+    adaptation_domain: Oxford-IIIT Pet
+    retained_domain: MNIST
+    artifact: public/data/benchmark-pets-mnist-local.json
+output: public/data/domain-comparison-local.json

@@ -1,0 +1,47 @@
+name: clip-food101-cifar10-lp-ft-local
+tier: research
+seed: 42
+model:
+  family: openai-clip-vit-b-32
+  revision: openai/clip-vit-base-patch32
+method:
+  name: lp-ft
+  fidelity: adapted-lp-ft-classification-baseline
+  strategy: lp-ft
+  probe_steps: 200
+  probe_learning_rate: 0.05
+  encoder_learning_rate: 0.00001
+  head_learning_rate: 0.01
+datasets:
+  loading_mode: dataset-server-stratified
+  adaptation:
+    repository: ethz/food101
+    config: default
+    split: train
+    image_field: image
+    class_count: 6
+    train_per_class: 4
+    eval_per_class: 4
+    server_window: 64
+  retained:
+    repository: uoft-cs/cifar10
+    config: plain_text
+    split: test
+    image_field: img
+    eval_start: 0
+    eval_size: 30
+training:
+  total_steps: 20
+  checkpoint_steps: [0, 20]
+  batch_size: 4
+  evaluation_batch_size: 8
+  learning_rate: 0.00001
+  momentum: 0.9
+  weight_decay: 0.0001
+analysis:
+  covariance_projection_dim: 16
+  diagnostics_version: layerwise-cross-modal-v1
+  collect_vision_hidden_states: true
+runtime:
+  device: auto
+output_dir: artifacts/runs

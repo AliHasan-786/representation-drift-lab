@@ -1,0 +1,4 @@
+name: clip-pets-eurosat-local-multiseed
+base_config: pets-eurosat-local.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-pets-eurosat-local.json

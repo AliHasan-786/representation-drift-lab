@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-nullspace-local-multiseed
+base_config: reproduction-local-nullspace.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-nullspace-local.json

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "representation-drift-lab"
+version = "0.1.0"
+description = "Reproducible experiments and artifacts for studying representation drift in adapted vision-language models."
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = { text = "MIT" }
+authors = [{ name = "Ali Hasan" }]
+dependencies = [
+  "numpy>=2.0,<3",
+  "PyYAML>=6.0,<7",
+  "scipy>=1.13,<2",
+  "torch>=2.5,<3",
+]
+
+[project.optional-dependencies]
+research = [
+  "accelerate==1.14.0",
+  "datasets==5.0.0",
+  "peft==0.19.1",
+  "Pillow==12.3.0",
+  "transformers==5.13.0",
+]
+
+[project.scripts]
+driftlab = "driftlab.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,1028 @@
+{
+  "analysis": {
+    "caveat": "Exploratory association across 9 interventions on one bounded scenario; it is neither causal nor a general predictor validation.",
+    "retained_cka_loss_vs_mean_forgetting": {
+      "bootstrap_samples": 2000,
+      "pearson": 0.5446797004575799,
+      "pearson_ci_high": 0.9695274599675437,
+      "pearson_ci_low": -0.7895757870348195,
+      "spearman": 0.25941649671427414
+    }
+  },
+  "config_hash": "56c5c70d05bce18b",
+  "dataset_fingerprints": {
+    "41": {
+      "adaptation_eval": "485b9854ae8c521ee0670502660c55c4f2692376726ec73b2cd040b60c88e73b",
+      "adaptation_train": "c189bf7fbd12d5e56605b3ccd2e8beae481bb010e45029d5ff53f9739add8a60",
+      "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+    },
+    "42": {
+      "adaptation_eval": "8a6f14faae4066c839cddd9cfdb7b4247669aa20c516b4cf8e1769400c8e0d07",
+      "adaptation_train": "0b1ee44b33b358f65e051388cd699ed66e7041dfc240b88a88efe1d381d1f2f5",
+      "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+    },
+    "43": {
+      "adaptation_eval": "645f384ed66226dd9aed7cc59ebafac65a194d288d6d7413218696bb902d2170",
+      "adaptation_train": "e6f3da61d42603535394d998dc64680843a06ef5ad9ea6d0a208245d2b94b9f0",
+      "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+    }
+  },
+  "evidence_status": "local-multimethod-preliminary",
+  "failure_cases": [
+    {
+      "id": "distillation-drift-without-mean-forgetting",
+      "method_id": "zscl-inspired-distillation",
+      "observation": "Mean retained accuracy returned to baseline while retained CKA still changed materially."
+    },
+    {
+      "id": "nullspace-lower-drift-worse-retention",
+      "method_id": "retention-gradient-nullspace",
+      "observation": "Lower mean CKA loss than standard LoRA did not produce better mean retained accuracy."
+    }
+  ],
+  "methods": [
+    {
+      "category": "frozen-encoder baseline",
+      "checkpoints": [
+        0,
+        200
+      ],
+      "fidelity": "exact-frozen-encoder-linear-classification-probe",
+      "id": "linear-probe",
+      "label": "Frozen linear probe",
+      "limitations": [
+        "The head reached 100% on a tiny six-class evaluation subset; this is a separability diagnostic, not a realistic Food-101 score."
+      ],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.30007368693748515,
+          "ci_low": 0.06103742417362601,
+          "confidence": 0.95,
+          "mean": 0.18055555555555558,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "adapter_l2_delta": {
+          "ci_high": 161.78911192675292,
+          "ci_low": 149.0506809606169,
+          "confidence": 0.95,
+          "mean": 155.4198964436849,
+          "n": 3,
+          "standard_deviation": 2.5639542658769323
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "trainable_parameters": {
+          "ci_high": 51813.0,
+          "ci_low": 51813.0,
+          "confidence": 0.95,
+          "mean": 51813.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-linear-probe-local.json",
+        "artifact_sha256": "aab75ec1d21ece28c81bf670471ace685021098a839ace7fdaede6fe7de0e810",
+        "benchmark_config_hash": "88b14de6694cc356",
+        "benchmark_run_id": "clip-food101-cifar10-linear-probe-local-multiseed-88b14de6694cc356",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-linear-probe-local-multiseed-88b14de6694cc356.json",
+          "run_id": "clip-food101-cifar10-linear-probe-local-multiseed-88b14de6694cc356",
+          "sha256": "4a0768c44f3d02df6c64d4e95f47fab5e3b6603038ec701ebbc5ee2eeb046de5"
+        }
+      },
+      "strategy": "linear-probe",
+      "training_budget": {
+        "joint_or_adaptation_steps": 0,
+        "probe_steps": 200,
+        "total_optimizer_steps": 200
+      }
+    },
+    {
+      "category": "full-parameter baseline",
+      "checkpoints": [
+        0,
+        200
+      ],
+      "fidelity": "joint-full-vision-encoder-and-random-head-baseline",
+      "id": "full-finetune",
+      "label": "Full fine-tune",
+      "limitations": [
+        "The random-head full fine-tune remained below the zero-shot adaptation baseline on this sparse local subset."
+      ],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.1303298486220873,
+          "ci_low": -0.1858854041776427,
+          "confidence": 0.95,
+          "mean": -0.027777777777777717,
+          "n": 3,
+          "standard_deviation": 0.06364688465216445
+        },
+        "adapter_l2_delta": {
+          "ci_high": 9.6653403253637,
+          "ci_low": 9.29411135005134,
+          "confidence": 0.95,
+          "mean": 9.47972583770752,
+          "n": 3,
+          "standard_deviation": 0.07471988641297779
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.9709438637395609,
+          "ci_low": 0.6123894695937724,
+          "confidence": 0.95,
+          "mean": 0.7916666666666666,
+          "n": 3,
+          "standard_deviation": 0.07216878364870322
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.8487083233421143,
+          "ci_low": 0.5957361211023301,
+          "confidence": 0.95,
+          "mean": 0.7222222222222222,
+          "n": 3,
+          "standard_deviation": 0.05091750772173159
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.11537499000878101,
+          "ci_low": -0.13759721223100316,
+          "confidence": 0.95,
+          "mean": -0.011111111111111072,
+          "n": 3,
+          "standard_deviation": 0.05091750772173159
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.11171600561999984,
+          "ci_low": 0.09042066029334206,
+          "confidence": 0.95,
+          "mean": 0.10106833295667095,
+          "n": 3,
+          "standard_deviation": 0.004286265054052317
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-full-finetune-local.json",
+        "artifact_sha256": "8c119e1dc06d76459bf0d519f3fee7baddd60446be50fcde0e601f4debecb352",
+        "benchmark_config_hash": "916c13930fac7b44",
+        "benchmark_run_id": "clip-food101-cifar10-full-finetune-local-multiseed-916c13930fac7b44",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-full-finetune-local-multiseed-916c13930fac7b44.json",
+          "run_id": "clip-food101-cifar10-full-finetune-local-multiseed-916c13930fac7b44",
+          "sha256": "e39618416a42ef3f1bef4cea170ea5d79bade353187d428f0f436252168b052d"
+        }
+      },
+      "strategy": "full-finetune",
+      "training_budget": {
+        "joint_or_adaptation_steps": 200,
+        "probe_steps": 0,
+        "total_optimizer_steps": 200
+      }
+    },
+    {
+      "category": "robust adaptation baseline",
+      "checkpoints": [
+        0,
+        20
+      ],
+      "fidelity": "adapted-lp-ft-classification-baseline",
+      "id": "lp-ft",
+      "label": "LP-FT",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.30007368693748515,
+          "ci_low": 0.06103742417362601,
+          "confidence": 0.95,
+          "mean": 0.18055555555555558,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "adapter_l2_delta": {
+          "ci_high": 163.06629422325312,
+          "ci_low": 150.23819999875207,
+          "confidence": 0.95,
+          "mean": 156.6522471110026,
+          "n": 3,
+          "standard_deviation": 2.58200142524755
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "retained_cka_loss": {
+          "ci_high": 3.716890861216182e-05,
+          "ci_low": -6.62427357589479e-06,
+          "confidence": 0.95,
+          "mean": 1.5272317518189027e-05,
+          "n": 3,
+          "standard_deviation": 8.814564100215999e-06
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-lp-ft-local.json",
+        "artifact_sha256": "f615704ae7a13c240ce75dc62c2e7e8d62baf1e147de91eee10f264eaf7c6262",
+        "benchmark_config_hash": "18a0434b3c7fff09",
+        "benchmark_run_id": "clip-food101-cifar10-lp-ft-local-multiseed-18a0434b3c7fff09",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-lp-ft-local-multiseed-18a0434b3c7fff09.json",
+          "run_id": "clip-food101-cifar10-lp-ft-local-multiseed-18a0434b3c7fff09",
+          "sha256": "0e30fb9c00612652af9b25830e8047d4e6dc364f5312f11175253b0857fa158a"
+        }
+      },
+      "strategy": "lp-ft",
+      "training_budget": {
+        "joint_or_adaptation_steps": 20,
+        "probe_steps": 200,
+        "total_optimizer_steps": 220
+      }
+    },
+    {
+      "category": "WiSE-FT source baseline",
+      "checkpoints": [
+        0,
+        200
+      ],
+      "fidelity": "compatible-wise-ft-source-baseline",
+      "id": "zero-shot-initialized-full-finetune",
+      "label": "Zero-shot initialized FT",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.33625848498608124,
+          "ci_low": -0.14181404054163677,
+          "confidence": 0.95,
+          "mean": 0.09722222222222225,
+          "n": 3,
+          "standard_deviation": 0.09622504486493763
+        },
+        "adapter_l2_delta": {
+          "ci_high": 1003.0714618587294,
+          "ci_low": 1003.0697734928331,
+          "confidence": 0.95,
+          "mean": 1003.0706176757812,
+          "n": 3,
+          "standard_deviation": 0.00033982936784851206
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.1236781426458609,
+          "ci_low": 0.7096551906874725,
+          "confidence": 0.95,
+          "mean": 0.9166666666666666,
+          "n": 3,
+          "standard_deviation": 0.08333333333333331
+        },
+        "final_retained_accuracy": {
+          "ci_high": 1.0610364474615201,
+          "ci_low": 0.13896355253847975,
+          "confidence": 0.95,
+          "mean": 0.6,
+          "n": 3,
+          "standard_deviation": 0.18559214542766742
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.327703114128187,
+          "ci_low": -0.5943697807948535,
+          "confidence": 0.95,
+          "mean": -0.13333333333333328,
+          "n": 3,
+          "standard_deviation": 0.18559214542766742
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.3513635825492162,
+          "ci_low": 0.004283003312525069,
+          "confidence": 0.95,
+          "mean": 0.17782329293087062,
+          "n": 3,
+          "standard_deviation": 0.06985936761777535
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-wise-source-local.json",
+        "artifact_sha256": "490c22db23839feb6e07133b14028b11cf418df73fabd8573d877caf416a7393",
+        "benchmark_config_hash": "49f86b39db49f95b",
+        "benchmark_run_id": "clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b.json",
+          "run_id": "clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b",
+          "sha256": "6f1bfe100a60f813dd8aa6426a25e8d4e91e65a69baff5abe896ffb000e3d2e2"
+        }
+      },
+      "strategy": "full-finetune",
+      "training_budget": {
+        "joint_or_adaptation_steps": 200,
+        "probe_steps": 0,
+        "total_optimizer_steps": 200
+      }
+    },
+    {
+      "category": "robust weight-space ensemble",
+      "checkpoints": [
+        0,
+        200
+      ],
+      "fidelity": "adapted-wise-ft-full-weight-space-ensemble",
+      "id": "wise-ft",
+      "label": "WiSE-FT \u00b7 \u03b1 0.5",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.2903448093125276,
+          "ci_low": -0.12367814264586088,
+          "confidence": 0.95,
+          "mean": 0.08333333333333337,
+          "n": 3,
+          "standard_deviation": 0.08333333333333337
+        },
+        "adapter_l2_delta": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.0222959091597073,
+          "ci_low": 0.7832596463958482,
+          "confidence": 0.95,
+          "mean": 0.9027777777777778,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.8494712570583445,
+          "ci_low": 0.683862076274989,
+          "confidence": 0.95,
+          "mean": 0.7666666666666667,
+          "n": 3,
+          "standard_deviation": 0.03333333333333338
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.1161379237250112,
+          "ci_low": -0.049471257058344396,
+          "confidence": 0.95,
+          "mean": 0.0333333333333334,
+          "n": 3,
+          "standard_deviation": 0.03333333333333338
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.22814457856760906,
+          "ci_low": -0.03853054076562046,
+          "confidence": 0.95,
+          "mean": 0.0948070189009943,
+          "n": 3,
+          "standard_deviation": 0.05367559094486141
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-wise-ft-local.json",
+        "artifact_sha256": "270beb3d4e152a4848444dc07b84f8a62993714ffa0c64c2f3ac0f71140f1d11",
+        "benchmark_config_hash": "573669707c7effd0",
+        "benchmark_run_id": "clip-food101-cifar10-wise-ft-local-573669707c7effd0",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-wise-ft-local-573669707c7effd0.json",
+          "run_id": "clip-food101-cifar10-wise-ft-local-573669707c7effd0",
+          "sha256": "5300e623641fb835878e8c3a3a4dddfca71754f5161b8a0fe520457cf590b0f6"
+        }
+      },
+      "strategy": "wise-ft",
+      "training_budget": {
+        "joint_or_adaptation_steps": 200,
+        "probe_steps": 0,
+        "total_optimizer_steps": 200
+      }
+    },
+    {
+      "category": "parameter-efficient baseline",
+      "checkpoints": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "fidelity": "corrected-local-pipeline-validation",
+      "id": "standard-lora",
+      "label": "Standard LoRA",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.12920351013540932,
+          "ci_low": 0.009685378753479607,
+          "confidence": 0.95,
+          "mean": 0.06944444444444446,
+          "n": 3,
+          "standard_deviation": 0.02405626121623445
+        },
+        "adapter_l2_delta": {
+          "ci_high": 2.082699605554411,
+          "ci_low": 1.9428712447976875,
+          "confidence": 0.95,
+          "mean": 2.012785425176049,
+          "n": 3,
+          "standard_deviation": 0.028144245002061457
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.9486479545798535,
+          "ci_low": 0.8291298231979242,
+          "confidence": 0.95,
+          "mean": 0.8888888888888888,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.7828045903916775,
+          "ci_low": 0.6171954096083222,
+          "confidence": 0.95,
+          "mean": 0.6999999999999998,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.04947125705834432,
+          "ci_low": -0.11613792372501097,
+          "confidence": 0.95,
+          "mean": -0.033333333333333326,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.014748911058591885,
+          "ci_low": 0.010540186334644375,
+          "confidence": 0.95,
+          "mean": 0.01264454869661813,
+          "n": 3,
+          "standard_deviation": 0.0008471198484769311
+        },
+        "trainable_parameters": {
+          "ci_high": 294912.0,
+          "ci_low": 294912.0,
+          "confidence": 0.95,
+          "mean": 294912.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-local.json",
+        "artifact_sha256": "3699f2d6b41351d50d51a58958614a0d892d73676b18f419bf8350d0022c2331",
+        "benchmark_config_hash": "13c5baa85a5a513c",
+        "benchmark_run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-local-multiseed-13c5baa85a5a513c.json",
+          "run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c",
+          "sha256": "ec202de88a21289bbe5187f8a28e38df3f8adfb8fc67525cc14d2a78f01e1f75"
+        }
+      },
+      "strategy": "standard",
+      "training_budget": {
+        "joint_or_adaptation_steps": 20,
+        "probe_steps": 0,
+        "total_optimizer_steps": 20
+      }
+    },
+    {
+      "category": "continual-learning inspired baseline",
+      "checkpoints": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "fidelity": "inspired-baseline-not-exact-zscl",
+      "id": "zscl-inspired-distillation",
+      "label": "Retention distillation",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.22755207084430945,
+          "ci_low": -0.08866318195542054,
+          "confidence": 0.95,
+          "mean": 0.06944444444444446,
+          "n": 3,
+          "standard_deviation": 0.06364688465216445
+        },
+        "adapter_l2_delta": {
+          "ci_high": 1.8880251590160861,
+          "ci_low": 1.2114173516632192,
+          "confidence": 0.95,
+          "mean": 1.5497212553396527,
+          "n": 3,
+          "standard_deviation": 0.13618564787137494
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.9486479545798535,
+          "ci_low": 0.8291298231979242,
+          "confidence": 0.95,
+          "mean": 0.8888888888888888,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.8161379237250111,
+          "ci_low": 0.6505287429416556,
+          "confidence": 0.95,
+          "mean": 0.7333333333333334,
+          "n": 3,
+          "standard_deviation": 0.03333333333333338
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.08280459039167784,
+          "ci_low": -0.08280459039167776,
+          "confidence": 0.95,
+          "mean": 3.700743415417188e-17,
+          "n": 3,
+          "standard_deviation": 0.03333333333333338
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.022732513442294766,
+          "ci_low": 0.0020173898722467554,
+          "confidence": 0.95,
+          "mean": 0.01237495165727076,
+          "n": 3,
+          "standard_deviation": 0.004169479709611598
+        },
+        "trainable_parameters": {
+          "ci_high": 294912.0,
+          "ci_low": 294912.0,
+          "confidence": 0.95,
+          "mean": 294912.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-distillation-local.json",
+        "artifact_sha256": "a2ded0dea796c7f6dd7a4b102562a7281364adf93caa814f706adb4b84ac8138",
+        "benchmark_config_hash": "eded6b7c559d3815",
+        "benchmark_run_id": "clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815.json",
+          "run_id": "clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815",
+          "sha256": "6b1d9a76bcd5bac695af5f5b3c7e3178ddf31a307a953d723ec3e5a93de017da"
+        }
+      },
+      "strategy": "zscl-inspired-distillation",
+      "training_budget": {
+        "joint_or_adaptation_steps": 20,
+        "probe_steps": 0,
+        "total_optimizer_steps": 20
+      }
+    },
+    {
+      "category": "geometry-preserving inspired baseline",
+      "checkpoints": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "fidelity": "inspired-first-order-gradient-projection-baseline",
+      "id": "retention-gradient-nullspace",
+      "label": "Gradient null-space",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.25532984862208735,
+          "ci_low": -0.06088540417764286,
+          "confidence": 0.95,
+          "mean": 0.09722222222222225,
+          "n": 3,
+          "standard_deviation": 0.0636468846521645
+        },
+        "adapter_l2_delta": {
+          "ci_high": 2.116893921307822,
+          "ci_low": 1.8492302092783854,
+          "confidence": 0.95,
+          "mean": 1.983062065293104,
+          "n": 3,
+          "standard_deviation": 0.05387457200205707
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.0201724046562637,
+          "ci_low": 0.8131609286770695,
+          "confidence": 0.95,
+          "mean": 0.9166666666666666,
+          "n": 3,
+          "standard_deviation": 0.041666666666666685
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.7366961414416606,
+          "ci_low": 0.6410816363361169,
+          "confidence": 0.95,
+          "mean": 0.6888888888888888,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.003362808108327363,
+          "ci_low": -0.09225169699721622,
+          "confidence": 0.95,
+          "mean": -0.04444444444444443,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.01652607617236035,
+          "ci_low": 0.0030767464745758977,
+          "confidence": 0.95,
+          "mean": 0.009801411323468123,
+          "n": 3,
+          "standard_deviation": 0.0027070418910689147
+        },
+        "trainable_parameters": {
+          "ci_high": 294912.0,
+          "ci_low": 294912.0,
+          "confidence": 0.95,
+          "mean": 294912.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-nullspace-local.json",
+        "artifact_sha256": "470cde63d38c98464d24f7165e82519c554bb32bc0d536ef8fe16321be493430",
+        "benchmark_config_hash": "ee2e9c2e1aaadce6",
+        "benchmark_run_id": "clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6.json",
+          "run_id": "clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6",
+          "sha256": "91897b2528d5cc7715a2dd04bffa9345714b25fdc859ab3e7a00fb8b3512d1a6"
+        }
+      },
+      "strategy": "retention-gradient-nullspace",
+      "training_budget": {
+        "joint_or_adaptation_steps": 20,
+        "probe_steps": 0,
+        "total_optimizer_steps": 20
+      }
+    },
+    {
+      "category": "selective parameter-efficient baseline",
+      "checkpoints": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "fidelity": "selective-parameter-efficient-baseline",
+      "id": "selective-v-lora",
+      "label": "Selective LoRA",
+      "limitations": [],
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.18683907132293046,
+          "ci_low": -0.020172404656263798,
+          "confidence": 0.95,
+          "mean": 0.08333333333333333,
+          "n": 3,
+          "standard_deviation": 0.041666666666666685
+        },
+        "adapter_l2_delta": {
+          "ci_high": 1.623644943012752,
+          "ci_low": 1.4378181964283643,
+          "confidence": 0.95,
+          "mean": 1.5307315697205581,
+          "n": 3,
+          "standard_deviation": 0.03740266606504952
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.9625368434687424,
+          "ci_low": 0.843018712086813,
+          "confidence": 0.95,
+          "mean": 0.9027777777777777,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.9194980937569703,
+          "ci_low": 0.5027241284652519,
+          "confidence": 0.95,
+          "mean": 0.7111111111111111,
+          "n": 3,
+          "standard_deviation": 0.08388704928078615
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.18616476042363708,
+          "ci_low": -0.23060920486808142,
+          "confidence": 0.95,
+          "mean": -0.02222222222222218,
+          "n": 3,
+          "standard_deviation": 0.08388704928078615
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.010817377751921042,
+          "ci_low": 0.006350370943139505,
+          "confidence": 0.95,
+          "mean": 0.008583874347530274,
+          "n": 3,
+          "standard_deviation": 0.0008991061138945433
+        },
+        "trainable_parameters": {
+          "ci_high": 147456.0,
+          "ci_low": 147456.0,
+          "confidence": 0.95,
+          "mean": 147456.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-selective-lora-local.json",
+        "artifact_sha256": "6c57a340dbfd3dd9fd97d0b37db7ee9edc347cb6ffbee0f222e8a0a4ccbb081a",
+        "benchmark_config_hash": "023a82cf6a6967a4",
+        "benchmark_run_id": "clip-food101-cifar10-selective-lora-local-multiseed-023a82cf6a6967a4",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-selective-lora-local-multiseed-023a82cf6a6967a4.json",
+          "run_id": "clip-food101-cifar10-selective-lora-local-multiseed-023a82cf6a6967a4",
+          "sha256": "0bdc448fe6a311aa187205be21225520d446a7801695ea48975ac53e3242a238"
+        }
+      },
+      "strategy": "standard",
+      "training_budget": {
+        "joint_or_adaptation_steps": 20,
+        "probe_steps": 0,
+        "total_optimizer_steps": 20
+      }
+    }
+  ],
+  "publication_caveat": "Small local subsets and three seeds validate comparison machinery; they do not establish general method rankings.",
+  "run_id": "clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "public_path": "/data/manifests/clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b.json",
+    "run_id": "clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b",
+    "sha256": "9ac6b060f935a0417456a872ce032be254d8df104dae8319bac0b8027fcd2d17"
+  }
+}

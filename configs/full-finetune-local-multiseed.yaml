@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-full-finetune-local-multiseed
+base_config: reproduction-local-full-finetune.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-full-finetune-local.json

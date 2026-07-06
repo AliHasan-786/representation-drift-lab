@@ -1,0 +1,305 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000005.pt",
+      "sha256": "3f7578df580414a9721a429e5e7ed84e6f682f02b123fffdb2a5b0963eb36a41"
+    },
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000010.pt",
+      "sha256": "a98a603c116d948559ac4eabb59f9665a1031271635727350f077af2dffc0412"
+    },
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000020.pt",
+      "sha256": "fa92cb738c7ea7ffbe2e52ebc5480e2202d3c7cd5bc9e3c4034e2a6b2a45a753"
+    },
+    {
+      "bytes": 208456,
+      "path": "metrics/checkpoints.json",
+      "sha256": "841be79eb913b0e02d3577b678041443142a626e65a255ad07dc2ffc09c8e101"
+    },
+    {
+      "bytes": 501,
+      "path": "metrics/summary.csv",
+      "sha256": "b63850366793e6de7f77e885603543f83a053bda34ea6e08b2a098155bd2c27f"
+    },
+    {
+      "bytes": 453089,
+      "path": "outputs/step_000000_adaptation.npz",
+      "sha256": "3fd02118b71523804e548769b48271be0255988743f23d7bc5743145e7df947e"
+    },
+    {
+      "bytes": 1473037,
+      "path": "outputs/step_000000_retained.npz",
+      "sha256": "06d5011a1faf3dc8534cdbce2641bedecf0e68513c61fef2b3b9e5364b749d8c"
+    },
+    {
+      "bytes": 453219,
+      "path": "outputs/step_000005_adaptation.npz",
+      "sha256": "b574a45304c1088498a42b2d582eb848def2976a0bffeefd096291e3665db6dd"
+    },
+    {
+      "bytes": 1473138,
+      "path": "outputs/step_000005_retained.npz",
+      "sha256": "0e2f6c92d3c9b59ef91e1300d63523ee202f77e4f91b66f62d038a76a316219d"
+    },
+    {
+      "bytes": 453208,
+      "path": "outputs/step_000010_adaptation.npz",
+      "sha256": "24bbba92b213c969db008dccc012977183ffcf3a76bbdac72aa7a750735a933a"
+    },
+    {
+      "bytes": 1473148,
+      "path": "outputs/step_000010_retained.npz",
+      "sha256": "0cd80676ff9d13dd9d3a99471144dcf299d357491321715504bc14b4c7f50617"
+    },
+    {
+      "bytes": 453239,
+      "path": "outputs/step_000020_adaptation.npz",
+      "sha256": "f91bdd979e1decb16402a41780f63ef3f2e535cab3b6fe92f480101eb317102d"
+    },
+    {
+      "bytes": 1473410,
+      "path": "outputs/step_000020_retained.npz",
+      "sha256": "fff62620a31fe6361feae6314360c92578c402727c0fba0d5a0659118fd7b6d0"
+    }
+  ],
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "analysis": {
+      "collect_vision_hidden_states": true,
+      "covariance_projection_dim": 16,
+      "diagnostics_version": "layerwise-cross-modal-v1"
+    },
+    "datasets": {
+      "adaptation": {
+        "class_count": 6,
+        "config": "default",
+        "eval_per_class": 2,
+        "image_field": "image",
+        "label_field": "label",
+        "repository": "timm/oxford-iiit-pet",
+        "server_window": 100,
+        "split": "train",
+        "train_per_class": 3
+      },
+      "loading_mode": "dataset-server-stratified",
+      "retained": {
+        "config": "mnist",
+        "eval_size": 40,
+        "eval_start": 0,
+        "image_field": "image",
+        "label_field": "label",
+        "repository": "ylecun/mnist",
+        "split": "test"
+      }
+    },
+    "method": {
+      "alpha": 16,
+      "dropout": 0.1,
+      "expected_trainable_parameters": 294912,
+      "fidelity": "corrected-local-domain-expansion",
+      "name": "lora",
+      "rank": 8,
+      "strategy": "standard",
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "model": {
+      "family": "openai-clip-vit-b-32",
+      "revision": "openai/clip-vit-base-patch32"
+    },
+    "name": "clip-pets-mnist-local",
+    "runtime": {
+      "device": "auto"
+    },
+    "seed": 41,
+    "tier": "research",
+    "training": {
+      "batch_size": 4,
+      "checkpoint_steps": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "evaluation_batch_size": 8,
+      "learning_rate": 0.0005,
+      "total_steps": 20
+    }
+  },
+  "config_hash": "0bd00d7172e6f839",
+  "datasets": {
+    "adaptation_eval": {
+      "fingerprint": "087a59e93431d6bf32e83b061d98d5dee1869d16050526c991f034de9370a342",
+      "repository": "timm/oxford-iiit-pet",
+      "revision": "089695c834a7deb60505b7cc506672db1c31a6aa",
+      "samples": 12,
+      "selection": {
+        "class_ids": [
+          12,
+          24,
+          25,
+          26,
+          29,
+          36
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "eval",
+        "row_indices": [
+          163,
+          166,
+          3596,
+          3623,
+          2459,
+          2481,
+          242,
+          251,
+          1278,
+          1281,
+          3515,
+          3529
+        ],
+        "seed": 41,
+        "server_window": 100
+      },
+      "split": "train"
+    },
+    "adaptation_train": {
+      "fingerprint": "6fcd589dd30ba935dc9d3f2848eea492345d43e6daf734c3c3ea47f62415537a",
+      "repository": "timm/oxford-iiit-pet",
+      "revision": "089695c834a7deb60505b7cc506672db1c31a6aa",
+      "samples": 18,
+      "selection": {
+        "class_ids": [
+          12,
+          24,
+          25,
+          26,
+          29,
+          36
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "train",
+        "row_indices": [
+          84,
+          90,
+          132,
+          3555,
+          3582,
+          3590,
+          2440,
+          2446,
+          2452,
+          218,
+          226,
+          235,
+          1224,
+          1246,
+          1271,
+          3503,
+          3506,
+          3511
+        ],
+        "seed": 41,
+        "server_window": 100
+      },
+      "split": "train"
+    },
+    "retained_eval": {
+      "fingerprint": "b87f5e258f0021d1f0c3ff3ef9ef55a40c4acfec358b3b0398c7147c15083d0d",
+      "repository": "ylecun/mnist",
+      "revision": "77f3279092a1c1579b2250db8eafed0ad422088c",
+      "samples": 40,
+      "selection": {
+        "mode": "dataset-server-range",
+        "row_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "size": 40,
+        "start": 0
+      },
+      "split": "test"
+    }
+  },
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "model": {
+    "requested_revision": "openai/clip-vit-base-patch32",
+    "resolved_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "trainable_parameters": 294912
+  },
+  "run_id": "clip-pets-mnist-local-0bd00d7172e6f839-s41",
+  "schema_version": "1.0.0",
+  "started_at": "2026-07-03T17:47:38.083215Z",
+  "status": "complete"
+}

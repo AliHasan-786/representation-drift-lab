@@ -1,0 +1,190 @@
+{
+  "artifact_id": "synthetic-early-warning-methodology-083040c52f3ac951",
+  "config_hash": "083040c52f3ac951",
+  "evaluation": {
+    "model": {
+      "standardized_coefficients": {
+        "centroid_drift": 0.042572442088986306,
+        "cka_loss": 0.05585124078230296,
+        "early_forgetting": 0.05607026978920705,
+        "plasticity_gain": 0.017715037065806367
+      },
+      "standardized_intercept": 0.40057210271140925,
+      "training_feature_mean": {
+        "centroid_drift": 0.3056478201045496,
+        "cka_loss": 0.14282251455844694,
+        "early_forgetting": 0.18521600200680827,
+        "plasticity_gain": 0.101055178833904
+      },
+      "training_feature_scale": {
+        "centroid_drift": 0.1367432390103937,
+        "cka_loss": 0.07212426743831228,
+        "early_forgetting": 0.06518729912676825,
+        "plasticity_gain": 0.05502362815973962
+      }
+    },
+    "protocol": {
+      "feature_names": [
+        "early_forgetting",
+        "centroid_drift",
+        "cka_loss",
+        "plasticity_gain"
+      ],
+      "interval_method": "absolute train-residual quantile",
+      "maximum_observation_fraction": 0.25,
+      "selected_ridge_alpha": 1.0,
+      "split_counts": {
+        "test": 12,
+        "train": 36,
+        "validation": 12
+      },
+      "split_strategy": "disjoint scenario-level train/validation/test",
+      "temporal_rule": "features observed before final forgetting target",
+      "validation_candidates": [
+        {
+          "alpha": 0.0,
+          "validation_rmse": 0.037336650205348154
+        },
+        {
+          "alpha": 0.01,
+          "validation_rmse": 0.03732515832125507
+        },
+        {
+          "alpha": 0.1,
+          "validation_rmse": 0.037232124220676587
+        },
+        {
+          "alpha": 1.0,
+          "validation_rmse": 0.03687470091475177
+        },
+        {
+          "alpha": 10.0,
+          "validation_rmse": 0.04065287009490472
+        }
+      ]
+    },
+    "test_metrics": {
+      "early_forgetting_persistence_baseline": {
+        "calibration_intercept": -0.04207174707931654,
+        "calibration_slope": 2.377000158547527,
+        "mae": 0.19398881847953908,
+        "mean_bias": -0.19398881847953908,
+        "r_squared": -2.369366494790653,
+        "rmse": 0.20865260157824556
+      },
+      "early_warning_model": {
+        "calibration_intercept": -0.034260733122097674,
+        "calibration_slope": 1.0548964947292414,
+        "mae": 0.02996700523174749,
+        "mean_bias": 0.013461476083785376,
+        "prediction_interval_empirical_coverage": 0.6666666666666666,
+        "prediction_interval_nominal_coverage": 0.9,
+        "prediction_interval_radius": 0.03887643366549304,
+        "r_squared": 0.9059433942290647,
+        "rmse": 0.034861360248544
+      },
+      "train_mean_baseline": {
+        "calibration_intercept": 0.36541985579173125,
+        "calibration_slope": null,
+        "mae": 0.095931747551933,
+        "mean_bias": 0.03515224691967787,
+        "r_squared": -0.0956327897901863,
+        "rmse": 0.1189822529831103
+      }
+    },
+    "test_predictions": [
+      {
+        "actual_final_forgetting": 0.3064066091515965,
+        "interval_high": 0.3425062381554191,
+        "interval_low": 0.264753370824433,
+        "predicted_final_forgetting": 0.30362980448992605,
+        "scenario_id": "synthetic-000"
+      },
+      {
+        "actual_final_forgetting": 0.3411922078182086,
+        "interval_high": 0.35079211656891934,
+        "interval_low": 0.27303924923793327,
+        "predicted_final_forgetting": 0.3119156829034263,
+        "scenario_id": "synthetic-005"
+      },
+      {
+        "actual_final_forgetting": 0.1120685797463814,
+        "interval_high": 0.20794844643740878,
+        "interval_low": 0.1301955791064227,
+        "predicted_final_forgetting": 0.16907201277191575,
+        "scenario_id": "synthetic-010"
+      },
+      {
+        "actual_final_forgetting": 0.4615359615446708,
+        "interval_high": 0.48445977420689196,
+        "interval_low": 0.4067069068759059,
+        "predicted_final_forgetting": 0.4455833405413989,
+        "scenario_id": "synthetic-015"
+      },
+      {
+        "actual_final_forgetting": 0.4451819532708154,
+        "interval_high": 0.4620538977828339,
+        "interval_low": 0.3843010304518478,
+        "predicted_final_forgetting": 0.42317746411734086,
+        "scenario_id": "synthetic-020"
+      },
+      {
+        "actual_final_forgetting": 0.49024403155789753,
+        "interval_high": 0.500097730068817,
+        "interval_low": 0.42234486273783095,
+        "predicted_final_forgetting": 0.461221296403324,
+        "scenario_id": "synthetic-025"
+      },
+      {
+        "actual_final_forgetting": 0.28182163388824005,
+        "interval_high": 0.3349922179223044,
+        "interval_low": 0.2572393505913183,
+        "predicted_final_forgetting": 0.29611578425681134,
+        "scenario_id": "synthetic-030"
+      },
+      {
+        "actual_final_forgetting": 0.24389509230126033,
+        "interval_high": 0.32271878824622,
+        "interval_low": 0.24496592091523395,
+        "predicted_final_forgetting": 0.283842354580727,
+        "scenario_id": "synthetic-035"
+      },
+      {
+        "actual_final_forgetting": 0.5357356682698595,
+        "interval_high": 0.5913902886366225,
+        "interval_low": 0.5136374213056363,
+        "predicted_final_forgetting": 0.5525138549711294,
+        "scenario_id": "synthetic-040"
+      },
+      {
+        "actual_final_forgetting": 0.36999554861014966,
+        "interval_high": 0.4645489244535234,
+        "interval_low": 0.38679605712253734,
+        "predicted_final_forgetting": 0.4256724907880304,
+        "scenario_id": "synthetic-045"
+      },
+      {
+        "actual_final_forgetting": 0.43483990270733314,
+        "interval_high": 0.5315482993838556,
+        "interval_low": 0.4537954320528695,
+        "predicted_final_forgetting": 0.4926718657183625,
+        "scenario_id": "synthetic-050"
+      },
+      {
+        "actual_final_forgetting": 0.3621210806343623,
+        "interval_high": 0.42003646462930033,
+        "interval_low": 0.34228359729831426,
+        "predicted_final_forgetting": 0.3811600309638073,
+        "scenario_id": "synthetic-055"
+      }
+    ]
+  },
+  "evidence_status": "synthetic-methodology-validation",
+  "publication_caveat": "This validates temporal splitting, baselines, calibration, and error reporting. It is not evidence that CLIP forgetting is predictable.",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "public_path": "/data/manifests/synthetic-early-warning-methodology-083040c52f3ac951.json",
+    "run_id": "synthetic-early-warning-methodology-083040c52f3ac951",
+    "sha256": "880b5c0dc61aec71d6cdf8a1f47b89195a84934304560aab7610f146b8291d16"
+  }
+}

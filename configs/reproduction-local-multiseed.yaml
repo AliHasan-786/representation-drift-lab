@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-local-multiseed
+base_config: reproduction-local.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-local.json

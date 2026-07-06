@@ -1,0 +1,475 @@
+{
+  "config_hash": "47267e1ec31336dd",
+  "curve": [
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "macro_f1": {
+          "ci_high": 0.058420532839058896,
+          "ci_low": 0.046372803637445885,
+          "confidence": 0.95,
+          "mean": 0.05239666823825239,
+          "n": 3,
+          "standard_deviation": 0.0024249318273752516
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        }
+      },
+      "alpha": 0.0,
+      "geometry": {
+        "cosine_centroid_drift": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "frechet_distance": {
+          "ci_high": 1.0321604682062002e-16,
+          "ci_low": 1.0321604682062002e-16,
+          "confidence": 0.95,
+          "mean": 1.0321604682062002e-16,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "linear_cka": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "neighborhood_overlap_at_5": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence": 0.95,
+          "mean": 1.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "macro_f1": {
+          "ci_high": 0.6264285714285713,
+          "ci_low": 0.6264285714285713,
+          "confidence": 0.95,
+          "mean": 0.6264285714285713,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      }
+    },
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.14729590915970736,
+          "ci_low": -0.09174035360415178,
+          "confidence": 0.95,
+          "mean": 0.02777777777777779,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "macro_f1": {
+          "ci_high": 0.05885342067296467,
+          "ci_low": 0.04864304325914282,
+          "confidence": 0.95,
+          "mean": 0.053748231966053744,
+          "n": 3,
+          "standard_deviation": 0.0020551150134562367
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9667403536041518,
+          "ci_low": 0.7277040908402926,
+          "confidence": 0.95,
+          "mean": 0.8472222222222222,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        }
+      },
+      "alpha": 0.25,
+      "geometry": {
+        "cosine_centroid_drift": {
+          "ci_high": 0.0009052161669499779,
+          "ci_low": 1.5097430194153786e-06,
+          "confidence": 0.95,
+          "mean": 0.00045336295498469664,
+          "n": 3,
+          "standard_deviation": 0.00018189539566504316
+        },
+        "frechet_distance": {
+          "ci_high": 0.0004710001525728441,
+          "ci_low": -3.1147851659444985e-05,
+          "confidence": 0.95,
+          "mean": 0.00021992615045669957,
+          "n": 3,
+          "standard_deviation": 0.00010107088706416245
+        },
+        "linear_cka": {
+          "ci_high": 0.9993599480555075,
+          "ci_low": 0.9991359431839493,
+          "confidence": 0.95,
+          "mean": 0.9992479456197284,
+          "n": 3,
+          "standard_deviation": 4.5087047811153396e-05
+        },
+        "neighborhood_overlap_at_5": {
+          "ci_high": 0.9741861091128674,
+          "ci_low": 0.9235916686649104,
+          "confidence": 0.95,
+          "mean": 0.9488888888888889,
+          "n": 3,
+          "standard_deviation": 0.010183501544346378
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.02558503033054958,
+          "ci_low": -0.07002947477499401,
+          "confidence": 0.95,
+          "mean": -0.022222222222222216,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        },
+        "macro_f1": {
+          "ci_high": 0.6392210865938461,
+          "ci_low": 0.5914138340410744,
+          "confidence": 0.95,
+          "mean": 0.6153174603174603,
+          "n": 3,
+          "standard_deviation": 0.00962250448649373
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7589183636638828,
+          "ci_low": 0.6633038585583391,
+          "confidence": 0.95,
+          "mean": 0.7111111111111109,
+          "n": 3,
+          "standard_deviation": 0.019245008972987525
+        }
+      }
+    },
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.22755207084430945,
+          "ci_low": -0.08866318195542054,
+          "confidence": 0.95,
+          "mean": 0.06944444444444446,
+          "n": 3,
+          "standard_deviation": 0.06364688465216445
+        },
+        "macro_f1": {
+          "ci_high": 0.05710887146012733,
+          "ci_low": 0.053530763931983305,
+          "confidence": 0.95,
+          "mean": 0.05531981769605532,
+          "n": 3,
+          "standard_deviation": 0.0007201910568844599
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9486479545798535,
+          "ci_low": 0.8291298231979242,
+          "confidence": 0.95,
+          "mean": 0.8888888888888888,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        }
+      },
+      "alpha": 0.5,
+      "geometry": {
+        "cosine_centroid_drift": {
+          "ci_high": 0.004147664196292266,
+          "ci_low": -0.00017628961305293052,
+          "confidence": 0.95,
+          "mean": 0.001985687291619668,
+          "n": 3,
+          "standard_deviation": 0.0008703128230154615
+        },
+        "frechet_distance": {
+          "ci_high": 0.0019315343899790694,
+          "ci_low": -0.00021404547984240436,
+          "confidence": 0.95,
+          "mean": 0.0008587444550683326,
+          "n": 3,
+          "standard_deviation": 0.000431856064112825
+        },
+        "linear_cka": {
+          "ci_high": 0.9974113725256185,
+          "ci_low": 0.9964936503779295,
+          "confidence": 0.95,
+          "mean": 0.996952511451774,
+          "n": 3,
+          "standard_deviation": 0.0001847164397022094
+        },
+        "neighborhood_overlap_at_5": {
+          "ci_high": 0.9564083313350894,
+          "ci_low": 0.9058138908871328,
+          "confidence": 0.95,
+          "mean": 0.9311111111111111,
+          "n": 3,
+          "standard_deviation": 0.010183501544346269
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.03669614144166069,
+          "ci_low": -0.0589183636638829,
+          "confidence": 0.95,
+          "mean": -0.011111111111111108,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        },
+        "macro_f1": {
+          "ci_high": 0.6693367258037296,
+          "ci_low": 0.5841553376883338,
+          "confidence": 0.95,
+          "mean": 0.6267460317460317,
+          "n": 3,
+          "standard_deviation": 0.017145061586657517
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7700294747749941,
+          "ci_low": 0.6744149696694504,
+          "confidence": 0.95,
+          "mean": 0.7222222222222222,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        }
+      }
+    },
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.18683907132293046,
+          "ci_low": -0.020172404656263798,
+          "confidence": 0.95,
+          "mean": 0.08333333333333333,
+          "n": 3,
+          "standard_deviation": 0.041666666666666685
+        },
+        "macro_f1": {
+          "ci_high": 0.05822936272789986,
+          "ci_low": 0.053353224102211716,
+          "confidence": 0.95,
+          "mean": 0.05579129341505579,
+          "n": 3,
+          "standard_deviation": 0.000981454973817131
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9625368434687424,
+          "ci_low": 0.843018712086813,
+          "confidence": 0.95,
+          "mean": 0.9027777777777777,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        }
+      },
+      "alpha": 0.75,
+      "geometry": {
+        "cosine_centroid_drift": {
+          "ci_high": 0.010870760892421456,
+          "ci_low": -0.000853715132168963,
+          "confidence": 0.95,
+          "mean": 0.005008522880126247,
+          "n": 3,
+          "standard_deviation": 0.002359868369843579
+        },
+        "frechet_distance": {
+          "ci_high": 0.004523233613528022,
+          "ci_low": -0.0006628664861836964,
+          "confidence": 0.95,
+          "mean": 0.001930183563672163,
+          "n": 3,
+          "standard_deviation": 0.0010438431161003507
+        },
+        "linear_cka": {
+          "ci_high": 0.994162154093884,
+          "ci_low": 0.9919220706183912,
+          "confidence": 0.95,
+          "mean": 0.9930421123561376,
+          "n": 3,
+          "standard_deviation": 0.00045087747448479133
+        },
+        "neighborhood_overlap_at_5": {
+          "ci_high": 0.9366965223058373,
+          "ci_low": 0.8677479221386074,
+          "confidence": 0.95,
+          "mean": 0.9022222222222224,
+          "n": 3,
+          "standard_deviation": 0.013877773329774183
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.02558503033054958,
+          "ci_low": -0.07002947477499401,
+          "confidence": 0.95,
+          "mean": -0.022222222222222216,
+          "n": 3,
+          "standard_deviation": 0.01924500897298752
+        },
+        "macro_f1": {
+          "ci_high": 0.7316073785288291,
+          "ci_low": 0.5437894468679962,
+          "confidence": 0.95,
+          "mean": 0.6376984126984127,
+          "n": 3,
+          "standard_deviation": 0.03780344599504826
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7589183636638828,
+          "ci_low": 0.6633038585583391,
+          "confidence": 0.95,
+          "mean": 0.7111111111111109,
+          "n": 3,
+          "standard_deviation": 0.019245008972987525
+        }
+      }
+    },
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.12920351013540932,
+          "ci_low": 0.009685378753479607,
+          "confidence": 0.95,
+          "mean": 0.06944444444444446,
+          "n": 3,
+          "standard_deviation": 0.02405626121623445
+        },
+        "macro_f1": {
+          "ci_high": 0.05870451114377788,
+          "ci_low": 0.051201717574332034,
+          "confidence": 0.95,
+          "mean": 0.05495311435905496,
+          "n": 3,
+          "standard_deviation": 0.0015101404269893222
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9486479545798535,
+          "ci_low": 0.8291298231979242,
+          "confidence": 0.95,
+          "mean": 0.8888888888888888,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        }
+      },
+      "alpha": 1.0,
+      "geometry": {
+        "cosine_centroid_drift": {
+          "ci_high": 0.02303881083465388,
+          "ci_low": -0.00252619743014172,
+          "confidence": 0.95,
+          "mean": 0.01025630670225608,
+          "n": 3,
+          "standard_deviation": 0.005145650368711327
+        },
+        "frechet_distance": {
+          "ci_high": 0.008547987601170627,
+          "ci_low": -0.0014593391915948225,
+          "confidence": 0.95,
+          "mean": 0.003544324204787902,
+          "n": 3,
+          "standard_deviation": 0.002014245576126748
+        },
+        "linear_cka": {
+          "ci_high": 0.9894598136653556,
+          "ci_low": 0.9852510889414081,
+          "confidence": 0.95,
+          "mean": 0.9873554513033819,
+          "n": 3,
+          "standard_deviation": 0.0008471198484769311
+        },
+        "neighborhood_overlap_at_5": {
+          "ci_high": 0.9141861091128671,
+          "ci_low": 0.8635916686649108,
+          "confidence": 0.95,
+          "mean": 0.888888888888889,
+          "n": 3,
+          "standard_deviation": 0.01018350154434622
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.04947125705834432,
+          "ci_low": -0.11613792372501097,
+          "confidence": 0.95,
+          "mean": -0.033333333333333326,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        },
+        "macro_f1": {
+          "ci_high": 0.7423306831368575,
+          "ci_low": 0.5118155410093665,
+          "confidence": 0.95,
+          "mean": 0.627073112073112,
+          "n": 3,
+          "standard_deviation": 0.046397416100790415
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7828045903916775,
+          "ci_low": 0.6171954096083222,
+          "confidence": 0.95,
+          "mean": 0.6999999999999998,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        }
+      }
+    }
+  ],
+  "evidence_status": "local-posthoc-recovery-preliminary",
+  "experiment": {
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "fidelity": "wise-ft-inspired-adapter-output-interpolation",
+    "run_count": 3,
+    "seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "publication_caveat": "The curve scales a trained LoRA output on a small local scenario. It is WiSE-FT-inspired and is not an exact WiSE-FT reproduction.",
+  "run_id": "clip-food101-cifar10-lora-interpolation-local-47267e1ec31336dd",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "public_path": "/data/manifests/clip-food101-cifar10-lora-interpolation-local-47267e1ec31336dd.json",
+    "run_id": "clip-food101-cifar10-lora-interpolation-local-47267e1ec31336dd",
+    "sha256": "4d0f3d0dfc5106a708631fb5de79ac8afc7e851f6f049632ba6ed9e3de8a18c8"
+  }
+}

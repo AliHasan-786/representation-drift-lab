@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "project": "CS 5787 final project - representation drift",
+  "storage": {
+    "kind": "external",
+    "root_environment_variable": "DRIFTLAB_LEGACY_ROOT",
+    "committed": false
+  },
+  "original_team": ["Sahil Mhatre", "Ali Hasan", "Corey Chen"],
+  "artifacts": [
+    {"path": "DL_Final_Report.pdf", "bytes": 1733304, "sha256": "5151e1d1efb6fc9a37a2347fe1e828fa6716468c87accfacc4c0cc1d077befdd", "role": "final-report"},
+    {"path": "DeepLearningFinalPres.pdf", "bytes": 449345, "sha256": "94fe62982a45628971287ad6748c087cee1716c07c6f6b068a003763cbec629c", "role": "presentation-pdf"},
+    {"path": "DeepLearningFinalPres.pptx", "bytes": 1876025, "sha256": "7a25aac774f6f03951ea27d03cc0ed041e97e729a361b05312a65b132c124d70", "role": "presentation-source"},
+    {"path": "DeepLearningFinalProject.ipynb", "bytes": 400902, "sha256": "cb01c720dade3f724d4c1518b54217798017e0d8c07231274839029efb04e09c", "role": "legacy-notebook"},
+    {"path": "DeepLearningFinalProject.md", "bytes": 23424, "sha256": "68f8947782286c949cef4a1ad98159a3e8dbe107570be93aa3b445b19ed8b28e", "role": "notebook-export"},
+    {"path": "drift_analysis_final_submission_v2-20251214T172059Z-1-001.zip", "bytes": 780817954, "sha256": "7f60a7a2fead8e0f7fb7b90e4e75b375ad98b76ecea55adaf4d45b482b0ef4c2", "role": "artifact-bundle"},
+    {"path": "drift_analysis_final_submission_v2/results/final_metrics.csv", "bytes": 5466, "sha256": "d07c6a6b5442048317c9aa97e58fe366fafdba4acadea3263af3702ed7d3680e", "role": "23000-step-metrics"},
+    {"path": "drift_analysis_final_submission_v2/results/final_report_text.txt", "bytes": 408, "sha256": "11ce414aaa6bec1344fb082eaaa8430d63ff05afc089beaf3343afc1c9823c8c", "role": "23000-step-summary"},
+    {"path": "drift_analysis_final_submission_v2/results/fig1_tradeoff.png", "bytes": 67262, "sha256": "22de0cd5800fe3aa1ab2c863e2ecb1a1c0d352f2e0a0780d6e628e175b5476dc", "role": "23000-step-tradeoff-figure"},
+    {"path": "drift_analysis_final_submission_v2/results/fig2_geometry.png", "bytes": 54490, "sha256": "42691b8ffa68286f847dad6ab1afd2329f378fde052aad57b68bd7e4c447f5f2", "role": "23000-step-geometry-figure"},
+    {"path": "drift_analysis_final_submission_v2/embeddings/baseline_cifar.npz", "bytes": 8208776, "sha256": "f986db8ec907ce53eb80845f22f0bf1522402260f07914c4303423765840ab06", "role": "cifar-baseline-embeddings"},
+    {"path": "drift_analysis_final_submission_v2/embeddings/baseline_food.npz", "bytes": 4104776, "sha256": "f10442d288656001f2c5c1f814a29c036db672d4055e8a0d10fede3a0de86f77", "role": "food101-baseline-embeddings"},
+    {"path": "drift_analysis_final_submission_v2/checkpoints/latest_model.pt", "bytes": 606494679, "sha256": "937436f6914f7504ff0ef0dd58ed5cb924900898dcf27ee56e43a0a2b0437389", "role": "23000-step-model-state"}
+  ]
+}

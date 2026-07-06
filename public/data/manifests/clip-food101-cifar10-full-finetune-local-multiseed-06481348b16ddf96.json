@@ -1,0 +1,138 @@
+{
+  "completed_steps": [
+    0,
+    20
+  ],
+  "config": {
+    "base_config": "reproduction-local-full-finetune.yaml",
+    "base_scientific_payload": {
+      "analysis": {
+        "collect_vision_hidden_states": true,
+        "covariance_projection_dim": 16,
+        "diagnostics_version": "layerwise-cross-modal-v1"
+      },
+      "datasets": {
+        "adaptation": {
+          "class_count": 6,
+          "config": "default",
+          "eval_per_class": 4,
+          "image_field": "image",
+          "repository": "ethz/food101",
+          "server_window": 64,
+          "split": "train",
+          "train_per_class": 4
+        },
+        "loading_mode": "dataset-server-stratified",
+        "retained": {
+          "config": "plain_text",
+          "eval_size": 30,
+          "eval_start": 0,
+          "image_field": "img",
+          "repository": "uoft-cs/cifar10",
+          "split": "test"
+        }
+      },
+      "method": {
+        "encoder_learning_rate": 1e-05,
+        "fidelity": "joint-full-vision-encoder-and-random-head-baseline",
+        "head_learning_rate": 0.01,
+        "name": "full-finetune",
+        "strategy": "full-finetune"
+      },
+      "model": {
+        "family": "openai-clip-vit-b-32",
+        "revision": "openai/clip-vit-base-patch32"
+      },
+      "name": "clip-food101-cifar10-full-finetune-local",
+      "runtime": {
+        "device": "auto"
+      },
+      "seed": 42,
+      "tier": "research",
+      "training": {
+        "batch_size": 4,
+        "checkpoint_steps": [
+          0,
+          20
+        ],
+        "evaluation_batch_size": 8,
+        "learning_rate": 1e-05,
+        "momentum": 0.9,
+        "total_steps": 20,
+        "weight_decay": 0.0001
+      }
+    },
+    "name": "clip-food101-cifar10-full-finetune-local-multiseed",
+    "seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "config_hash": "06481348b16ddf96",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "clip-food101-cifar10-full-finetune-local-multiseed-06481348b16ddf96",
+  "schema_version": "1.0.0",
+  "source_runs": [
+    {
+      "config_hash": "b5074aec56164a5e",
+      "run_id": "clip-food101-cifar10-full-finetune-local-b5074aec56164a5e-s41",
+      "seed": 41,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-full-finetune-local-b5074aec56164a5e-s41.json",
+        "run_id": "clip-food101-cifar10-full-finetune-local-b5074aec56164a5e-s41",
+        "sha256": "956a532c529464fe941748b1f7d81ccc47901bf6f765fd4a938901622db1807b"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-full-finetune-local-b5074aec56164a5e-s41.json",
+      "web_artifact_sha256": "e6687e76741a7ad22197117b2626c527c408d35ca3ea59df686835111fbfe748"
+    },
+    {
+      "config_hash": "3488bb648ffcc291",
+      "run_id": "clip-food101-cifar10-full-finetune-local-3488bb648ffcc291-s42",
+      "seed": 42,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-full-finetune-local-3488bb648ffcc291-s42.json",
+        "run_id": "clip-food101-cifar10-full-finetune-local-3488bb648ffcc291-s42",
+        "sha256": "37db50ced0456bc9abfa2eb224918f66ce723910da05ab544d67af9cfb8947d2"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-full-finetune-local-3488bb648ffcc291-s42.json",
+      "web_artifact_sha256": "2fe25a5aa16026edea2f5204d7c6a6c1a401730a737791011783db1ed58c7725"
+    },
+    {
+      "config_hash": "58a89272bbee9026",
+      "run_id": "clip-food101-cifar10-full-finetune-local-58a89272bbee9026-s43",
+      "seed": 43,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-full-finetune-local-58a89272bbee9026-s43.json",
+        "run_id": "clip-food101-cifar10-full-finetune-local-58a89272bbee9026-s43",
+        "sha256": "a3e7ba138911fe7bd7b575fa027e318956948bc3c24a8cd652d15d30ef500ec7"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-full-finetune-local-58a89272bbee9026-s43.json",
+      "web_artifact_sha256": "448f5a0a5a341467ac7135f5df2bb1f8343b01fd09e8c2b6128ddba63678278d"
+    }
+  ],
+  "started_at": "2026-07-03T17:22:19.529875Z",
+  "status": "complete"
+}

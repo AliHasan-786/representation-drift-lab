@@ -1,0 +1,3125 @@
+{
+  "checkpoints": [
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "expected_calibration_error": {
+          "ci_high": 0.19812772012309277,
+          "ci_low": 0.051905608145230875,
+          "confidence": 0.95,
+          "mean": 0.12501666413416182,
+          "n": 3,
+          "standard_deviation": 0.029431160616863183
+        },
+        "macro_f1": {
+          "ci_high": 0.058420532839058896,
+          "ci_low": 0.046372803637445885,
+          "confidence": 0.95,
+          "mean": 0.05239666823825239,
+          "n": 3,
+          "standard_deviation": 0.0024249318273752516
+        },
+        "negative_log_likelihood": {
+          "ci_high": 0.810419243828854,
+          "ci_low": 0.2688040368850839,
+          "confidence": 0.95,
+          "mean": 0.539611640356969,
+          "n": 3,
+          "standard_deviation": 0.10901473062098208
+        },
+        "sample_count": {
+          "ci_high": 24.0,
+          "ci_low": 24.0,
+          "confidence": 0.95,
+          "mean": 24.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "top1_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        }
+      },
+      "cross_modal": {
+        "adaptation": {
+          "alignment_change": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "baseline_paired_cosine_alignment": {
+            "ci_high": 0.31774923235535457,
+            "ci_low": 0.29604031528969055,
+            "confidence": 0.95,
+            "mean": 0.30689477382252256,
+            "n": 3,
+            "standard_deviation": 0.004369507568557445
+          },
+          "current_paired_cosine_alignment": {
+            "ci_high": 0.31774923235535457,
+            "ci_low": 0.29604031528969055,
+            "confidence": 0.95,
+            "mean": 0.30689477382252256,
+            "n": 3,
+            "standard_deviation": 0.004369507568557445
+          },
+          "image_cosine_centroid_drift": {
+            "ci_high": 1.9623757173864303e-16,
+            "ci_low": -1.2222270343029928e-16,
+            "confidence": 0.95,
+            "mean": 3.700743415417188e-17,
+            "n": 3,
+            "standard_deviation": 6.409875621278547e-17
+          },
+          "image_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        },
+        "retained": {
+          "alignment_change": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "baseline_paired_cosine_alignment": {
+            "ci_high": 0.2511562413007956,
+            "ci_low": 0.2511562413007956,
+            "confidence": 0.95,
+            "mean": 0.2511562413007956,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "current_paired_cosine_alignment": {
+            "ci_high": 0.2511562413007956,
+            "ci_low": 0.2511562413007956,
+            "confidence": 0.95,
+            "mean": 0.2511562413007956,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "image_cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "image_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        }
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": {
+            "ci_high": 1.9623757173864303e-16,
+            "ci_low": -1.2222270343029928e-16,
+            "confidence": 0.95,
+            "mean": 3.700743415417188e-17,
+            "n": 3,
+            "standard_deviation": 6.409875621278547e-17
+          },
+          "effective_rank": {
+            "ci_high": 14.141132693220602,
+            "ci_low": 10.564270449182587,
+            "confidence": 0.95,
+            "mean": 12.352701571201594,
+            "n": 3,
+            "standard_deviation": 0.7199404097282814
+          },
+          "frechet_distance": {
+            "ci_high": 1.0358515010108331e-15,
+            "ci_low": -2.6679075999444864e-16,
+            "confidence": 0.95,
+            "mean": 3.845303705081922e-16,
+            "n": 3,
+            "standard_deviation": 2.6219203847749575e-16
+          },
+          "frechet_projection_dimension": {
+            "ci_high": 16.0,
+            "ci_low": 16.0,
+            "confidence": 0.95,
+            "mean": 16.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "neighborhood_overlap_at_5": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        },
+        "retained": {
+          "class_centroid_movement": {
+            "0": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "1": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "2": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "3": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "4": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "5": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "6": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "7": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "8": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "9": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "effective_rank": {
+            "ci_high": 12.74841087547341,
+            "ci_low": 12.74841087547341,
+            "confidence": 0.95,
+            "mean": 12.74841087547341,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "frechet_distance": {
+            "ci_high": 1.0321604682062002e-16,
+            "ci_low": 1.0321604682062002e-16,
+            "confidence": 0.95,
+            "mean": 1.0321604682062002e-16,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "frechet_projection_dimension": {
+            "ci_high": 16.0,
+            "ci_low": 16.0,
+            "confidence": 0.95,
+            "mean": 16.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "neighborhood_overlap_at_5": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        }
+      },
+      "layerwise": {
+        "adaptation": {
+          "vision_block_00": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 10.495575427565798,
+              "ci_low": 4.23515985743493,
+              "confidence": 0.95,
+              "mean": 7.365367642500364,
+              "n": 3,
+              "standard_deviation": 1.260078203498582
+            },
+            "frechet_distance": {
+              "ci_high": 1.5024439086239857e-16,
+              "ci_low": -9.357675731382289e-17,
+              "confidence": 0.95,
+              "mean": 2.833381677428785e-17,
+              "n": 3,
+              "standard_deviation": 4.9075610225413875e-17
+            },
+            "linear_cka": {
+              "ci_high": 1.0000000000000004,
+              "ci_low": 0.9999999999999994,
+              "confidence": 0.95,
+              "mean": 0.9999999999999999,
+              "n": 3,
+              "standard_deviation": 1.9229626863835638e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_01": {
+            "cosine_centroid_drift": {
+              "ci_high": 3.9247514347728606e-16,
+              "ci_low": -2.4444540686059855e-16,
+              "confidence": 0.95,
+              "mean": 7.401486830834377e-17,
+              "n": 3,
+              "standard_deviation": 1.2819751242557095e-16
+            },
+            "effective_rank": {
+              "ci_high": 10.634221454959697,
+              "ci_low": 6.834805241375189,
+              "confidence": 0.95,
+              "mean": 8.734513348167443,
+              "n": 3,
+              "standard_deviation": 0.7647354242103246
+            },
+            "frechet_distance": {
+              "ci_high": 3.3456279442848984e-16,
+              "ci_low": -1.782931213009125e-16,
+              "confidence": 0.95,
+              "mean": 7.813483656378868e-17,
+              "n": 3,
+              "standard_deviation": 1.0322614428812056e-16
+            },
+            "linear_cka": {
+              "ci_high": 1.0000000000000002,
+              "ci_low": 0.9999999999999997,
+              "confidence": 0.95,
+              "mean": 0.9999999999999999,
+              "n": 3,
+              "standard_deviation": 1.1102230246251565e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_02": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 10.055945620094922,
+              "ci_low": 6.617888264159455,
+              "confidence": 0.95,
+              "mean": 8.33691694212719,
+              "n": 3,
+              "standard_deviation": 0.6920021663197173
+            },
+            "frechet_distance": {
+              "ci_high": 3.0473852789795056e-16,
+              "ci_low": -6.88161351651048e-17,
+              "confidence": 0.95,
+              "mean": 1.1796119636642288e-16,
+              "n": 3,
+              "standard_deviation": 7.518799406653018e-17
+            },
+            "linear_cka": {
+              "ci_high": 1.0000000000000004,
+              "ci_low": 0.9999999999999996,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 1.5700924586837752e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_03": {
+            "cosine_centroid_drift": {
+              "ci_high": 3.9247514347728606e-16,
+              "ci_low": -2.4444540686059855e-16,
+              "confidence": 0.95,
+              "mean": 7.401486830834377e-17,
+              "n": 3,
+              "standard_deviation": 1.2819751242557095e-16
+            },
+            "effective_rank": {
+              "ci_high": 12.872163136936669,
+              "ci_low": 8.98496866297369,
+              "confidence": 0.95,
+              "mean": 10.92856589995518,
+              "n": 3,
+              "standard_deviation": 0.7824031766789711
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_04": {
+            "cosine_centroid_drift": {
+              "ci_high": 3.9247514347728606e-16,
+              "ci_low": -2.4444540686059855e-16,
+              "confidence": 0.95,
+              "mean": 7.401486830834377e-17,
+              "n": 3,
+              "standard_deviation": 1.2819751242557095e-16
+            },
+            "effective_rank": {
+              "ci_high": 13.512890644215906,
+              "ci_low": 11.400619048812198,
+              "confidence": 0.95,
+              "mean": 12.456754846514052,
+              "n": 3,
+              "standard_deviation": 0.4251518716962346
+            },
+            "frechet_distance": {
+              "ci_high": 1.165160582198193e-16,
+              "ci_low": -7.256973016174019e-17,
+              "confidence": 0.95,
+              "mean": 2.1973164029039556e-17,
+              "n": 3,
+              "standard_deviation": 3.805863650134137e-17
+            },
+            "linear_cka": {
+              "ci_high": 1.0000000000000004,
+              "ci_low": 0.9999999999999996,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 1.5700924586837752e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_05": {
+            "cosine_centroid_drift": {
+              "ci_high": 2.3324500589281493e-16,
+              "ci_low": -8.521526927612739e-17,
+              "confidence": 0.95,
+              "mean": 7.401486830834377e-17,
+              "n": 3,
+              "standard_deviation": 6.409875621278547e-17
+            },
+            "effective_rank": {
+              "ci_high": 13.137440390087393,
+              "ci_low": 12.318991030660117,
+              "confidence": 0.95,
+              "mean": 12.728215710373755,
+              "n": 3,
+              "standard_deviation": 0.1647351021555476
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_06": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.42846851559421,
+              "ci_low": 12.767856381993164,
+              "confidence": 0.95,
+              "mean": 13.098162448793687,
+              "n": 3,
+              "standard_deviation": 0.13296608526899567
+            },
+            "frechet_distance": {
+              "ci_high": 1.4320099057631785e-15,
+              "ci_low": -7.843798080651707e-16,
+              "confidence": 0.95,
+              "mean": 3.2381504884900397e-16,
+              "n": 3,
+              "standard_deviation": 4.461084631790955e-16
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_07": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.852795580931604,
+              "ci_low": 13.240964524787566,
+              "confidence": 0.95,
+              "mean": 13.546880052859585,
+              "n": 3,
+              "standard_deviation": 0.12314757214344196
+            },
+            "frechet_distance": {
+              "ci_high": 7.0524834341705245e-15,
+              "ci_low": -3.1944584235981056e-15,
+              "confidence": 0.95,
+              "mean": 1.9290125052862095e-15,
+              "n": 3,
+              "standard_deviation": 2.062474598187354e-15
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_08": {
+            "cosine_centroid_drift": {
+              "ci_high": 1.9623757173864303e-16,
+              "ci_low": -1.2222270343029928e-16,
+              "confidence": 0.95,
+              "mean": 3.700743415417188e-17,
+              "n": 3,
+              "standard_deviation": 6.409875621278547e-17
+            },
+            "effective_rank": {
+              "ci_high": 14.205787420655467,
+              "ci_low": 12.520123907568026,
+              "confidence": 0.95,
+              "mean": 13.362955664111746,
+              "n": 3,
+              "standard_deviation": 0.3392854399967462
+            },
+            "frechet_distance": {
+              "ci_high": 5.274150374782479e-15,
+              "ci_low": -2.8871708718383928e-15,
+              "confidence": 0.95,
+              "mean": 1.1934897514720433e-15,
+              "n": 3,
+              "standard_deviation": 1.6426869589428645e-15
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_09": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 14.535938732854477,
+              "ci_low": 12.583254237983114,
+              "confidence": 0.95,
+              "mean": 13.559596485418796,
+              "n": 3,
+              "standard_deviation": 0.3930306451278611
+            },
+            "frechet_distance": {
+              "ci_high": 2.3057914679290556e-15,
+              "ci_low": -1.4361167653060162e-15,
+              "confidence": 0.95,
+              "mean": 4.3483735131151963e-16,
+              "n": 3,
+              "standard_deviation": 7.531603855002292e-16
+            },
+            "linear_cka": {
+              "ci_high": 1.0000000000000002,
+              "ci_low": 0.9999999999999997,
+              "confidence": 0.95,
+              "mean": 0.9999999999999999,
+              "n": 3,
+              "standard_deviation": 1.1102230246251565e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_10": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 14.223380837042717,
+              "ci_low": 10.219319239928039,
+              "confidence": 0.95,
+              "mean": 12.221350038485378,
+              "n": 3,
+              "standard_deviation": 0.8059258506834965
+            },
+            "frechet_distance": {
+              "ci_high": 2.2211359680971958e-14,
+              "ci_low": -1.2996508576583158e-14,
+              "confidence": 0.95,
+              "mean": 4.6074255521944e-15,
+              "n": 3,
+              "standard_deviation": 7.086537129366222e-15
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_11": {
+            "cosine_centroid_drift": {
+              "ci_high": 1.9623757173864303e-16,
+              "ci_low": -1.2222270343029928e-16,
+              "confidence": 0.95,
+              "mean": 3.700743415417188e-17,
+              "n": 3,
+              "standard_deviation": 6.409875621278547e-17
+            },
+            "effective_rank": {
+              "ci_high": 14.543738499471482,
+              "ci_low": 10.152283453418898,
+              "confidence": 0.95,
+              "mean": 12.34801097644519,
+              "n": 3,
+              "standard_deviation": 0.8838992752455644
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_embeddings": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          }
+        },
+        "retained": {
+          "vision_block_00": {
+            "cosine_centroid_drift": {
+              "ci_high": 2.220446049250313e-16,
+              "ci_low": 2.220446049250313e-16,
+              "confidence": 0.95,
+              "mean": 2.220446049250313e-16,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 5.732049049189909,
+              "ci_low": 5.732049049189904,
+              "confidence": 0.95,
+              "mean": 5.732049049189906,
+              "n": 3,
+              "standard_deviation": 1.0877919644084146e-15
+            },
+            "frechet_distance": {
+              "ci_high": 2.222614453595284e-17,
+              "ci_low": 2.222614453595284e-17,
+              "confidence": 0.95,
+              "mean": 2.222614453595284e-17,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_01": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 7.51551719840516,
+              "ci_low": 7.51551719840516,
+              "confidence": 0.95,
+              "mean": 7.51551719840516,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 8.565197162635485e-17,
+              "ci_low": 8.565197162635485e-17,
+              "confidence": 0.95,
+              "mean": 8.565197162635485e-17,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_02": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 7.559471468897511,
+              "ci_low": 7.559471468897506,
+              "confidence": 0.95,
+              "mean": 7.559471468897509,
+              "n": 3,
+              "standard_deviation": 1.0877919644084146e-15
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_03": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 8.667856983291838,
+              "ci_low": 8.667856983291838,
+              "confidence": 0.95,
+              "mean": 8.667856983291838,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 0.9999999999999993,
+              "confidence": 0.95,
+              "mean": 0.9999999999999997,
+              "n": 3,
+              "standard_deviation": 1.3597399555105182e-16
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_04": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 10.284986448670624,
+              "ci_low": 10.284986448670624,
+              "confidence": 0.95,
+              "mean": 10.284986448670624,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 5.134781488891349e-16,
+              "ci_low": 5.134781488891349e-16,
+              "confidence": 0.95,
+              "mean": 5.134781488891349e-16,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_05": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 10.923298743969946,
+              "ci_low": 10.923298743969946,
+              "confidence": 0.95,
+              "mean": 10.923298743969946,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 0.9999999999999999,
+              "ci_low": 0.9999999999999999,
+              "confidence": 0.95,
+              "mean": 0.9999999999999999,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_06": {
+            "cosine_centroid_drift": {
+              "ci_high": 2.220446049250313e-16,
+              "ci_low": 2.220446049250313e-16,
+              "confidence": 0.95,
+              "mean": 2.220446049250313e-16,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.012837306412651,
+              "ci_low": 13.012837306412651,
+              "confidence": 0.95,
+              "mean": 13.012837306412651,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 2.192690473634684e-15,
+              "ci_low": 2.192690473634684e-15,
+              "confidence": 0.95,
+              "mean": 2.192690473634684e-15,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_07": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.048441386113572,
+              "ci_low": 13.048441386113572,
+              "confidence": 0.95,
+              "mean": 13.048441386113572,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 0.9999999999999999,
+              "ci_low": 0.9999999999999999,
+              "confidence": 0.95,
+              "mean": 0.9999999999999999,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_08": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 12.763929333355327,
+              "ci_low": 12.763929333355327,
+              "confidence": 0.95,
+              "mean": 12.763929333355327,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 1.096345236817342e-15,
+              "ci_low": 1.096345236817342e-15,
+              "confidence": 0.95,
+              "mean": 1.096345236817342e-15,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_09": {
+            "cosine_centroid_drift": {
+              "ci_high": 1.1102230246251565e-16,
+              "ci_low": 1.1102230246251565e-16,
+              "confidence": 0.95,
+              "mean": 1.1102230246251565e-16,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.001011191611923,
+              "ci_low": 13.001011191611923,
+              "confidence": 0.95,
+              "mean": 13.001011191611923,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_10": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.59133612937643,
+              "ci_low": 13.59133612937643,
+              "confidence": 0.95,
+              "mean": 13.59133612937643,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 6.161737786669619e-15,
+              "ci_low": 6.161737786669619e-15,
+              "confidence": 0.95,
+              "mean": 6.161737786669619e-15,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 0.9999999999999997,
+              "ci_low": 0.9999999999999997,
+              "confidence": 0.95,
+              "mean": 0.9999999999999997,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_11": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 13.803029912578742,
+              "ci_low": 13.803029912578742,
+              "confidence": 0.95,
+              "mean": 13.803029912578742,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "linear_cka": {
+              "ci_high": 1.0,
+              "ci_low": 1.0,
+              "confidence": 0.95,
+              "mean": 1.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_embeddings": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "effective_rank": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          }
+        }
+      },
+      "optimization": {
+        "adapter_l2_delta_from_initial": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence": 0.95,
+          "mean": 0.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "expected_calibration_error": {
+          "ci_high": 0.2165031396074509,
+          "ci_low": 0.2165031396074509,
+          "confidence": 0.95,
+          "mean": 0.2165031396074509,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "macro_f1": {
+          "ci_high": 0.6264285714285713,
+          "ci_low": 0.6264285714285713,
+          "confidence": 0.95,
+          "mean": 0.6264285714285713,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "negative_log_likelihood": {
+          "ci_high": 0.8865292272593931,
+          "ci_low": 0.8865292272593931,
+          "confidence": 0.95,
+          "mean": 0.8865292272593931,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "sample_count": {
+          "ci_high": 30.0,
+          "ci_low": 30.0,
+          "confidence": 0.95,
+          "mean": 30.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "top1_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "step": 0
+    },
+    {
+      "adaptation": {
+        "accuracy_change": {
+          "ci_high": 0.33625848498608124,
+          "ci_low": -0.14181404054163677,
+          "confidence": 0.95,
+          "mean": 0.09722222222222225,
+          "n": 3,
+          "standard_deviation": 0.09622504486493763
+        },
+        "expected_calibration_error": {
+          "ci_high": 0.1776852486740765,
+          "ci_low": 0.003368559387563086,
+          "confidence": 0.95,
+          "mean": 0.0905269040308198,
+          "n": 3,
+          "standard_deviation": 0.03508595527171668
+        },
+        "macro_f1": {
+          "ci_high": 0.06448908213276926,
+          "ci_low": 0.04803645613534327,
+          "confidence": 0.95,
+          "mean": 0.05626276913405626,
+          "n": 3,
+          "standard_deviation": 0.003311536618844176
+        },
+        "negative_log_likelihood": {
+          "ci_high": 0.5522865593383995,
+          "ci_low": -0.1093828187741189,
+          "confidence": 0.95,
+          "mean": 0.22145187028214033,
+          "n": 3,
+          "standard_deviation": 0.13317888436352115
+        },
+        "sample_count": {
+          "ci_high": 24.0,
+          "ci_low": 24.0,
+          "confidence": 0.95,
+          "mean": 24.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "top1_accuracy": {
+          "ci_high": 1.1236781426458609,
+          "ci_low": 0.7096551906874725,
+          "confidence": 0.95,
+          "mean": 0.9166666666666666,
+          "n": 3,
+          "standard_deviation": 0.08333333333333331
+        }
+      },
+      "cross_modal": {
+        "adaptation": {
+          "alignment_change": {
+            "ci_high": 0.030230570679485938,
+            "ci_low": 0.0011962175188377343,
+            "confidence": 0.95,
+            "mean": 0.015713394099161837,
+            "n": 3,
+            "standard_deviation": 0.005843949999895642
+          },
+          "baseline_paired_cosine_alignment": {
+            "ci_high": 0.31774923235535457,
+            "ci_low": 0.29604031528969055,
+            "confidence": 0.95,
+            "mean": 0.30689477382252256,
+            "n": 3,
+            "standard_deviation": 0.004369507568557445
+          },
+          "current_paired_cosine_alignment": {
+            "ci_high": 0.3441026478859538,
+            "ci_low": 0.301113687957415,
+            "confidence": 0.95,
+            "mean": 0.3226081679216844,
+            "n": 3,
+            "standard_deviation": 0.00865269258728992
+          },
+          "image_cosine_centroid_drift": {
+            "ci_high": 0.1471731194247349,
+            "ci_low": 0.002673327607029513,
+            "confidence": 0.95,
+            "mean": 0.07492322351588221,
+            "n": 3,
+            "standard_deviation": 0.02908449703375954
+          },
+          "image_linear_cka": {
+            "ci_high": 1.0020387965375641,
+            "ci_low": 0.9161534055509482,
+            "confidence": 0.95,
+            "mean": 0.9590961010442561,
+            "n": 3,
+            "standard_deviation": 0.017286761233156592
+          },
+          "text_cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        },
+        "retained": {
+          "alignment_change": {
+            "ci_high": 0.05555829501762155,
+            "ci_low": 0.002434349444129156,
+            "confidence": 0.95,
+            "mean": 0.028996322230875355,
+            "n": 3,
+            "standard_deviation": 0.01069263296519522
+          },
+          "baseline_paired_cosine_alignment": {
+            "ci_high": 0.2511562413007956,
+            "ci_low": 0.2511562413007956,
+            "confidence": 0.95,
+            "mean": 0.2511562413007956,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "current_paired_cosine_alignment": {
+            "ci_high": 0.3067145363184172,
+            "ci_low": 0.2535905907449248,
+            "confidence": 0.95,
+            "mean": 0.280152563531671,
+            "n": 3,
+            "standard_deviation": 0.010692632965195221
+          },
+          "image_cosine_centroid_drift": {
+            "ci_high": 0.23635990949160823,
+            "ci_low": 0.10725128454802264,
+            "confidence": 0.95,
+            "mean": 0.17180559701981543,
+            "n": 3,
+            "standard_deviation": 0.02598660781422929
+          },
+          "image_linear_cka": {
+            "ci_high": 0.9957169966874749,
+            "ci_low": 0.6486364174507838,
+            "confidence": 0.95,
+            "mean": 0.8221767070691294,
+            "n": 3,
+            "standard_deviation": 0.06985936761777535
+          },
+          "text_cosine_centroid_drift": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "confidence": 0.95,
+            "mean": 0.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "text_linear_cka": {
+            "ci_high": 1.0,
+            "ci_low": 1.0,
+            "confidence": 0.95,
+            "mean": 1.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          }
+        }
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": {
+            "ci_high": 0.1471731194247349,
+            "ci_low": 0.002673327607029513,
+            "confidence": 0.95,
+            "mean": 0.07492322351588221,
+            "n": 3,
+            "standard_deviation": 0.02908449703375954
+          },
+          "effective_rank": {
+            "ci_high": 10.951802130657965,
+            "ci_low": 10.302345653686208,
+            "confidence": 0.95,
+            "mean": 10.627073892172087,
+            "n": 3,
+            "standard_deviation": 0.13072070720953452
+          },
+          "frechet_distance": {
+            "ci_high": 0.07092417663546334,
+            "ci_low": -0.008292749970085972,
+            "confidence": 0.95,
+            "mean": 0.031315713332688684,
+            "n": 3,
+            "standard_deviation": 0.015944552154021456
+          },
+          "frechet_projection_dimension": {
+            "ci_high": 16.0,
+            "ci_low": 16.0,
+            "confidence": 0.95,
+            "mean": 16.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "linear_cka": {
+            "ci_high": 1.0020387965375641,
+            "ci_low": 0.9161534055509482,
+            "confidence": 0.95,
+            "mean": 0.9590961010442561,
+            "n": 3,
+            "standard_deviation": 0.017286761233156592
+          },
+          "neighborhood_overlap_at_5": {
+            "ci_high": 1.0086056298868225,
+            "ci_low": 0.5469499256687329,
+            "confidence": 0.95,
+            "mean": 0.7777777777777777,
+            "n": 3,
+            "standard_deviation": 0.09292071490932072
+          }
+        },
+        "retained": {
+          "class_centroid_movement": {
+            "0": {
+              "ci_high": 0.6822706063462572,
+              "ci_low": 0.3674229215449999,
+              "confidence": 0.95,
+              "mean": 0.5248467639456286,
+              "n": 3,
+              "standard_deviation": 0.06337162455043904
+            },
+            "1": {
+              "ci_high": 0.7444480781694456,
+              "ci_low": 0.614956367964167,
+              "confidence": 0.95,
+              "mean": 0.6797022230668063,
+              "n": 3,
+              "standard_deviation": 0.026063714099416487
+            },
+            "2": {
+              "ci_high": 0.6612219685464418,
+              "ci_low": 0.5245995816851621,
+              "confidence": 0.95,
+              "mean": 0.5929107751158019,
+              "n": 3,
+              "standard_deviation": 0.02749895591839294
+            },
+            "3": {
+              "ci_high": 0.6877652467370231,
+              "ci_low": 0.5190788922450004,
+              "confidence": 0.95,
+              "mean": 0.6034220694910117,
+              "n": 3,
+              "standard_deviation": 0.033952697890723194
+            },
+            "4": {
+              "ci_high": 0.6658228526609364,
+              "ci_low": 0.5595422311119305,
+              "confidence": 0.95,
+              "mean": 0.6126825418864335,
+              "n": 3,
+              "standard_deviation": 0.021391853810334906
+            },
+            "5": {
+              "ci_high": 0.7495018810182071,
+              "ci_low": 0.40953922263844655,
+              "confidence": 0.95,
+              "mean": 0.5795205518283268,
+              "n": 3,
+              "standard_deviation": 0.06842669324886623
+            },
+            "6": {
+              "ci_high": 0.609301731258588,
+              "ci_low": 0.4266254888128795,
+              "confidence": 0.95,
+              "mean": 0.5179636100357338,
+              "n": 3,
+              "standard_deviation": 0.03676854177238716
+            },
+            "7": {
+              "ci_high": 0.7483277367896686,
+              "ci_low": 0.3828132809548585,
+              "confidence": 0.95,
+              "mean": 0.5655705088722636,
+              "n": 3,
+              "standard_deviation": 0.07356968458428732
+            },
+            "8": {
+              "ci_high": 0.8293229772172367,
+              "ci_low": 0.42257598794786355,
+              "confidence": 0.95,
+              "mean": 0.6259494825825501,
+              "n": 3,
+              "standard_deviation": 0.08186884876498615
+            },
+            "9": {
+              "ci_high": 0.8706894706910747,
+              "ci_low": 0.4014534026339328,
+              "confidence": 0.95,
+              "mean": 0.6360714366625038,
+              "n": 3,
+              "standard_deviation": 0.09444646845414158
+            }
+          },
+          "cosine_centroid_drift": {
+            "ci_high": 0.23635990949160823,
+            "ci_low": 0.10725128454802264,
+            "confidence": 0.95,
+            "mean": 0.17180559701981543,
+            "n": 3,
+            "standard_deviation": 0.02598660781422929
+          },
+          "effective_rank": {
+            "ci_high": 12.780070666678228,
+            "ci_low": 5.936547545680771,
+            "confidence": 0.95,
+            "mean": 9.3583091061795,
+            "n": 3,
+            "standard_deviation": 1.3774443921982675
+          },
+          "frechet_distance": {
+            "ci_high": 0.228924874749581,
+            "ci_low": 0.005800358341145256,
+            "confidence": 0.95,
+            "mean": 0.11736261654536313,
+            "n": 3,
+            "standard_deviation": 0.04490985249187768
+          },
+          "frechet_projection_dimension": {
+            "ci_high": 16.0,
+            "ci_low": 16.0,
+            "confidence": 0.95,
+            "mean": 16.0,
+            "n": 3,
+            "standard_deviation": 0.0
+          },
+          "linear_cka": {
+            "ci_high": 0.9957169966874749,
+            "ci_low": 0.6486364174507838,
+            "confidence": 0.95,
+            "mean": 0.8221767070691294,
+            "n": 3,
+            "standard_deviation": 0.06985936761777535
+          },
+          "neighborhood_overlap_at_5": {
+            "ci_high": 0.7572758715347484,
+            "ci_low": 0.34050190624302956,
+            "confidence": 0.95,
+            "mean": 0.548888888888889,
+            "n": 3,
+            "standard_deviation": 0.08388704928078619
+          }
+        }
+      },
+      "layerwise": {
+        "adaptation": {
+          "vision_block_00": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.003611159691269737,
+              "ci_low": -0.0012780670100711027,
+              "confidence": 0.95,
+              "mean": 0.001166546340599317,
+              "n": 3,
+              "standard_deviation": 0.0009840893035466777
+            },
+            "effective_rank": {
+              "ci_high": 11.488168129815405,
+              "ci_low": 1.7280331789368208,
+              "confidence": 0.95,
+              "mean": 6.608100654376113,
+              "n": 3,
+              "standard_deviation": 1.9644915224932453
+            },
+            "frechet_distance": {
+              "ci_high": 0.13723498297379944,
+              "ci_low": -0.06402338427095072,
+              "confidence": 0.95,
+              "mean": 0.03660579935142436,
+              "n": 3,
+              "standard_deviation": 0.04050869770479491
+            },
+            "linear_cka": {
+              "ci_high": 1.1458294121553552,
+              "ci_low": 0.4118862168438512,
+              "confidence": 0.95,
+              "mean": 0.7788578144996032,
+              "n": 3,
+              "standard_deviation": 0.14772594768797373
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_01": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.002035056137725621,
+              "ci_low": -0.0006221926239926895,
+              "confidence": 0.95,
+              "mean": 0.0007064317568664658,
+              "n": 3,
+              "standard_deviation": 0.0005348432877028395
+            },
+            "effective_rank": {
+              "ci_high": 11.872725413929672,
+              "ci_low": 3.226473275469951,
+              "confidence": 0.95,
+              "mean": 7.5495993446998115,
+              "n": 3,
+              "standard_deviation": 1.7402924357940586
+            },
+            "frechet_distance": {
+              "ci_high": 0.08275981570794652,
+              "ci_low": -0.035737690976301806,
+              "confidence": 0.95,
+              "mean": 0.02351106236582236,
+              "n": 3,
+              "standard_deviation": 0.02385083285112134
+            },
+            "linear_cka": {
+              "ci_high": 1.129344107516197,
+              "ci_low": 0.5363720828588907,
+              "confidence": 0.95,
+              "mean": 0.8328580951875438,
+              "n": 3,
+              "standard_deviation": 0.11935168123982481
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_02": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.00971764604282592,
+              "ci_low": -0.003154026626322846,
+              "confidence": 0.95,
+              "mean": 0.0032818097082515374,
+              "n": 3,
+              "standard_deviation": 0.0025907727676013886
+            },
+            "effective_rank": {
+              "ci_high": 11.113795371642249,
+              "ci_low": 2.2674385763098144,
+              "confidence": 0.95,
+              "mean": 6.690616973976032,
+              "n": 3,
+              "standard_deviation": 1.7805689180370092
+            },
+            "frechet_distance": {
+              "ci_high": 0.36516064935853193,
+              "ci_low": -0.1296148194558701,
+              "confidence": 0.95,
+              "mean": 0.11777291495133092,
+              "n": 3,
+              "standard_deviation": 0.09958696461835483
+            },
+            "linear_cka": {
+              "ci_high": 1.1799053367004981,
+              "ci_low": 0.4179296466640516,
+              "confidence": 0.95,
+              "mean": 0.7989174916822749,
+              "n": 3,
+              "standard_deviation": 0.15336824654128303
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_03": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.027558126113729396,
+              "ci_low": -0.008136604853994625,
+              "confidence": 0.95,
+              "mean": 0.009710760629867385,
+              "n": 3,
+              "standard_deviation": 0.007184531436981691
+            },
+            "effective_rank": {
+              "ci_high": 13.306208998243822,
+              "ci_low": 6.4463908037403,
+              "confidence": 0.95,
+              "mean": 9.876299900992061,
+              "n": 3,
+              "standard_deviation": 1.3807242171107486
+            },
+            "frechet_distance": {
+              "ci_high": 0.6611502679372105,
+              "ci_low": -0.1796011051007667,
+              "confidence": 0.95,
+              "mean": 0.24077458141822194,
+              "n": 3,
+              "standard_deviation": 0.16922398646844375
+            },
+            "linear_cka": {
+              "ci_high": 1.037434518569554,
+              "ci_low": 0.7999381361404161,
+              "confidence": 0.95,
+              "mean": 0.918686327354985,
+              "n": 3,
+              "standard_deviation": 0.0478025798058106
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_04": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.05657580107106967,
+              "ci_low": -0.011763260627533082,
+              "confidence": 0.95,
+              "mean": 0.022406270221768294,
+              "n": 3,
+              "standard_deviation": 0.013755087202965664
+            },
+            "effective_rank": {
+              "ci_high": 14.445960902125028,
+              "ci_low": 7.136188925760576,
+              "confidence": 0.95,
+              "mean": 10.791074913942802,
+              "n": 3,
+              "standard_deviation": 1.4712896031866862
+            },
+            "frechet_distance": {
+              "ci_high": 0.8871002459720176,
+              "ci_low": -0.14697163534627405,
+              "confidence": 0.95,
+              "mean": 0.37006430531287177,
+              "n": 3,
+              "standard_deviation": 0.20813497505129894
+            },
+            "linear_cka": {
+              "ci_high": 1.0296794634275572,
+              "ci_low": 0.7946985497928961,
+              "confidence": 0.95,
+              "mean": 0.9121890066102266,
+              "n": 3,
+              "standard_deviation": 0.047296273576776245
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_05": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.09963174254319909,
+              "ci_low": -0.011810178332278813,
+              "confidence": 0.95,
+              "mean": 0.04391078210546014,
+              "n": 3,
+              "standard_deviation": 0.02243070509906547
+            },
+            "effective_rank": {
+              "ci_high": 14.194745662081518,
+              "ci_low": 6.947505556110174,
+              "confidence": 0.95,
+              "mean": 10.571125609095846,
+              "n": 3,
+              "standard_deviation": 1.4587033705279
+            },
+            "frechet_distance": {
+              "ci_high": 1.3801993201840044,
+              "ci_low": -0.17728589399193262,
+              "confidence": 0.95,
+              "mean": 0.6014567130960359,
+              "n": 3,
+              "standard_deviation": 0.3134860854953425
+            },
+            "linear_cka": {
+              "ci_high": 0.9424755736725615,
+              "ci_low": 0.6954769515166909,
+              "confidence": 0.95,
+              "mean": 0.8189762625946262,
+              "n": 3,
+              "standard_deviation": 0.04971516292907826
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_06": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.06945878868273295,
+              "ci_low": 0.005447556686836642,
+              "confidence": 0.95,
+              "mean": 0.0374531726847848,
+              "n": 3,
+              "standard_deviation": 0.012883994251428563
+            },
+            "effective_rank": {
+              "ci_high": 15.844088932030363,
+              "ci_low": 5.4293621135819805,
+              "confidence": 0.95,
+              "mean": 10.636725522806172,
+              "n": 3,
+              "standard_deviation": 2.0962458661581485
+            },
+            "frechet_distance": {
+              "ci_high": 1.7992476008628682,
+              "ci_low": -0.09868877073215176,
+              "confidence": 0.95,
+              "mean": 0.8502794150653582,
+              "n": 3,
+              "standard_deviation": 0.38201110240738806
+            },
+            "linear_cka": {
+              "ci_high": 0.9684020105187623,
+              "ci_low": 0.6804199527323025,
+              "confidence": 0.95,
+              "mean": 0.8244109816255324,
+              "n": 3,
+              "standard_deviation": 0.0579641894296486
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_07": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.053776103516632145,
+              "ci_low": 0.0015820771352189032,
+              "confidence": 0.95,
+              "mean": 0.027679090325925526,
+              "n": 3,
+              "standard_deviation": 0.010505461539939587
+            },
+            "effective_rank": {
+              "ci_high": 14.23985177661135,
+              "ci_low": 7.393757245742741,
+              "confidence": 0.95,
+              "mean": 10.816804511177045,
+              "n": 3,
+              "standard_deviation": 1.377961958084206
+            },
+            "frechet_distance": {
+              "ci_high": 1.4423373754797284,
+              "ci_low": 0.031158409316613067,
+              "confidence": 0.95,
+              "mean": 0.7367478923981707,
+              "n": 3,
+              "standard_deviation": 0.28403799022252973
+            },
+            "linear_cka": {
+              "ci_high": 0.9149289341265165,
+              "ci_low": 0.7676077808223845,
+              "confidence": 0.95,
+              "mean": 0.8412683574744505,
+              "n": 3,
+              "standard_deviation": 0.02965237245247754
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_08": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.023555693606808138,
+              "ci_low": 0.00043966317448376757,
+              "confidence": 0.95,
+              "mean": 0.011997678390645953,
+              "n": 3,
+              "standard_deviation": 0.004652727246758947
+            },
+            "effective_rank": {
+              "ci_high": 13.79204543733407,
+              "ci_low": 7.812876208670589,
+              "confidence": 0.95,
+              "mean": 10.80246082300233,
+              "n": 3,
+              "standard_deviation": 1.203469759422182
+            },
+            "frechet_distance": {
+              "ci_high": 1.3471583203992972,
+              "ci_low": 0.05848288051357964,
+              "confidence": 0.95,
+              "mean": 0.7028206004564383,
+              "n": 3,
+              "standard_deviation": 0.2593808374209885
+            },
+            "linear_cka": {
+              "ci_high": 0.9597032424335507,
+              "ci_low": 0.8053655402052958,
+              "confidence": 0.95,
+              "mean": 0.8825343913194232,
+              "n": 3,
+              "standard_deviation": 0.031064642974142548
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_09": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.022083478887315384,
+              "ci_low": -4.4689276644090115e-05,
+              "confidence": 0.95,
+              "mean": 0.011019394805335647,
+              "n": 3,
+              "standard_deviation": 0.0044538932079510015
+            },
+            "effective_rank": {
+              "ci_high": 14.499478218483272,
+              "ci_low": 8.452786872904078,
+              "confidence": 0.95,
+              "mean": 11.476132545693675,
+              "n": 3,
+              "standard_deviation": 1.2170604143597743
+            },
+            "frechet_distance": {
+              "ci_high": 2.035095655974243,
+              "ci_low": -0.20595581655487027,
+              "confidence": 0.95,
+              "mean": 0.9145699197096864,
+              "n": 3,
+              "standard_deviation": 0.45107231010757093
+            },
+            "linear_cka": {
+              "ci_high": 0.9766455028963903,
+              "ci_low": 0.8581162216389064,
+              "confidence": 0.95,
+              "mean": 0.9173808622676484,
+              "n": 3,
+              "standard_deviation": 0.023857228344633066
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_10": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.028082562822135042,
+              "ci_low": 0.0025835171698684323,
+              "confidence": 0.95,
+              "mean": 0.015333039996001737,
+              "n": 3,
+              "standard_deviation": 0.005132373606272399
+            },
+            "effective_rank": {
+              "ci_high": 11.734472942942212,
+              "ci_low": 9.07813409173951,
+              "confidence": 0.95,
+              "mean": 10.406303517340861,
+              "n": 3,
+              "standard_deviation": 0.5346601435656798
+            },
+            "frechet_distance": {
+              "ci_high": 4.472809312031034,
+              "ci_low": -0.9180020334311194,
+              "confidence": 0.95,
+              "mean": 1.7774036392999573,
+              "n": 3,
+              "standard_deviation": 1.085046799129299
+            },
+            "linear_cka": {
+              "ci_high": 1.0625074551886586,
+              "ci_low": 0.8196734110104466,
+              "confidence": 0.95,
+              "mean": 0.9410904330995526,
+              "n": 3,
+              "standard_deviation": 0.04887692880905355
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_11": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.19297410780642843,
+              "ci_low": 0.012945712203174059,
+              "confidence": 0.95,
+              "mean": 0.10295991000480124,
+              "n": 3,
+              "standard_deviation": 0.03623559087559721
+            },
+            "effective_rank": {
+              "ci_high": 11.284376333242331,
+              "ci_low": 9.295890979165684,
+              "confidence": 0.95,
+              "mean": 10.290133656204008,
+              "n": 3,
+              "standard_deviation": 0.40023653774724843
+            },
+            "frechet_distance": {
+              "ci_high": 5.0635651701663225,
+              "ci_low": -0.8939214426074753,
+              "confidence": 0.95,
+              "mean": 2.0848218637794234,
+              "n": 3,
+              "standard_deviation": 1.1991055456776862
+            },
+            "linear_cka": {
+              "ci_high": 1.0248289482822772,
+              "ci_low": 0.9043133510425605,
+              "confidence": 0.95,
+              "mean": 0.9645711496624189,
+              "n": 3,
+              "standard_deviation": 0.024257028237537028
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_embeddings": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.00016331429617592302,
+              "ci_low": -5.689695488749279e-05,
+              "confidence": 0.95,
+              "mean": 5.320867064421512e-05,
+              "n": 3,
+              "standard_deviation": 4.4323478932304116e-05
+            },
+            "effective_rank": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 1.2717167010403728e-05,
+              "ci_low": -5.541518132706765e-06,
+              "confidence": 0.95,
+              "mean": 3.5878244388484823e-06,
+              "n": 3,
+              "standard_deviation": 3.6750549409447545e-06
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          }
+        },
+        "retained": {
+          "vision_block_00": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.012330106523282792,
+              "ci_low": -0.00398370074678635,
+              "confidence": 0.95,
+              "mean": 0.0041732028882482215,
+              "n": 3,
+              "standard_deviation": 0.0032835955899108327
+            },
+            "effective_rank": {
+              "ci_high": 6.23641622255276,
+              "ci_low": 3.908056315941799,
+              "confidence": 0.95,
+              "mean": 5.07223626924728,
+              "n": 3,
+              "standard_deviation": 0.4686454973082778
+            },
+            "frechet_distance": {
+              "ci_high": 0.4218322788000749,
+              "ci_low": -0.16862217045014882,
+              "confidence": 0.95,
+              "mean": 0.12660505417496304,
+              "n": 3,
+              "standard_deviation": 0.11884495099794365
+            },
+            "linear_cka": {
+              "ci_high": 1.010528705999072,
+              "ci_low": 0.574314946712182,
+              "confidence": 0.95,
+              "mean": 0.792421826355627,
+              "n": 3,
+              "standard_deviation": 0.08779983436979681
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_01": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.007640784224398305,
+              "ci_low": -0.002521413263307475,
+              "confidence": 0.95,
+              "mean": 0.002559685480545415,
+              "n": 3,
+              "standard_deviation": 0.0020454174983208697
+            },
+            "effective_rank": {
+              "ci_high": 9.380213754645062,
+              "ci_low": 2.151806417489157,
+              "confidence": 0.95,
+              "mean": 5.7660100860671095,
+              "n": 3,
+              "standard_deviation": 1.454912765698233
+            },
+            "frechet_distance": {
+              "ci_high": 0.28129782884766763,
+              "ci_low": -0.10139048653919792,
+              "confidence": 0.95,
+              "mean": 0.08995367115423485,
+              "n": 3,
+              "standard_deviation": 0.07702638899137809
+            },
+            "linear_cka": {
+              "ci_high": 1.0270101619922887,
+              "ci_low": 0.4758710995233095,
+              "confidence": 0.95,
+              "mean": 0.7514406307577991,
+              "n": 3,
+              "standard_deviation": 0.11093166450917995
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_02": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.013082500754950807,
+              "ci_low": -0.004064136133520381,
+              "confidence": 0.95,
+              "mean": 0.004509182310715214,
+              "n": 3,
+              "standard_deviation": 0.0034512251086896515
+            },
+            "effective_rank": {
+              "ci_high": 10.076290873293921,
+              "ci_low": 0.33393775265953707,
+              "confidence": 0.95,
+              "mean": 5.205114312976729,
+              "n": 3,
+              "standard_deviation": 1.9609124475168276
+            },
+            "frechet_distance": {
+              "ci_high": 0.5348266940484401,
+              "ci_low": -0.17643158251569452,
+              "confidence": 0.95,
+              "mean": 0.17919755576637275,
+              "n": 3,
+              "standard_deviation": 0.14315999334493015
+            },
+            "linear_cka": {
+              "ci_high": 1.2167264019922421,
+              "ci_low": 0.30014672339973036,
+              "confidence": 0.95,
+              "mean": 0.7584365626959862,
+              "n": 3,
+              "standard_deviation": 0.18448648685154562
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_03": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.052117064691123954,
+              "ci_low": -0.014707681747006988,
+              "confidence": 0.95,
+              "mean": 0.01870469147205848,
+              "n": 3,
+              "standard_deviation": 0.013450290239957356
+            },
+            "effective_rank": {
+              "ci_high": 9.335944634695444,
+              "ci_low": 7.121730217521214,
+              "confidence": 0.95,
+              "mean": 8.22883742610833,
+              "n": 3,
+              "standard_deviation": 0.44567062580723216
+            },
+            "frechet_distance": {
+              "ci_high": 1.7784979251002866,
+              "ci_low": -0.4745471494285771,
+              "confidence": 0.95,
+              "mean": 0.6519753878358547,
+              "n": 3,
+              "standard_deviation": 0.45348634736947857
+            },
+            "linear_cka": {
+              "ci_high": 1.1066851485988372,
+              "ci_low": 0.6085728009318448,
+              "confidence": 0.95,
+              "mean": 0.8576289747653411,
+              "n": 3,
+              "standard_deviation": 0.10025860187034902
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_04": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.11747588456037861,
+              "ci_low": -0.017674406605417338,
+              "confidence": 0.95,
+              "mean": 0.04990073897748063,
+              "n": 3,
+              "standard_deviation": 0.027202656786400273
+            },
+            "effective_rank": {
+              "ci_high": 10.751756422095902,
+              "ci_low": 6.69249921939436,
+              "confidence": 0.95,
+              "mean": 8.722127820745131,
+              "n": 3,
+              "standard_deviation": 0.8170354613394961
+            },
+            "frechet_distance": {
+              "ci_high": 3.2083616067080722,
+              "ci_low": -0.512158704296483,
+              "confidence": 0.95,
+              "mean": 1.3481014512057945,
+              "n": 3,
+              "standard_deviation": 0.7488554868367314
+            },
+            "linear_cka": {
+              "ci_high": 1.0441168282788684,
+              "ci_low": 0.677783255393755,
+              "confidence": 0.95,
+              "mean": 0.8609500418363117,
+              "n": 3,
+              "standard_deviation": 0.07373455407731683
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_05": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.17008018492543592,
+              "ci_low": -0.012742257021510245,
+              "confidence": 0.95,
+              "mean": 0.07866896395196284,
+              "n": 3,
+              "standard_deviation": 0.036797968381980115
+            },
+            "effective_rank": {
+              "ci_high": 11.399562595959777,
+              "ci_low": 6.36559331802003,
+              "confidence": 0.95,
+              "mean": 8.882577956989904,
+              "n": 3,
+              "standard_deviation": 1.013222667593738
+            },
+            "frechet_distance": {
+              "ci_high": 2.205875690983124,
+              "ci_low": -0.25506365752157534,
+              "confidence": 0.95,
+              "mean": 0.9754060167307742,
+              "n": 3,
+              "standard_deviation": 0.49533070104449134
+            },
+            "linear_cka": {
+              "ci_high": 1.0119135004673956,
+              "ci_low": 0.5708915593618085,
+              "confidence": 0.95,
+              "mean": 0.791402529914602,
+              "n": 3,
+              "standard_deviation": 0.08876761119552462
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_06": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.17865104021825728,
+              "ci_low": 0.0029510118250065526,
+              "confidence": 0.95,
+              "mean": 0.09080102602163191,
+              "n": 3,
+              "standard_deviation": 0.03536438973615758
+            },
+            "effective_rank": {
+              "ci_high": 13.55518392370362,
+              "ci_low": 7.014374937641044,
+              "confidence": 0.95,
+              "mean": 10.284779430672332,
+              "n": 3,
+              "standard_deviation": 1.3165149732085313
+            },
+            "frechet_distance": {
+              "ci_high": 1.6944725150699607,
+              "ci_low": 0.5847925980609183,
+              "confidence": 0.95,
+              "mean": 1.1396325565654395,
+              "n": 3,
+              "standard_deviation": 0.22335314015807095
+            },
+            "linear_cka": {
+              "ci_high": 1.0275224035296902,
+              "ci_low": 0.5907291909015161,
+              "confidence": 0.95,
+              "mean": 0.8091257972156032,
+              "n": 3,
+              "standard_deviation": 0.08791646504983987
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_07": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.1495571199843709,
+              "ci_low": 0.030358539621984003,
+              "confidence": 0.95,
+              "mean": 0.08995782980317746,
+              "n": 3,
+              "standard_deviation": 0.023991942918172453
+            },
+            "effective_rank": {
+              "ci_high": 13.481971488349824,
+              "ci_low": 8.03311995067805,
+              "confidence": 0.95,
+              "mean": 10.757545719513937,
+              "n": 3,
+              "standard_deviation": 1.0967289598917809
+            },
+            "frechet_distance": {
+              "ci_high": 2.2760084787553825,
+              "ci_low": 1.692724397261252,
+              "confidence": 0.95,
+              "mean": 1.9843664380083172,
+              "n": 3,
+              "standard_deviation": 0.11740172026999798
+            },
+            "linear_cka": {
+              "ci_high": 0.992353103703509,
+              "ci_low": 0.5820771350528179,
+              "confidence": 0.95,
+              "mean": 0.7872151193781635,
+              "n": 3,
+              "standard_deviation": 0.0825791514516338
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_08": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.09181308605568671,
+              "ci_low": 0.03493089135710471,
+              "confidence": 0.95,
+              "mean": 0.06337198870639571,
+              "n": 3,
+              "standard_deviation": 0.011449082397791596
+            },
+            "effective_rank": {
+              "ci_high": 11.691682572713837,
+              "ci_low": 7.99906142120135,
+              "confidence": 0.95,
+              "mean": 9.845371996957594,
+              "n": 3,
+              "standard_deviation": 0.7432400253105648
+            },
+            "frechet_distance": {
+              "ci_high": 5.472212810203139,
+              "ci_low": 3.1298532299617405,
+              "confidence": 0.95,
+              "mean": 4.30103302008244,
+              "n": 3,
+              "standard_deviation": 0.47146331082244347
+            },
+            "linear_cka": {
+              "ci_high": 0.9430029588226276,
+              "ci_low": 0.6509684766879551,
+              "confidence": 0.95,
+              "mean": 0.7969857177552914,
+              "n": 3,
+              "standard_deviation": 0.05877984959394708
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_09": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.08558553227224927,
+              "ci_low": 0.028772863043882897,
+              "confidence": 0.95,
+              "mean": 0.05717919765806608,
+              "n": 3,
+              "standard_deviation": 0.011435088513739445
+            },
+            "effective_rank": {
+              "ci_high": 12.498609235598256,
+              "ci_low": 5.808099507669635,
+              "confidence": 0.95,
+              "mean": 9.153354371633945,
+              "n": 3,
+              "standard_deviation": 1.346646302312779
+            },
+            "frechet_distance": {
+              "ci_high": 7.588214749756807,
+              "ci_low": 1.9085771160914002,
+              "confidence": 0.95,
+              "mean": 4.748395932924104,
+              "n": 3,
+              "standard_deviation": 1.1431809127972052
+            },
+            "linear_cka": {
+              "ci_high": 0.9927411557756678,
+              "ci_low": 0.6820460411337215,
+              "confidence": 0.95,
+              "mean": 0.8373935984546946,
+              "n": 3,
+              "standard_deviation": 0.06253580732910127
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_10": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.09156960663717789,
+              "ci_low": 0.040075057593169594,
+              "confidence": 0.95,
+              "mean": 0.06582233211517374,
+              "n": 3,
+              "standard_deviation": 0.010364672779699702
+            },
+            "effective_rank": {
+              "ci_high": 13.484888473614884,
+              "ci_low": 6.341460690257263,
+              "confidence": 0.95,
+              "mean": 9.913174581936074,
+              "n": 3,
+              "standard_deviation": 1.4378083287347911
+            },
+            "frechet_distance": {
+              "ci_high": 12.576900737222072,
+              "ci_low": 3.051704169032713,
+              "confidence": 0.95,
+              "mean": 7.814302453127392,
+              "n": 3,
+              "standard_deviation": 1.9172038094212336
+            },
+            "linear_cka": {
+              "ci_high": 1.0052163190037633,
+              "ci_low": 0.6549891611466917,
+              "confidence": 0.95,
+              "mean": 0.8301027400752276,
+              "n": 3,
+              "standard_deviation": 0.07049270179355328
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_block_11": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.41882867154344894,
+              "ci_low": 0.1992684104271563,
+              "confidence": 0.95,
+              "mean": 0.3090485409853026,
+              "n": 3,
+              "standard_deviation": 0.04419244957269094
+            },
+            "effective_rank": {
+              "ci_high": 14.683583949173997,
+              "ci_low": 6.138941523111254,
+              "confidence": 0.95,
+              "mean": 10.411262736142625,
+              "n": 3,
+              "standard_deviation": 1.7198407289671078
+            },
+            "frechet_distance": {
+              "ci_high": 15.662170996272591,
+              "ci_low": -0.525496495754906,
+              "confidence": 0.95,
+              "mean": 7.568337250258843,
+              "n": 3,
+              "standard_deviation": 3.2582065429499925
+            },
+            "linear_cka": {
+              "ci_high": 1.005205374105389,
+              "ci_low": 0.7203403687560744,
+              "confidence": 0.95,
+              "mean": 0.8627728714307318,
+              "n": 3,
+              "standard_deviation": 0.057336798197994844
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          },
+          "vision_embeddings": {
+            "cosine_centroid_drift": {
+              "ci_high": 0.00016331429617592302,
+              "ci_low": -5.689695488749279e-05,
+              "confidence": 0.95,
+              "mean": 5.320867064421512e-05,
+              "n": 3,
+              "standard_deviation": 4.4323478932304116e-05
+            },
+            "effective_rank": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "confidence": 0.95,
+              "mean": 0.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            },
+            "frechet_distance": {
+              "ci_high": 1.2717167010403728e-05,
+              "ci_low": -5.541518132706765e-06,
+              "confidence": 0.95,
+              "mean": 3.5878244388484823e-06,
+              "n": 3,
+              "standard_deviation": 3.6750549409447545e-06
+            },
+            "projection_dimension": {
+              "ci_high": 16.0,
+              "ci_low": 16.0,
+              "confidence": 0.95,
+              "mean": 16.0,
+              "n": 3,
+              "standard_deviation": 0.0
+            }
+          }
+        }
+      },
+      "optimization": {
+        "adapter_l2_delta_from_initial": {
+          "ci_high": 1003.0714618587294,
+          "ci_low": 1003.0697734928331,
+          "confidence": 0.95,
+          "mean": 1003.0706176757812,
+          "n": 3,
+          "standard_deviation": 0.00033982936784851206
+        },
+        "trainable_parameters": {
+          "ci_high": 87901029.0,
+          "ci_low": 87901029.0,
+          "confidence": 0.95,
+          "mean": 87901029.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        }
+      },
+      "retained": {
+        "accuracy_change": {
+          "ci_high": 0.327703114128187,
+          "ci_low": -0.5943697807948535,
+          "confidence": 0.95,
+          "mean": -0.13333333333333328,
+          "n": 3,
+          "standard_deviation": 0.18559214542766742
+        },
+        "expected_calibration_error": {
+          "ci_high": 0.2998721602137585,
+          "ci_low": 0.10448757026444273,
+          "confidence": 0.95,
+          "mean": 0.20217986523910061,
+          "n": 3,
+          "standard_deviation": 0.03932644092658761
+        },
+        "macro_f1": {
+          "ci_high": 1.1572099331143497,
+          "ci_low": -0.11733018323459976,
+          "confidence": 0.95,
+          "mean": 0.5199398749398749,
+          "n": 3,
+          "standard_deviation": 0.25653572068895186
+        },
+        "negative_log_likelihood": {
+          "ci_high": 2.0959847324467713,
+          "ci_low": 0.14752404166374267,
+          "confidence": 0.95,
+          "mean": 1.121754387055257,
+          "n": 3,
+          "standard_deviation": 0.392180490148861
+        },
+        "sample_count": {
+          "ci_high": 30.0,
+          "ci_low": 30.0,
+          "confidence": 0.95,
+          "mean": 30.0,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "top1_accuracy": {
+          "ci_high": 1.0610364474615201,
+          "ci_low": 0.13896355253847975,
+          "confidence": 0.95,
+          "mean": 0.6,
+          "n": 3,
+          "standard_deviation": 0.18559214542766742
+        }
+      },
+      "step": 200
+    }
+  ],
+  "config_hash": "49f86b39db49f95b",
+  "datasets": {
+    "per_run_fingerprints": {
+      "clip-food101-cifar10-wise-source-local-0ff77213f2472089-s42": {
+        "adaptation_eval": "8a6f14faae4066c839cddd9cfdb7b4247669aa20c516b4cf8e1769400c8e0d07",
+        "adaptation_train": "0b1ee44b33b358f65e051388cd699ed66e7041dfc240b88a88efe1d381d1f2f5",
+        "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+      },
+      "clip-food101-cifar10-wise-source-local-48c2ba34d3a81b53-s41": {
+        "adaptation_eval": "485b9854ae8c521ee0670502660c55c4f2692376726ec73b2cd040b60c88e73b",
+        "adaptation_train": "c189bf7fbd12d5e56605b3ccd2e8beae481bb010e45029d5ff53f9739add8a60",
+        "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+      },
+      "clip-food101-cifar10-wise-source-local-9b3515993c07fa64-s43": {
+        "adaptation_eval": "645f384ed66226dd9aed7cc59ebafac65a194d288d6d7413218696bb902d2170",
+        "adaptation_train": "e6f3da61d42603535394d998dc64680843a06ef5ad9ea6d0a208245d2b94b9f0",
+        "retained_eval": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b"
+      }
+    },
+    "selection_policy": {
+      "adaptation": {
+        "class_count": 6,
+        "config": "default",
+        "eval_per_class": 4,
+        "image_field": "image",
+        "repository": "ethz/food101",
+        "server_window": 64,
+        "split": "train",
+        "train_per_class": 4
+      },
+      "loading_mode": "dataset-server-stratified",
+      "retained": {
+        "config": "plain_text",
+        "eval_size": 30,
+        "eval_start": 0,
+        "image_field": "img",
+        "repository": "uoft-cs/cifar10",
+        "split": "test"
+      }
+    }
+  },
+  "evidence_status": "local-multiseed-preliminary",
+  "experiment": {
+    "method": {
+      "encoder_learning_rate": 1e-05,
+      "fidelity": "compatible-wise-ft-source-baseline",
+      "head_learning_rate": 0.01,
+      "initialize_head_from_text": true,
+      "name": "zero-shot-initialized-full-finetune",
+      "strategy": "full-finetune"
+    },
+    "model": {
+      "encoder_trainable_parameters": 87849216,
+      "head_trainable_parameters": 51813,
+      "requested_revision": "openai/clip-vit-base-patch32",
+      "resolved_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
+    },
+    "name": "clip-food101-cifar10-wise-source-local-multiseed",
+    "run_count": 3,
+    "seeds": [
+      41,
+      42,
+      43
+    ],
+    "uncertainty": "two-sided 95% Student-t confidence interval"
+  },
+  "run_id": "clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b",
+  "runs": [
+    {
+      "config_hash": "48c2ba34d3a81b53",
+      "run_id": "clip-food101-cifar10-wise-source-local-48c2ba34d3a81b53-s41",
+      "seed": 41,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-wise-source-local-48c2ba34d3a81b53-s41.json",
+        "run_id": "clip-food101-cifar10-wise-source-local-48c2ba34d3a81b53-s41",
+        "sha256": "ca4514ed1020e1e173c4a65f9c2bd6d32ec4cf5bd7d446c0f9c154b616ff35f5"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-wise-source-local-48c2ba34d3a81b53-s41.json",
+      "web_artifact_sha256": "d58957b623ae73c5a63443dd93f61988b30e73ca16c650f262b7088162057bec"
+    },
+    {
+      "config_hash": "0ff77213f2472089",
+      "run_id": "clip-food101-cifar10-wise-source-local-0ff77213f2472089-s42",
+      "seed": 42,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-wise-source-local-0ff77213f2472089-s42.json",
+        "run_id": "clip-food101-cifar10-wise-source-local-0ff77213f2472089-s42",
+        "sha256": "e53fcbafa2f18556475d7ad2daca70d6a3148950ebd180ac8714ffddb344220f"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-wise-source-local-0ff77213f2472089-s42.json",
+      "web_artifact_sha256": "23ed4020df5b2ea58475aa2c45c1b56adc03adf2dd3f8cf819faeb3d2fec7bc8"
+    },
+    {
+      "config_hash": "9b3515993c07fa64",
+      "run_id": "clip-food101-cifar10-wise-source-local-9b3515993c07fa64-s43",
+      "seed": 43,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-wise-source-local-9b3515993c07fa64-s43.json",
+        "run_id": "clip-food101-cifar10-wise-source-local-9b3515993c07fa64-s43",
+        "sha256": "9e7797567f208b4883cbc392fb24014b3f73490a1800f25ede7508acea3659a4"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-wise-source-local-9b3515993c07fa64-s43.json",
+      "web_artifact_sha256": "e87586a0e40d073771e0631f39cf6ef18841fc622edbae52e926a46ebfb19fcb"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "public_path": "/data/manifests/clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b.json",
+    "run_id": "clip-food101-cifar10-wise-source-local-multiseed-49f86b39db49f95b",
+    "sha256": "6f1bfe100a60f813dd8aa6426a25e8d4e91e65a69baff5abe896ffb000e3d2e2"
+  }
+}

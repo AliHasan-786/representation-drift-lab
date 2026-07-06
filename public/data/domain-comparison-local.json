@@ -1,0 +1,266 @@
+{
+  "config_hash": "79e5b05c661a821f",
+  "evidence_status": "local-multidomain-preliminary",
+  "publication_caveat": "Three small local scenarios establish domain coverage and expose failure modes; they do not estimate population-level model behavior.",
+  "run_id": "clip-lora-domain-comparison-local-79e5b05c661a821f",
+  "scenarios": [
+    {
+      "adaptation_domain": "Food-101",
+      "id": "food101-cifar10",
+      "label": "Food-101 \u2192 CIFAR-10",
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.12920351013540932,
+          "ci_low": 0.009685378753479607,
+          "confidence": 0.95,
+          "mean": 0.06944444444444446,
+          "n": 3,
+          "standard_deviation": 0.02405626121623445
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.9389625758263739,
+          "ci_low": 0.6999263130625147,
+          "confidence": 0.95,
+          "mean": 0.8194444444444443,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
+          "confidence": 0.95,
+          "mean": 0.7333333333333333,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.9486479545798535,
+          "ci_low": 0.8291298231979242,
+          "confidence": 0.95,
+          "mean": 0.8888888888888888,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.7828045903916775,
+          "ci_low": 0.6171954096083222,
+          "confidence": 0.95,
+          "mean": 0.6999999999999998,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.04947125705834432,
+          "ci_low": -0.11613792372501097,
+          "confidence": 0.95,
+          "mean": -0.033333333333333326,
+          "n": 3,
+          "standard_deviation": 0.033333333333333326
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.014748911058591885,
+          "ci_low": 0.010540186334644375,
+          "confidence": 0.95,
+          "mean": 0.01264454869661813,
+          "n": 3,
+          "standard_deviation": 0.0008471198484769311
+        }
+      },
+      "retained_domain": "CIFAR-10",
+      "sample_counts_per_seed": {
+        "adaptation_eval": 24,
+        "retained_eval": 30
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-local.json",
+        "artifact_sha256": "3699f2d6b41351d50d51a58958614a0d892d73676b18f419bf8350d0022c2331",
+        "config_hash": "13c5baa85a5a513c",
+        "manifest": {
+          "public_path": "/data/manifests/clip-food101-cifar10-local-multiseed-13c5baa85a5a513c.json",
+          "run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c",
+          "sha256": "ec202de88a21289bbe5187f8a28e38df3f8adfb8fc67525cc14d2a78f01e1f75"
+        },
+        "run_id": "clip-food101-cifar10-local-multiseed-13c5baa85a5a513c"
+      }
+    },
+    {
+      "adaptation_domain": "EuroSAT",
+      "id": "eurosat-cifar100",
+      "label": "EuroSAT \u2192 CIFAR-100",
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.3792035101354091,
+          "ci_low": 0.25968537875347975,
+          "confidence": 0.95,
+          "mean": 0.3194444444444444,
+          "n": 3,
+          "standard_deviation": 0.024056261216234387
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 0.5126105304062276,
+          "ci_low": 0.15405613626043904,
+          "confidence": 0.95,
+          "mean": 0.3333333333333333,
+          "n": 3,
+          "standard_deviation": 0.07216878364870323
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.5,
+          "ci_low": 0.5,
+          "confidence": 0.95,
+          "mean": 0.5,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 0.7722959091597074,
+          "ci_low": 0.5332596463958482,
+          "confidence": 0.95,
+          "mean": 0.6527777777777778,
+          "n": 3,
+          "standard_deviation": 0.048112522432468836
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.61261195864689,
+          "ci_low": 0.3540547080197768,
+          "confidence": 0.95,
+          "mean": 0.4833333333333334,
+          "n": 3,
+          "standard_deviation": 0.05204164998665333
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.11261195864688994,
+          "ci_low": -0.14594529198022327,
+          "confidence": 0.95,
+          "mean": -0.016666666666666663,
+          "n": 3,
+          "standard_deviation": 0.05204164998665334
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.39486444255013786,
+          "ci_low": -0.08325104913680059,
+          "confidence": 0.95,
+          "mean": 0.15580669670666858,
+          "n": 3,
+          "standard_deviation": 0.09623369296826484
+        }
+      },
+      "retained_domain": "CIFAR-100",
+      "sample_counts_per_seed": {
+        "adaptation_eval": 24,
+        "retained_eval": 40
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-eurosat-cifar100-local.json",
+        "artifact_sha256": "5c3c7b7d5afb0b90c955c3f647892798d95a01a3e4d8ca04280e4d46d607119c",
+        "config_hash": "ee3a69a7f2247981",
+        "manifest": {
+          "public_path": "/data/manifests/clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981.json",
+          "run_id": "clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981",
+          "sha256": "55a1ec4eb5f2044c92d9264dedb21af2634612a24b7d31eaab99de5ccecb4234"
+        },
+        "run_id": "clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981"
+      }
+    },
+    {
+      "adaptation_domain": "Oxford-IIIT Pet",
+      "id": "pets-mnist",
+      "label": "Oxford Pets \u2192 MNIST",
+      "metrics": {
+        "adaptation_accuracy_change": {
+          "ci_high": 0.49735628529172166,
+          "ci_low": -0.3306896186250549,
+          "confidence": 0.95,
+          "mean": 0.08333333333333337,
+          "n": 3,
+          "standard_deviation": 0.16666666666666663
+        },
+        "baseline_adaptation_accuracy": {
+          "ci_high": 1.0445918183194145,
+          "ci_low": 0.5665192927916965,
+          "confidence": 0.95,
+          "mean": 0.8055555555555555,
+          "n": 3,
+          "standard_deviation": 0.0962250448649376
+        },
+        "baseline_retained_accuracy": {
+          "ci_high": 0.275,
+          "ci_low": 0.275,
+          "confidence": 0.95,
+          "mean": 0.275,
+          "n": 3,
+          "standard_deviation": 0.0
+        },
+        "final_adaptation_accuracy": {
+          "ci_high": 1.127925151652748,
+          "ci_low": 0.64985262612503,
+          "confidence": 0.95,
+          "mean": 0.888888888888889,
+          "n": 3,
+          "standard_deviation": 0.0962250448649376
+        },
+        "final_retained_accuracy": {
+          "ci_high": 0.4550442121624911,
+          "ci_low": 0.31162245450417553,
+          "confidence": 0.95,
+          "mean": 0.3833333333333333,
+          "n": 3,
+          "standard_deviation": 0.028867513459481315
+        },
+        "retained_accuracy_change": {
+          "ci_high": 0.1800442121624911,
+          "ci_low": 0.03662245450417555,
+          "confidence": 0.95,
+          "mean": 0.10833333333333332,
+          "n": 3,
+          "standard_deviation": 0.028867513459481315
+        },
+        "retained_cka_loss": {
+          "ci_high": 0.053638591996825635,
+          "ci_low": 0.004947900428263763,
+          "confidence": 0.95,
+          "mean": 0.0292932462125447,
+          "n": 3,
+          "standard_deviation": 0.009800320517306263
+        }
+      },
+      "retained_domain": "MNIST",
+      "sample_counts_per_seed": {
+        "adaptation_eval": 12,
+        "retained_eval": 40
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "source": {
+        "artifact_path": "public/data/benchmark-pets-mnist-local.json",
+        "artifact_sha256": "58dde9719149b78dce2173f798856bdd5e6030338bc48b26a2b4cb1fb23a979c",
+        "config_hash": "1a4ae89402350982",
+        "manifest": {
+          "public_path": "/data/manifests/clip-pets-mnist-local-multiseed-1a4ae89402350982.json",
+          "run_id": "clip-pets-mnist-local-multiseed-1a4ae89402350982",
+          "sha256": "e9734c0a1f7cdfcab78882004c1c6356fbff5a2b44240827728c8722c687a6ea"
+        },
+        "run_id": "clip-pets-mnist-local-multiseed-1a4ae89402350982"
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "public_path": "/data/manifests/clip-lora-domain-comparison-local-79e5b05c661a821f.json",
+    "run_id": "clip-lora-domain-comparison-local-79e5b05c661a821f",
+    "sha256": "b03f799b0e243940f965ac15f03e84c8852472e0bb2fbedf8dfd597357d41b12"
+  }
+}

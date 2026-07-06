@@ -1,0 +1,4 @@
+name: clip-eurosat-cifar100-local-multiseed
+base_config: eurosat-cifar100-local.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-eurosat-cifar100-local.json

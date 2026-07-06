@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alihasan.dev/schemas/driftlab/web-artifact-1.0.0.json",
+  "title": "Representation Drift Lab Web Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "config_hash",
+    "source_manifest",
+    "experiment",
+    "datasets",
+    "checkpoints"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "config_hash": { "type": "string", "pattern": "^[a-f0-9]{16}$" },
+    "source_manifest": { "type": "object" },
+    "experiment": { "type": "object" },
+    "datasets": { "type": "object" },
+    "checkpoints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step", "retained", "adaptation", "geometry"],
+        "properties": {
+          "step": { "type": "integer", "minimum": 0 },
+          "retained": { "type": "object" },
+          "adaptation": { "type": "object" },
+          "geometry": { "type": "object" }
+        }
+      }
+    }
+  }
+}

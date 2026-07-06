@@ -1,0 +1,40 @@
+name: clip-food101-cifar10-method-comparison-local
+evidence_status: local-multimethod-preliminary
+methods:
+  - id: linear-probe
+    label: Frozen linear probe
+    category: frozen-encoder baseline
+    artifact: public/data/benchmark-linear-probe-local.json
+  - id: full-finetune
+    label: Full fine-tune
+    category: full-parameter baseline
+    artifact: public/data/benchmark-full-finetune-local.json
+  - id: lp-ft
+    label: LP-FT
+    category: robust adaptation baseline
+    artifact: public/data/benchmark-lp-ft-local.json
+  - id: zero-shot-initialized-full-finetune
+    label: Zero-shot initialized FT
+    category: WiSE-FT source baseline
+    artifact: public/data/benchmark-wise-source-local.json
+  - id: wise-ft
+    label: WiSE-FT · α 0.5
+    category: robust weight-space ensemble
+    artifact: public/data/benchmark-wise-ft-local.json
+  - id: standard-lora
+    label: Standard LoRA
+    category: parameter-efficient baseline
+    artifact: public/data/benchmark-local.json
+  - id: zscl-inspired-distillation
+    label: Retention distillation
+    category: continual-learning inspired baseline
+    artifact: public/data/benchmark-distillation-local.json
+  - id: retention-gradient-nullspace
+    label: Gradient null-space
+    category: geometry-preserving inspired baseline
+    artifact: public/data/benchmark-nullspace-local.json
+  - id: selective-v-lora
+    label: Selective LoRA
+    category: selective parameter-efficient baseline
+    artifact: public/data/benchmark-selective-lora-local.json
+output: public/data/method-comparison-local.json

@@ -1,0 +1,20 @@
+name: synthetic-drift-smoke
+tier: smoke
+seed: 42
+model:
+  family: synthetic-dual-encoder
+  revision: v1
+method:
+  name: full-finetune
+  fidelity: native-smoke-baseline
+datasets:
+  adaptation: synthetic-rotated-v1
+  retained: synthetic-reference-v1
+  generator_revision: v1
+  adaptation_rotation_degrees: 85.0
+training:
+  total_steps: 20
+  checkpoint_steps: [0, 5, 10, 20]
+  batch_size: 24
+  learning_rate: 0.08
+output_dir: artifacts/runs

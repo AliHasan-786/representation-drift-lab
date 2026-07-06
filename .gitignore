@@ -1,0 +1,36 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.python-version
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated research outputs. Compact reviewed web artifacts are allow-listed.
+artifacts/
+checkpoints/
+embeddings/
+data/raw/
+data/cache/
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+apps/web/dist/
+*.tsbuildinfo
+tmp/
+output/
+.claude/
+
+# Large model/data formats must be registered by checksum, not committed.
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.npz
+*.parquet

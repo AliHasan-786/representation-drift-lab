@@ -1,0 +1,41 @@
+name: legacy-clip-food101-cifar10
+tier: research
+seed: 42
+model:
+  family: openai-clip-vit-b-32
+  revision: openai/clip-vit-base-patch32
+method:
+  name: lora
+  fidelity: legacy-reproduction
+  rank: 8
+  alpha: 16
+  dropout: 0.1
+  target_modules: [q_proj, v_proj]
+  expected_trainable_parameters: 294912
+datasets:
+  loading_mode: materialized-seeded-split
+  adaptation:
+    repository: ethz/food101
+    config: default
+    split: train
+    image_field: image
+    train_size: 5000
+    eval_size: 1000
+  retained:
+    repository: uoft-cs/cifar10
+    config: plain_text
+    split: test
+    image_field: img
+    eval_size: 1000
+training:
+  total_steps: 785
+  checkpoint_steps: [0, 200, 400, 600, 785]
+  batch_size: 32
+  learning_rate: 0.00005
+analysis:
+  covariance_projection_dim: 64
+  diagnostics_version: layerwise-cross-modal-v1
+  collect_vision_hidden_states: true
+runtime:
+  device: auto
+output_dir: artifacts/runs

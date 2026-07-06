@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "project": "CS 5787 historical source scaffold - DL Final",
+  "storage": {
+    "kind": "external",
+    "root_environment_variable": "DRIFTLAB_LEGACY_CODE_ROOT",
+    "committed": false
+  },
+  "tree_sha256": "3fcbf170707783e446b9f7738507d918ff20640c403d68e473009d716cb97ef4",
+  "tree_sha256_method": "SHA-256 of the sorted per-file SHA-256 listing rooted at drift-analysis",
+  "artifacts": [
+    {"path": "drift-analysis-clean.zip", "bytes": 46659, "sha256": "957682e7d364010b8d05f452eca1e141967daf00b53eb58c2946ca3bdb5ff645", "role": "historical-source-archive"},
+    {"path": "drift-analysis/README.md", "bytes": 4998, "sha256": "5351e2ed32554e12b2c5d557b409b9e779daa36465e9448c99f2c8f95f2f8d40", "role": "post-archive-readme"},
+    {"path": "drift-analysis/config.py", "bytes": 5252, "sha256": "ca1c9f6c2b9da64dd1b53b6e7cc3c617ff0de79229831b330077dbf6787f81a6", "role": "planned-configuration"},
+    {"path": "drift-analysis/metrics/drift_metrics.py", "bytes": 12089, "sha256": "30d27e09cd2234be7b37bc6d38d0938166cfb42d045a9c34aeb384394bce3203", "role": "historical-metrics-source"},
+    {"path": "drift-analysis/models/clip_wrapper.py", "bytes": 7121, "sha256": "8291f3141d33f8e7cec743193b055de398982e2f68e2e0304a43e3bcdea4dff4", "role": "historical-model-wrapper"},
+    {"path": "drift-analysis/experiments/finetune_lora.py", "bytes": 8439, "sha256": "f6649378d8b379613b88a0bdcae220f96d9109c729f56207d2e90f92f42b38f3", "role": "historical-training-source"},
+    {"path": "drift-analysis/experiments/analyze_checkpoints.py", "bytes": 14022, "sha256": "43f8eb1733fa5e54e5832984729df8667548a54ce417da6ebde753c7a2cc57b9", "role": "historical-analysis-source"},
+    {"path": "drift-analysis/tests/test_data_loading.py", "bytes": 2571, "sha256": "2469060eb87969360e40db1114748280c6b51b35089db01a68994118e846a7e3", "role": "historical-test-source"},
+    {"path": "drift-analysis/notebooks/exploratory_analysis.ipynb", "bytes": 3501, "sha256": "d017f8952eb81c6289fc90f90ec5ade57aefec86f1d8d8ea673bcea332100a6c", "role": "unexecuted-exploration-notebook"},
+    {"path": "drift-analysis/notebooks/colab_runner.ipynb", "bytes": 5914, "sha256": "c1b2486979c902d58c902977dff2be50f048ecb675209ae63b166999b27b2aff", "role": "unexecuted-colab-notebook"}
+  ]
+}

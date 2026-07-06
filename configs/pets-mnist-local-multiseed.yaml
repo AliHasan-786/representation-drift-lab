@@ -1,0 +1,4 @@
+name: clip-pets-mnist-local-multiseed
+base_config: pets-mnist-local.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-pets-mnist-local.json

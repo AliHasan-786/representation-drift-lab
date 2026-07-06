@@ -1,0 +1,1164 @@
+{
+  "analysis": {
+    "drift_forgetting_association": {
+      "bootstrap_samples": 2000,
+      "pearson": 0.9206560813356476,
+      "pearson_ci_high": 0.9542524204665519,
+      "pearson_ci_low": 0.8844328719690764,
+      "spearman": 0.9592919335308792
+    },
+    "early_warning": {
+      "absolute_error": 0.3592,
+      "actual_final_drift": 0.3055,
+      "checkpoint_step": 8000,
+      "predicted_final_drift": 0.6647,
+      "status": "failed-legacy-predictor"
+    },
+    "interpretation": "Association only; checkpoints from one run are autocorrelated and do not establish causation."
+  },
+  "checkpoints": [
+    {
+      "adaptation": {
+        "accuracy_change": 0.0,
+        "sample_count": 1000,
+        "top1_accuracy": 0.752
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.0,
+          "frechet_distance": 0.0
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.0,
+          "frechet_distance": 0.0
+        }
+      },
+      "retained": {
+        "accuracy_change": 0.0,
+        "sample_count": 2000,
+        "top1_accuracy": 0.9045
+      },
+      "step": 0
+    },
+    {
+      "adaptation": {
+        "accuracy_change": -0.017000000000000015,
+        "sample_count": 1000,
+        "top1_accuracy": 0.735
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78185666,
+          "frechet_distance": 0.9738332650222253
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.070191026,
+          "frechet_distance": 0.1571475333458926
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.0034999999999999476,
+        "sample_count": 2000,
+        "top1_accuracy": 0.901
+      },
+      "step": 500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.0040000000000000036,
+        "sample_count": 1000,
+        "top1_accuracy": 0.756
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7807046,
+          "frechet_distance": 1.0068623162668768
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.1084193,
+          "frechet_distance": 0.2384010012358005
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.00649999999999995,
+        "sample_count": 2000,
+        "top1_accuracy": 0.898
+      },
+      "step": 1000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": -0.006000000000000005,
+        "sample_count": 1000,
+        "top1_accuracy": 0.746
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78456885,
+          "frechet_distance": 1.031603459851328
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.13632798,
+          "frechet_distance": 0.3000957422061795
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.010000000000000009,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8945
+      },
+      "step": 1500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.0050000000000000044,
+        "sample_count": 1000,
+        "top1_accuracy": 0.757
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7950443,
+          "frechet_distance": 1.0511321176534927
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.14509845,
+          "frechet_distance": 0.3270120302902533
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.013000000000000012,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8915
+      },
+      "step": 2000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.006000000000000005,
+        "sample_count": 1000,
+        "top1_accuracy": 0.758
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7670082,
+          "frechet_distance": 1.0534137777654577
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.1569891,
+          "frechet_distance": 0.35473424603619846
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.014000000000000012,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8905
+      },
+      "step": 2500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.0030000000000000027,
+        "sample_count": 1000,
+        "top1_accuracy": 0.755
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.80315113,
+          "frechet_distance": 1.0798172698202264
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.170699,
+          "frechet_distance": 0.38602014492104997
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.019000000000000017,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8855
+      },
+      "step": 3000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.0030000000000000027,
+        "sample_count": 1000,
+        "top1_accuracy": 0.755
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.82440245,
+          "frechet_distance": 1.0933896886934427
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.18763071,
+          "frechet_distance": 0.41885820166948196
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.02749999999999997,
+        "sample_count": 2000,
+        "top1_accuracy": 0.877
+      },
+      "step": 3500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.01100000000000001,
+        "sample_count": 1000,
+        "top1_accuracy": 0.763
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7886552,
+          "frechet_distance": 1.085320738097856
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.19065976,
+          "frechet_distance": 0.42455197176964915
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.03049999999999997,
+        "sample_count": 2000,
+        "top1_accuracy": 0.874
+      },
+      "step": 4000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.014000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.766
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7458403,
+          "frechet_distance": 1.0713599621123568
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.18122238,
+          "frechet_distance": 0.40984107804061537
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.030999999999999917,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8735
+      },
+      "step": 4500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.008000000000000007,
+        "sample_count": 1000,
+        "top1_accuracy": 0.76
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7659043,
+          "frechet_distance": 1.0877690385703964
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.20925462,
+          "frechet_distance": 0.46149888589661875
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.03749999999999998,
+        "sample_count": 2000,
+        "top1_accuracy": 0.867
+      },
+      "step": 5000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.014000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.766
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7270951,
+          "frechet_distance": 1.07461073904794
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.20063138,
+          "frechet_distance": 0.4507731300525121
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04399999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8605
+      },
+      "step": 5500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.013000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.765
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.76679933,
+          "frechet_distance": 1.0910698974843054
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.21306443,
+          "frechet_distance": 0.46664978219700315
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04899999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8555
+      },
+      "step": 6000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.01100000000000001,
+        "sample_count": 1000,
+        "top1_accuracy": 0.763
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.80348945,
+          "frechet_distance": 1.1133144572151008
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.21240675,
+          "frechet_distance": 0.47028156819177935
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04149999999999998,
+        "sample_count": 2000,
+        "top1_accuracy": 0.863
+      },
+      "step": 6500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.015000000000000013,
+        "sample_count": 1000,
+        "top1_accuracy": 0.767
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7923685,
+          "frechet_distance": 1.105971698961252
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.203928,
+          "frechet_distance": 0.45961124148760757
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04349999999999998,
+        "sample_count": 2000,
+        "top1_accuracy": 0.861
+      },
+      "step": 7000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.014000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.766
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7605355,
+          "frechet_distance": 1.0979073136559465
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.21345961,
+          "frechet_distance": 0.4827514117778372
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04699999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8575
+      },
+      "step": 7500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.018000000000000016,
+        "sample_count": 1000,
+        "top1_accuracy": 0.77
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.79575825,
+          "frechet_distance": 1.111382177183103
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.23119193,
+          "frechet_distance": 0.5109674411346906
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04849999999999999,
+        "sample_count": 2000,
+        "top1_accuracy": 0.856
+      },
+      "step": 8000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.009000000000000008,
+        "sample_count": 1000,
+        "top1_accuracy": 0.761
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7825577,
+          "frechet_distance": 1.1101242125860262
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.22715962,
+          "frechet_distance": 0.5044136778939865
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04749999999999999,
+        "sample_count": 2000,
+        "top1_accuracy": 0.857
+      },
+      "step": 8500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.020000000000000018,
+        "sample_count": 1000,
+        "top1_accuracy": 0.772
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.768549,
+          "frechet_distance": 1.10562498096674
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.20836246,
+          "frechet_distance": 0.4719516237409287
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04799999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8565
+      },
+      "step": 9000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.026000000000000023,
+        "sample_count": 1000,
+        "top1_accuracy": 0.778
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78846216,
+          "frechet_distance": 1.1166969085386558
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2296691,
+          "frechet_distance": 0.5115272423526707
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04949999999999999,
+        "sample_count": 2000,
+        "top1_accuracy": 0.855
+      },
+      "step": 9500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.01100000000000001,
+        "sample_count": 1000,
+        "top1_accuracy": 0.763
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.754001,
+          "frechet_distance": 1.1088054973645565
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.24383402,
+          "frechet_distance": 0.5381723363986831
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.056499999999999995,
+        "sample_count": 2000,
+        "top1_accuracy": 0.848
+      },
+      "step": 10000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.020000000000000018,
+        "sample_count": 1000,
+        "top1_accuracy": 0.772
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78282684,
+          "frechet_distance": 1.1168840265161668
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2463485,
+          "frechet_distance": 0.5409288843043589
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04499999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8595
+      },
+      "step": 10500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.014000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.766
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.74796706,
+          "frechet_distance": 1.1042975023490713
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.23559433,
+          "frechet_distance": 0.5242859177944303
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04949999999999999,
+        "sample_count": 2000,
+        "top1_accuracy": 0.855
+      },
+      "step": 11000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.018000000000000016,
+        "sample_count": 1000,
+        "top1_accuracy": 0.77
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7450571,
+          "frechet_distance": 1.1028439380903947
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.24547374,
+          "frechet_distance": 0.5373602035290367
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04299999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8615
+      },
+      "step": 11500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.018000000000000016,
+        "sample_count": 1000,
+        "top1_accuracy": 0.77
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7381109,
+          "frechet_distance": 1.103525840905573
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2559927,
+          "frechet_distance": 0.5565795143534589
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04999999999999993,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8545
+      },
+      "step": 12000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.015000000000000013,
+        "sample_count": 1000,
+        "top1_accuracy": 0.767
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.80631536,
+          "frechet_distance": 1.130056659564021
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.25923067,
+          "frechet_distance": 0.5618640993321408
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.0615,
+        "sample_count": 2000,
+        "top1_accuracy": 0.843
+      },
+      "step": 12500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.0050000000000000044,
+        "sample_count": 1000,
+        "top1_accuracy": 0.757
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78444445,
+          "frechet_distance": 1.1237684369758463
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2610743,
+          "frechet_distance": 0.5672010061900967
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.057499999999999996,
+        "sample_count": 2000,
+        "top1_accuracy": 0.847
+      },
+      "step": 13000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.017000000000000015,
+        "sample_count": 1000,
+        "top1_accuracy": 0.769
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7872555,
+          "frechet_distance": 1.1250550065035592
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.27037442,
+          "frechet_distance": 0.5813409601913585
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.04949999999999999,
+        "sample_count": 2000,
+        "top1_accuracy": 0.855
+      },
+      "step": 13500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.006000000000000005,
+        "sample_count": 1000,
+        "top1_accuracy": 0.758
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.76855636,
+          "frechet_distance": 1.1213579509310652
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.25767452,
+          "frechet_distance": 0.5592239631682038
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.06099999999999994,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8435
+      },
+      "step": 14000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.019000000000000017,
+        "sample_count": 1000,
+        "top1_accuracy": 0.771
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.75144756,
+          "frechet_distance": 1.1144218153914824
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.27465558,
+          "frechet_distance": 0.5867675864148142
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.0635,
+        "sample_count": 2000,
+        "top1_accuracy": 0.841
+      },
+      "step": 14500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02100000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.773
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.75818086,
+          "frechet_distance": 1.1181476707530202
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2593974,
+          "frechet_distance": 0.5695177048789486
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07099999999999995,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8335
+      },
+      "step": 15000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.008000000000000007,
+        "sample_count": 1000,
+        "top1_accuracy": 0.76
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.77489674,
+          "frechet_distance": 1.12533015257718
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.26098573,
+          "frechet_distance": 0.5682858013767056
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07850000000000001,
+        "sample_count": 2000,
+        "top1_accuracy": 0.826
+      },
+      "step": 15500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.019000000000000017,
+        "sample_count": 1000,
+        "top1_accuracy": 0.771
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.75090903,
+          "frechet_distance": 1.1183066098401466
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.25662625,
+          "frechet_distance": 0.5610665672976071
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.061999999999999944,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8425
+      },
+      "step": 16000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.009000000000000008,
+        "sample_count": 1000,
+        "top1_accuracy": 0.761
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.77147704,
+          "frechet_distance": 1.1254399079248116
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.268099,
+          "frechet_distance": 0.5825552630258963
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.0675,
+        "sample_count": 2000,
+        "top1_accuracy": 0.837
+      },
+      "step": 16500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.018000000000000016,
+        "sample_count": 1000,
+        "top1_accuracy": 0.77
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7503079,
+          "frechet_distance": 1.1202113733814967
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.27833414,
+          "frechet_distance": 0.6032238051868165
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07150000000000001,
+        "sample_count": 2000,
+        "top1_accuracy": 0.833
+      },
+      "step": 17000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.016000000000000014,
+        "sample_count": 1000,
+        "top1_accuracy": 0.768
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.78164744,
+          "frechet_distance": 1.1264676782414218
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2660069,
+          "frechet_distance": 0.5762546617435448
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07250000000000001,
+        "sample_count": 2000,
+        "top1_accuracy": 0.832
+      },
+      "step": 17500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.013000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.765
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7611313,
+          "frechet_distance": 1.1241573534167402
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.26418805,
+          "frechet_distance": 0.581779008381521
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.06899999999999995,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8355
+      },
+      "step": 18000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02200000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.774
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7545862,
+          "frechet_distance": 1.1223509366452524
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.28447556,
+          "frechet_distance": 0.6062451917376205
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07399999999999995,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8305
+      },
+      "step": 18500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02100000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.773
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7446519,
+          "frechet_distance": 1.118361172062098
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.28538537,
+          "frechet_distance": 0.6129969242916111
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.08299999999999996,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8215
+      },
+      "step": 19000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.015000000000000013,
+        "sample_count": 1000,
+        "top1_accuracy": 0.767
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.8099923,
+          "frechet_distance": 1.143681030921457
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.28441685,
+          "frechet_distance": 0.6212594413958201
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.08950000000000002,
+        "sample_count": 2000,
+        "top1_accuracy": 0.815
+      },
+      "step": 19500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.016000000000000014,
+        "sample_count": 1000,
+        "top1_accuracy": 0.768
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.765986,
+          "frechet_distance": 1.1279456579229232
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.26857436,
+          "frechet_distance": 0.591896105527467
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.08650000000000002,
+        "sample_count": 2000,
+        "top1_accuracy": 0.818
+      },
+      "step": 20000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02200000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.774
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7693693,
+          "frechet_distance": 1.1302394918517489
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2769332,
+          "frechet_distance": 0.5925713575102904
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.09349999999999992,
+        "sample_count": 2000,
+        "top1_accuracy": 0.811
+      },
+      "step": 20500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.018000000000000016,
+        "sample_count": 1000,
+        "top1_accuracy": 0.77
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7584396,
+          "frechet_distance": 1.1249280057694149
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.283086,
+          "frechet_distance": 0.6085465015816208
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.07950000000000002,
+        "sample_count": 2000,
+        "top1_accuracy": 0.825
+      },
+      "step": 21000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02100000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.773
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.74260974,
+          "frechet_distance": 1.1219145956145256
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2917105,
+          "frechet_distance": 0.6210063925922659
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.08999999999999997,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8145
+      },
+      "step": 21500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.013000000000000012,
+        "sample_count": 1000,
+        "top1_accuracy": 0.765
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7325016,
+          "frechet_distance": 1.1185481220017315
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2918747,
+          "frechet_distance": 0.6188292760254265
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.09599999999999997,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8085
+      },
+      "step": 22000
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.016000000000000014,
+        "sample_count": 1000,
+        "top1_accuracy": 0.768
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7632279,
+          "frechet_distance": 1.1304476293408716
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.2880702,
+          "frechet_distance": 0.6244605667138623
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.08899999999999997,
+        "sample_count": 2000,
+        "top1_accuracy": 0.8155
+      },
+      "step": 22500
+    },
+    {
+      "adaptation": {
+        "accuracy_change": 0.02100000000000002,
+        "sample_count": 1000,
+        "top1_accuracy": 0.773
+      },
+      "geometry": {
+        "adaptation": {
+          "cosine_centroid_drift": 0.7723653,
+          "frechet_distance": 1.1352039905367146
+        },
+        "retained": {
+          "cosine_centroid_drift": 0.30549318,
+          "frechet_distance": 0.6427975813729159
+        }
+      },
+      "retained": {
+        "accuracy_change": -0.09150000000000003,
+        "sample_count": 2000,
+        "top1_accuracy": 0.813
+      },
+      "step": 23000
+    }
+  ],
+  "config_hash": "d07c6a6b54420483",
+  "config_hash_kind": "artifact-identity-not-training-config",
+  "datasets": {
+    "adaptation": {
+      "fingerprint": "unavailable",
+      "name": "food101",
+      "sample_count": 1000
+    },
+    "retained": {
+      "fingerprint": "unavailable",
+      "name": "cifar10",
+      "sample_count": 2000
+    }
+  },
+  "evidence_status": "historical-unreproduced",
+  "experiment": {
+    "method": {
+      "fidelity": "legacy-unverified",
+      "name": "lora"
+    },
+    "model": {
+      "family": "openai-clip-vit-b-32",
+      "revision": "unverified"
+    },
+    "name": "Legacy Family B - saved 23,000-step artifacts",
+    "seed": "reported-42-not-reproducible-from-bundle"
+  },
+  "publication_treatment": "Historical evidence only; producing training code and exact configuration are absent.",
+  "run_id": "legacy-family-b-23000-steps",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "metrics": {
+      "relative_path": "drift_analysis_final_submission_v2/results/final_metrics.csv",
+      "sha256": "d07c6a6b5442048317c9aa97e58fe366fafdba4acadea3263af3702ed7d3680e"
+    },
+    "public_path": "/data/manifests/legacy-family-b-23000-steps.json",
+    "registry_relative_path": "data/legacy/manifest.json",
+    "sha256": "f5dddfc2abdb299a850240023c158994b7981e007a17de135750d2d7a2c5290a",
+    "summary": {
+      "relative_path": "drift_analysis_final_submission_v2/results/final_report_text.txt",
+      "sha256": "11ce414aaa6bec1344fb082eaaa8430d63ff05afc089beaf3343afc1c9823c8c"
+    }
+  },
+  "summary": {
+    "baseline_adaptation_accuracy": 0.752,
+    "baseline_retained_accuracy": 0.9045,
+    "final_adaptation_accuracy": 0.773,
+    "final_adaptation_accuracy_change": 0.02100000000000002,
+    "final_retained_accuracy": 0.813,
+    "final_retained_accuracy_change": -0.09150000000000003,
+    "registered_summary_sha256": "11ce414aaa6bec1344fb082eaaa8430d63ff05afc089beaf3343afc1c9823c8c"
+  },
+  "unavailable_metrics": [
+    "macro_f1",
+    "negative_log_likelihood",
+    "expected_calibration_error",
+    "linear_cka",
+    "effective_rank",
+    "local_neighborhood_overlap",
+    "layerwise_drift",
+    "confidence_intervals"
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "base_config": "eurosat-cifar100-local.yaml",
+    "base_scientific_payload": {
+      "analysis": {
+        "collect_vision_hidden_states": true,
+        "covariance_projection_dim": 16,
+        "diagnostics_version": "layerwise-cross-modal-v1"
+      },
+      "datasets": {
+        "adaptation": {
+          "class_count": 6,
+          "config": "default",
+          "eval_per_class": 4,
+          "image_field": "image",
+          "label_field": "label",
+          "repository": "blanchon/EuroSat",
+          "server_window": 80,
+          "split": "train",
+          "train_per_class": 4
+        },
+        "loading_mode": "dataset-server-stratified",
+        "retained": {
+          "config": "cifar100",
+          "eval_size": 40,
+          "eval_start": 0,
+          "image_field": "img",
+          "label_field": "fine_label",
+          "repository": "uoft-cs/cifar100",
+          "split": "test"
+        }
+      },
+      "method": {
+        "alpha": 16,
+        "dropout": 0.1,
+        "expected_trainable_parameters": 294912,
+        "fidelity": "corrected-local-domain-expansion",
+        "name": "lora",
+        "rank": 8,
+        "strategy": "standard",
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "model": {
+        "family": "openai-clip-vit-b-32",
+        "revision": "openai/clip-vit-base-patch32"
+      },
+      "name": "clip-eurosat-cifar100-local",
+      "runtime": {
+        "device": "auto"
+      },
+      "seed": 42,
+      "tier": "research",
+      "training": {
+        "batch_size": 4,
+        "checkpoint_steps": [
+          0,
+          5,
+          10,
+          20
+        ],
+        "evaluation_batch_size": 8,
+        "learning_rate": 0.0005,
+        "total_steps": 20
+      }
+    },
+    "name": "clip-eurosat-cifar100-local-multiseed",
+    "seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "config_hash": "ee3a69a7f2247981",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "clip-eurosat-cifar100-local-multiseed-ee3a69a7f2247981",
+  "schema_version": "1.0.0",
+  "source_runs": [
+    {
+      "config_hash": "82e3aaeb1cc0f3a2",
+      "run_id": "clip-eurosat-cifar100-local-82e3aaeb1cc0f3a2-s41",
+      "seed": 41,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-eurosat-cifar100-local-82e3aaeb1cc0f3a2-s41.json",
+        "run_id": "clip-eurosat-cifar100-local-82e3aaeb1cc0f3a2-s41",
+        "sha256": "8fdc76eaebcf3f4a00cc4a5284b7a83d9b0b03362f3929faaa1a9fec55b0290b"
+      },
+      "web_artifact": "public/data/runs/clip-eurosat-cifar100-local-82e3aaeb1cc0f3a2-s41.json",
+      "web_artifact_sha256": "8bdceda28622e4589be20fa958a6e0c82ed9f817b81c1533af50ead8ae7ef7bb"
+    },
+    {
+      "config_hash": "95141c57d5b40664",
+      "run_id": "clip-eurosat-cifar100-local-95141c57d5b40664-s42",
+      "seed": 42,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-eurosat-cifar100-local-95141c57d5b40664-s42.json",
+        "run_id": "clip-eurosat-cifar100-local-95141c57d5b40664-s42",
+        "sha256": "3a7a28603417448afb3a5050dd526fcb128a2d3f10f1eb13667001691af140ec"
+      },
+      "web_artifact": "public/data/runs/clip-eurosat-cifar100-local-95141c57d5b40664-s42.json",
+      "web_artifact_sha256": "ddf32ced3390782b8063e86c3b07b12036a86200011f8ef015d6dc5d53b8a37f"
+    },
+    {
+      "config_hash": "6746366e0d8966bd",
+      "run_id": "clip-eurosat-cifar100-local-6746366e0d8966bd-s43",
+      "seed": 43,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-eurosat-cifar100-local-6746366e0d8966bd-s43.json",
+        "run_id": "clip-eurosat-cifar100-local-6746366e0d8966bd-s43",
+        "sha256": "739c2db34cd38f65ddcfcb72daa81e9a38ba79b5e0ab20ac1f716a917910f9a0"
+      },
+      "web_artifact": "public/data/runs/clip-eurosat-cifar100-local-6746366e0d8966bd-s43.json",
+      "web_artifact_sha256": "18486fbb058a0621035f6d3aafdcf97e34d8b5cb49ec8ce2fb178c09c7d956f5"
+    }
+  ],
+  "started_at": "2026-07-03T17:37:13.457843Z",
+  "status": "complete"
+}

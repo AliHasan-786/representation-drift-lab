@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "bytes": 5714,
+      "path": "evaluation.json",
+      "sha256": "cc3a2f3b92623fe9baeda4a6d835701b19b45c221644b535bf6c433fa0dfe0a4"
+    }
+  ],
+  "completed_steps": [
+    0
+  ],
+  "config": {
+    "feature_names": [
+      "early_forgetting",
+      "centroid_drift",
+      "cka_loss",
+      "plasticity_gain"
+    ],
+    "name": "synthetic-early-warning-methodology",
+    "scenario_count": 60,
+    "seed": 5787
+  },
+  "config_hash": "083040c52f3ac951",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "run_id": "synthetic-early-warning-methodology-083040c52f3ac951",
+  "schema_version": "1.0.0",
+  "seed": 5787,
+  "started_at": "2026-07-03T16:45:01.097102Z",
+  "status": "complete"
+}

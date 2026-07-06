@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-selective-lora-local-multiseed
+base_config: reproduction-local-selective-lora.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-selective-lora-local.json

@@ -1,0 +1,49 @@
+schema_version: 1
+models:
+  - id: openai-clip-vit-b-32
+    role: legacy
+    status: local-benchmark-implemented
+  - id: openclip-vit-b-32
+    role: reproducible-vlm
+    status: implementation-pending
+  - id: siglip2-base
+    role: modern-vlm
+    status: implementation-pending
+  - id: dinov2-base
+    role: visual-control
+    status: implementation-pending
+datasets:
+  adaptation:
+    - id: food101
+      status: local-benchmark-implemented
+    - id: eurosat
+      status: local-benchmark-implemented
+    - id: oxford-iiit-pet
+      status: local-benchmark-implemented
+  retained_or_shifted:
+    - id: cifar10
+      status: local-benchmark-implemented
+    - id: cifar100
+      status: local-benchmark-implemented
+    - id: imagenet-derived-shifts
+      status: implementation-pending
+    - id: mnist
+      status: local-benchmark-implemented
+methods:
+  implemented_local:
+    - zero-shot
+    - linear-probe
+    - full-finetune
+    - lp-ft
+    - zero-shot-initialized-full-finetune
+    - adapted-wise-ft
+    - standard-lora
+    - zscl-inspired-distillation
+    - selective-v-projection-lora
+    - retention-gradient-nullspace
+    - wise-ft-inspired-adapter-output-interpolation
+  implementation_pending:
+    - exact-paper-protocol-wise-ft
+    - adaptive-rank-lora
+    - mergetune-inspired
+note: Local implementations remain preliminary. Paper-derived inspired baselines are not exact reproductions.

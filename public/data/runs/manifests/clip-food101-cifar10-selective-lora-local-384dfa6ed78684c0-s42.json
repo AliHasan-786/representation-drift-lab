@@ -1,0 +1,310 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1803676,
+      "path": "checkpoints/step_000005.pt",
+      "sha256": "dbfdc1e2e002f4670646bd2bd588f375b1bc881dbc22215d8c549e67b19efb2b"
+    },
+    {
+      "bytes": 1803676,
+      "path": "checkpoints/step_000010.pt",
+      "sha256": "4911a14c6a59bf33aea9b4f8b4c3e4ecabf2e6ad48db823ed1d955ee091331cf"
+    },
+    {
+      "bytes": 1803676,
+      "path": "checkpoints/step_000020.pt",
+      "sha256": "d4b3807588f9b9e6df989de1e5f0b39e9d5c848ffde749cfd69ff62279845cd9"
+    },
+    {
+      "bytes": 767339,
+      "path": "metrics/checkpoints.json",
+      "sha256": "daa5d3d9e4237d78139aac941ff0c8b1186d8a3926a74980acb261dec465e334"
+    },
+    {
+      "bytes": 534,
+      "path": "metrics/summary.csv",
+      "sha256": "a1b822fb0e38869e0546981c86bfef9cf93730aca73e3ee0ef49b53448c5c8ed"
+    },
+    {
+      "bytes": 892449,
+      "path": "outputs/step_000000_adaptation.npz",
+      "sha256": "cff566b6b2863121d2db29ab63a06fa8b221b7a8807e7991c75d8a88a3ded462"
+    },
+    {
+      "bytes": 1110090,
+      "path": "outputs/step_000000_retained.npz",
+      "sha256": "be96364a4584d5cb94015d02fa7e92bf488ea6ce3260f6e0ef53cd1e583bcc76"
+    },
+    {
+      "bytes": 892689,
+      "path": "outputs/step_000005_adaptation.npz",
+      "sha256": "2ff1236ef7ef031a2fe3fdafb743c470aef3705171b9875d178c192f8e4c774f"
+    },
+    {
+      "bytes": 1110213,
+      "path": "outputs/step_000005_retained.npz",
+      "sha256": "9a97e4628f818c7c4afee5a5dbc2b8817cb546b2a350340da2a3549e2a916946"
+    },
+    {
+      "bytes": 892431,
+      "path": "outputs/step_000010_adaptation.npz",
+      "sha256": "849a8ea166d634cf44e2d7fd4f8fe114b9cfda0489baed864f0570f531c24924"
+    },
+    {
+      "bytes": 1110126,
+      "path": "outputs/step_000010_retained.npz",
+      "sha256": "589c873399ca6adcf0277ef65fffa89370e8943453de30fec669cc01fd5f7f22"
+    },
+    {
+      "bytes": 892678,
+      "path": "outputs/step_000020_adaptation.npz",
+      "sha256": "99332df6716a921fd9d822669b1d89bc97b1b81e67a44a8eadf8895ab219b731"
+    },
+    {
+      "bytes": 1110100,
+      "path": "outputs/step_000020_retained.npz",
+      "sha256": "e6b9a2b07216c4c0590983b3fc9b4f2dfefe295cbca0117828bb3b2eb6acdf51"
+    }
+  ],
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "analysis": {
+      "collect_vision_hidden_states": true,
+      "covariance_projection_dim": 16,
+      "diagnostics_version": "layerwise-cross-modal-v1"
+    },
+    "datasets": {
+      "adaptation": {
+        "class_count": 6,
+        "config": "default",
+        "eval_per_class": 4,
+        "image_field": "image",
+        "repository": "ethz/food101",
+        "server_window": 64,
+        "split": "train",
+        "train_per_class": 4
+      },
+      "loading_mode": "dataset-server-stratified",
+      "retained": {
+        "config": "plain_text",
+        "eval_size": 30,
+        "eval_start": 0,
+        "image_field": "img",
+        "repository": "uoft-cs/cifar10",
+        "split": "test"
+      }
+    },
+    "method": {
+      "alpha": 16,
+      "dropout": 0.1,
+      "expected_trainable_parameters": 147456,
+      "fidelity": "selective-parameter-efficient-baseline",
+      "name": "selective-v-projection-lora",
+      "rank": 8,
+      "strategy": "standard",
+      "target_modules": [
+        "v_proj"
+      ]
+    },
+    "model": {
+      "family": "openai-clip-vit-b-32",
+      "revision": "openai/clip-vit-base-patch32"
+    },
+    "name": "clip-food101-cifar10-selective-lora-local",
+    "runtime": {
+      "device": "auto"
+    },
+    "seed": 42,
+    "tier": "research",
+    "training": {
+      "batch_size": 4,
+      "checkpoint_steps": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "evaluation_batch_size": 8,
+      "learning_rate": 0.0005,
+      "total_steps": 20
+    }
+  },
+  "config_hash": "384dfa6ed78684c0",
+  "datasets": {
+    "adaptation_eval": {
+      "fingerprint": "8a6f14faae4066c839cddd9cfdb7b4247669aa20c516b4cf8e1769400c8e0d07",
+      "repository": "ethz/food101",
+      "revision": "83488de741c1bd1ce27aa6a2b33e19c7bdf92ca9",
+      "samples": 24,
+      "selection": {
+        "class_ids": [
+          18,
+          26,
+          54,
+          84,
+          89,
+          94
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "eval",
+        "row_indices": [
+          58627,
+          58628,
+          58629,
+          58630,
+          32800,
+          32801,
+          32802,
+          32803,
+          65038,
+          65039,
+          65040,
+          65041,
+          6760,
+          6761,
+          6762,
+          6763,
+          49583,
+          49584,
+          49585,
+          49586,
+          33245,
+          33246,
+          33247,
+          33248
+        ],
+        "seed": 42,
+        "server_window": 64
+      },
+      "split": "train"
+    },
+    "adaptation_train": {
+      "fingerprint": "0b1ee44b33b358f65e051388cd699ed66e7041dfc240b88a88efe1d381d1f2f5",
+      "repository": "ethz/food101",
+      "revision": "83488de741c1bd1ce27aa6a2b33e19c7bdf92ca9",
+      "samples": 24,
+      "selection": {
+        "class_ids": [
+          18,
+          26,
+          54,
+          84,
+          89,
+          94
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "train",
+        "row_indices": [
+          58623,
+          58624,
+          58625,
+          58626,
+          32796,
+          32797,
+          32798,
+          32799,
+          65034,
+          65035,
+          65036,
+          65037,
+          6756,
+          6757,
+          6758,
+          6759,
+          49579,
+          49580,
+          49581,
+          49582,
+          33241,
+          33242,
+          33243,
+          33244
+        ],
+        "seed": 42,
+        "server_window": 64
+      },
+      "split": "train"
+    },
+    "retained_eval": {
+      "fingerprint": "a3fed150779011218aa28353a45dd127870f86b0af6c5571a2ebedcc16b41a4b",
+      "repository": "uoft-cs/cifar10",
+      "revision": "0b2714987fa478483af9968de7c934580d0bb9a2",
+      "samples": 30,
+      "selection": {
+        "mode": "dataset-server-range",
+        "row_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "size": 30,
+        "start": 0
+      },
+      "split": "test"
+    }
+  },
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "model": {
+    "requested_revision": "openai/clip-vit-base-patch32",
+    "resolved_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "trainable_parameters": 147456
+  },
+  "run_id": "clip-food101-cifar10-selective-lora-local-384dfa6ed78684c0-s42",
+  "schema_version": "1.0.0",
+  "started_at": "2026-07-03T17:03:25.744224Z",
+  "status": "complete"
+}

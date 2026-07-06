@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-linear-probe-local-multiseed
+base_config: reproduction-local-linear-probe.yaml
+seeds: [41, 42, 43]
+web_output: public/data/benchmark-linear-probe-local.json

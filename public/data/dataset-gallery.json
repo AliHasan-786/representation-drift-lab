@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0.0",
+  "datasets": [
+    {
+      "id": "food101",
+      "name": "Food-101",
+      "plain_name": "photographs of prepared dishes",
+      "label_field": "label",
+      "full_size": "101,000 images in 101 food categories",
+      "native_resolution": "varied photograph sizes",
+      "role": "Learning dataset",
+      "role_explanation": "The model updates itself using food images so it becomes more specialized at recognizing dishes.",
+      "local_protocol": "Each local seed uses 6 classes, with 4 training and 4 evaluation images per class.",
+      "source_url": "https://huggingface.co/datasets/ethz/food101",
+      "examples": [
+        {
+          "src": "/datasets/food101/1-54.webp",
+          "label": "hot and sour soup",
+          "row_index": 65034,
+          "alt": "A real Food-101 example labeled hot and sour soup"
+        },
+        {
+          "src": "/datasets/food101/2-10.webp",
+          "label": "bruschetta",
+          "row_index": 3311,
+          "alt": "A real Food-101 example labeled bruschetta"
+        },
+        {
+          "src": "/datasets/food101/3-31.webp",
+          "label": "donuts",
+          "row_index": 58166,
+          "alt": "A real Food-101 example labeled donuts"
+        },
+        {
+          "src": "/datasets/food101/4-26.webp",
+          "label": "crab cakes",
+          "row_index": 32796,
+          "alt": "A real Food-101 example labeled crab cakes"
+        }
+      ]
+    },
+    {
+      "id": "cifar10",
+      "name": "CIFAR-10",
+      "plain_name": "tiny photographs of everyday objects and animals",
+      "label_field": "label",
+      "full_size": "60,000 images in 10 categories",
+      "native_resolution": "32 x 32 pixels",
+      "role": "Memory check",
+      "role_explanation": "The model never trains on these examples. They test whether learning food harms an older general object-recognition ability.",
+      "local_protocol": "Each local seed evaluates the same type of 30-image retained probe.",
+      "source_url": "https://huggingface.co/datasets/uoft-cs/cifar10",
+      "examples": [
+        {
+          "src": "/datasets/cifar10/1-3.webp",
+          "label": "cat",
+          "row_index": 0,
+          "alt": "A real CIFAR-10 example labeled cat"
+        },
+        {
+          "src": "/datasets/cifar10/2-8.webp",
+          "label": "ship",
+          "row_index": 1,
+          "alt": "A real CIFAR-10 example labeled ship"
+        },
+        {
+          "src": "/datasets/cifar10/3-0.webp",
+          "label": "airplane",
+          "row_index": 3,
+          "alt": "A real CIFAR-10 example labeled airplane"
+        },
+        {
+          "src": "/datasets/cifar10/4-6.webp",
+          "label": "frog",
+          "row_index": 4,
+          "alt": "A real CIFAR-10 example labeled frog"
+        }
+      ]
+    },
+    {
+      "id": "eurosat",
+      "name": "EuroSAT",
+      "plain_name": "satellite images of land use",
+      "label_field": "label",
+      "full_size": "27,000 images in 10 land-use categories",
+      "native_resolution": "64 x 64 pixels",
+      "role": "Learning dataset",
+      "role_explanation": "This second scenario asks the same model to specialize in overhead satellite imagery.",
+      "local_protocol": "Each local seed uses 6 classes, with 4 training and 4 evaluation images per class.",
+      "source_url": "https://huggingface.co/datasets/blanchon/EuroSat",
+      "examples": [
+        {
+          "src": "/datasets/eurosat/1-2.webp",
+          "label": "Herbaceous Vegetation",
+          "row_index": 4113,
+          "alt": "A real EuroSAT example labeled Herbaceous Vegetation"
+        },
+        {
+          "src": "/datasets/eurosat/2-4.webp",
+          "label": "Industrial Buildings",
+          "row_index": 2311,
+          "alt": "A real EuroSAT example labeled Industrial Buildings"
+        },
+        {
+          "src": "/datasets/eurosat/3-0.webp",
+          "label": "Annual Crop",
+          "row_index": 705,
+          "alt": "A real EuroSAT example labeled Annual Crop"
+        },
+        {
+          "src": "/datasets/eurosat/4-3.webp",
+          "label": "Highway",
+          "row_index": 2166,
+          "alt": "A real EuroSAT example labeled Highway"
+        }
+      ]
+    },
+    {
+      "id": "cifar100",
+      "name": "CIFAR-100",
+      "plain_name": "tiny photographs from many fine-grained categories",
+      "label_field": "fine_label",
+      "full_size": "60,000 images in 100 categories",
+      "native_resolution": "32 x 32 pixels",
+      "role": "Memory check",
+      "role_explanation": "These images test whether satellite specialization disrupts a broader set of object categories.",
+      "local_protocol": "Each local seed evaluates a 40-image retained probe.",
+      "source_url": "https://huggingface.co/datasets/uoft-cs/cifar100",
+      "examples": [
+        {
+          "src": "/datasets/cifar100/1-49.webp",
+          "label": "mountain",
+          "row_index": 0,
+          "alt": "A real CIFAR-100 example labeled mountain"
+        },
+        {
+          "src": "/datasets/cifar100/2-33.webp",
+          "label": "forest",
+          "row_index": 1,
+          "alt": "A real CIFAR-100 example labeled forest"
+        },
+        {
+          "src": "/datasets/cifar100/3-72.webp",
+          "label": "seal",
+          "row_index": 2,
+          "alt": "A real CIFAR-100 example labeled seal"
+        },
+        {
+          "src": "/datasets/cifar100/4-51.webp",
+          "label": "mushroom",
+          "row_index": 3,
+          "alt": "A real CIFAR-100 example labeled mushroom"
+        }
+      ]
+    },
+    {
+      "id": "pets",
+      "name": "Oxford-IIIT Pet",
+      "plain_name": "cat and dog breed photographs",
+      "label_field": "label",
+      "full_size": "7,349 images across 37 pet breeds",
+      "native_resolution": "varied photograph sizes",
+      "role": "Learning dataset",
+      "role_explanation": "This third scenario specializes the model toward distinguishing visually similar cat and dog breeds.",
+      "local_protocol": "Each local seed uses 6 breeds, with 3 training and 2 evaluation images per breed.",
+      "source_url": "https://huggingface.co/datasets/timm/oxford-iiit-pet",
+      "examples": [
+        {
+          "src": "/datasets/pets/1-34.webp",
+          "label": "staffordshire bull terrier",
+          "row_index": 1372,
+          "alt": "A real Oxford-IIIT Pet example labeled staffordshire bull terrier"
+        },
+        {
+          "src": "/datasets/pets/2-36.webp",
+          "label": "yorkshire terrier",
+          "row_index": 3503,
+          "alt": "A real Oxford-IIIT Pet example labeled yorkshire terrier"
+        },
+        {
+          "src": "/datasets/pets/3-5.webp",
+          "label": "bengal",
+          "row_index": 44,
+          "alt": "A real Oxford-IIIT Pet example labeled bengal"
+        },
+        {
+          "src": "/datasets/pets/4-10.webp",
+          "label": "chihuahua",
+          "row_index": 1918,
+          "alt": "A real Oxford-IIIT Pet example labeled chihuahua"
+        }
+      ]
+    },
+    {
+      "id": "mnist",
+      "name": "MNIST",
+      "plain_name": "handwritten digits from zero through nine",
+      "label_field": "label",
+      "full_size": "70,000 handwritten digit images in 10 categories",
+      "native_resolution": "28 x 28 grayscale pixels",
+      "role": "Memory check",
+      "role_explanation": "Digits are visually very different from pets, making this a useful counterexample: retained performance improved even though representations moved.",
+      "local_protocol": "Each local seed evaluates a 40-image retained probe.",
+      "source_url": "https://huggingface.co/datasets/ylecun/mnist",
+      "examples": [
+        {
+          "src": "/datasets/mnist/1-7.webp",
+          "label": "7",
+          "row_index": 0,
+          "alt": "A real MNIST example labeled 7"
+        },
+        {
+          "src": "/datasets/mnist/2-2.webp",
+          "label": "2",
+          "row_index": 1,
+          "alt": "A real MNIST example labeled 2"
+        },
+        {
+          "src": "/datasets/mnist/3-1.webp",
+          "label": "1",
+          "row_index": 2,
+          "alt": "A real MNIST example labeled 1"
+        },
+        {
+          "src": "/datasets/mnist/4-0.webp",
+          "label": "0",
+          "row_index": 3,
+          "alt": "A real MNIST example labeled 0"
+        }
+      ]
+    }
+  ]
+}

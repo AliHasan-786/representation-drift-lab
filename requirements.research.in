@@ -1,0 +1,7 @@
+-r requirements.lock
+
+accelerate==1.14.0
+datasets==5.0.0
+peft==0.19.1
+Pillow==12.3.0
+transformers==5.13.0

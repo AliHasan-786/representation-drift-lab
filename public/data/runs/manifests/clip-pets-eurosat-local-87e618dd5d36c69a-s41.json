@@ -1,0 +1,320 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000005.pt",
+      "sha256": "fcc4f3818b1fdcf9134393eeab43eef0b16c58622b0a2cdceba6b90dfd0156e1"
+    },
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000010.pt",
+      "sha256": "c0816f7e306c1e4b45e95363de954e2a818dfc99d2642484cce4ea56233c9f29"
+    },
+    {
+      "bytes": 3601433,
+      "path": "checkpoints/step_000020.pt",
+      "sha256": "0f55c9cc5a07c1826109ad13ffff6aab2a80c5a35500592f7f8283e9aa9eb3ed"
+    },
+    {
+      "bytes": 209475,
+      "path": "metrics/checkpoints.json",
+      "sha256": "54bf4b7c5d110deb68454919db15e86f3e9e63adfa2e6ed27ef63b8613901455"
+    },
+    {
+      "bytes": 502,
+      "path": "metrics/summary.csv",
+      "sha256": "28acca2cd8a80899d81b3be35d85a31de9c6a7dbca460e8a254bd3d0d7ba2c06"
+    },
+    {
+      "bytes": 453089,
+      "path": "outputs/step_000000_adaptation.npz",
+      "sha256": "3fd02118b71523804e548769b48271be0255988743f23d7bc5743145e7df947e"
+    },
+    {
+      "bytes": 1471276,
+      "path": "outputs/step_000000_retained.npz",
+      "sha256": "44f59541f9ad281145fc21017c60c0b1ba59a0c59deb5a9090ed09d07af7c3dd"
+    },
+    {
+      "bytes": 453219,
+      "path": "outputs/step_000005_adaptation.npz",
+      "sha256": "b574a45304c1088498a42b2d582eb848def2976a0bffeefd096291e3665db6dd"
+    },
+    {
+      "bytes": 1471203,
+      "path": "outputs/step_000005_retained.npz",
+      "sha256": "fe206137511ac4a7a8fdc7acdde400ea57bbb1680ff8d70bbf376edebfe04365"
+    },
+    {
+      "bytes": 453208,
+      "path": "outputs/step_000010_adaptation.npz",
+      "sha256": "24bbba92b213c969db008dccc012977183ffcf3a76bbdac72aa7a750735a933a"
+    },
+    {
+      "bytes": 1471158,
+      "path": "outputs/step_000010_retained.npz",
+      "sha256": "9730dfb5f11d8c447eba88693e0de0565f4e9c8c8c5e286862c837c90b87f38a"
+    },
+    {
+      "bytes": 453239,
+      "path": "outputs/step_000020_adaptation.npz",
+      "sha256": "f91bdd979e1decb16402a41780f63ef3f2e535cab3b6fe92f480101eb317102d"
+    },
+    {
+      "bytes": 1471071,
+      "path": "outputs/step_000020_retained.npz",
+      "sha256": "4c9e85ed022027a9a7a73a0bfdb65a353b3dcdf354a2367e04158b04b47cb1ca"
+    }
+  ],
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "analysis": {
+      "collect_vision_hidden_states": true,
+      "covariance_projection_dim": 16,
+      "diagnostics_version": "layerwise-cross-modal-v1"
+    },
+    "datasets": {
+      "adaptation": {
+        "class_count": 6,
+        "config": "default",
+        "eval_per_class": 2,
+        "image_field": "image",
+        "label_field": "label",
+        "repository": "timm/oxford-iiit-pet",
+        "server_window": 100,
+        "split": "train",
+        "train_per_class": 3
+      },
+      "loading_mode": "dataset-server-stratified",
+      "retained": {
+        "class_count": 10,
+        "config": "default",
+        "eval_per_class": 4,
+        "image_field": "image",
+        "label_field": "label",
+        "repository": "blanchon/EuroSat",
+        "selection_mode": "stratified",
+        "server_window": 80,
+        "split": "test"
+      }
+    },
+    "method": {
+      "alpha": 16,
+      "dropout": 0.1,
+      "expected_trainable_parameters": 294912,
+      "fidelity": "corrected-local-domain-expansion",
+      "name": "lora",
+      "rank": 8,
+      "strategy": "standard",
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "model": {
+      "family": "openai-clip-vit-b-32",
+      "revision": "openai/clip-vit-base-patch32"
+    },
+    "name": "clip-pets-eurosat-local",
+    "runtime": {
+      "device": "auto"
+    },
+    "seed": 41,
+    "tier": "research",
+    "training": {
+      "batch_size": 4,
+      "checkpoint_steps": [
+        0,
+        5,
+        10,
+        20
+      ],
+      "evaluation_batch_size": 8,
+      "learning_rate": 0.0005,
+      "total_steps": 20
+    }
+  },
+  "config_hash": "87e618dd5d36c69a",
+  "datasets": {
+    "adaptation_eval": {
+      "fingerprint": "087a59e93431d6bf32e83b061d98d5dee1869d16050526c991f034de9370a342",
+      "repository": "timm/oxford-iiit-pet",
+      "revision": "089695c834a7deb60505b7cc506672db1c31a6aa",
+      "samples": 12,
+      "selection": {
+        "class_ids": [
+          12,
+          24,
+          25,
+          26,
+          29,
+          36
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "eval",
+        "row_indices": [
+          163,
+          166,
+          3596,
+          3623,
+          2459,
+          2481,
+          242,
+          251,
+          1278,
+          1281,
+          3515,
+          3529
+        ],
+        "seed": 41,
+        "server_window": 100
+      },
+      "split": "train"
+    },
+    "adaptation_train": {
+      "fingerprint": "6fcd589dd30ba935dc9d3f2848eea492345d43e6daf734c3c3ea47f62415537a",
+      "repository": "timm/oxford-iiit-pet",
+      "revision": "089695c834a7deb60505b7cc506672db1c31a6aa",
+      "samples": 18,
+      "selection": {
+        "class_ids": [
+          12,
+          24,
+          25,
+          26,
+          29,
+          36
+        ],
+        "mode": "dataset-server-stratified",
+        "role": "train",
+        "row_indices": [
+          84,
+          90,
+          132,
+          3555,
+          3582,
+          3590,
+          2440,
+          2446,
+          2452,
+          218,
+          226,
+          235,
+          1224,
+          1246,
+          1271,
+          3503,
+          3506,
+          3511
+        ],
+        "seed": 41,
+        "server_window": 100
+      },
+      "split": "train"
+    },
+    "retained_eval": {
+      "fingerprint": "cd9d12023040bdc2f2b1750f993c9cc579a04ea87578eb30bfac886a9af29755",
+      "repository": "blanchon/EuroSat",
+      "revision": "3625b29f4a8b71bcedca09ca7498f3d1fcb45124",
+      "samples": 40,
+      "selection": {
+        "class_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "mode": "dataset-server-stratified",
+        "per_class": 4,
+        "row_indices": [
+          523,
+          524,
+          525,
+          526,
+          927,
+          928,
+          929,
+          930,
+          1744,
+          1745,
+          1746,
+          1747,
+          2166,
+          2167,
+          2168,
+          2169,
+          2311,
+          2312,
+          2313,
+          2314,
+          2881,
+          2882,
+          2883,
+          2884,
+          3581,
+          3582,
+          3583,
+          3584,
+          3937,
+          3938,
+          3939,
+          3940,
+          4756,
+          4757,
+          4758,
+          4759,
+          4865,
+          4866,
+          4867,
+          4868
+        ],
+        "seed": 1041,
+        "server_window": 80
+      },
+      "split": "test"
+    }
+  },
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "uncommitted",
+    "dirty": true
+  },
+  "model": {
+    "requested_revision": "openai/clip-vit-base-patch32",
+    "resolved_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "trainable_parameters": 294912
+  },
+  "run_id": "clip-pets-eurosat-local-87e618dd5d36c69a-s41",
+  "schema_version": "1.0.0",
+  "started_at": "2026-07-03T17:45:20.694618Z",
+  "status": "complete"
+}
