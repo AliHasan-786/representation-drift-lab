@@ -331,7 +331,7 @@ def build_pdf() -> None:
                 [
                     ("Measured methods", "9", "Each run across 3 independent seeds"),
                     ("Domain scenarios", "3", "Food, satellite, pet, object, and digit data"),
-                    ("Automated checks", "39", "Research, artifact, and web tests"),
+                    ("Automated checks", "41", "Research, artifact, and web tests"),
                 ]
             ),
             Spacer(1, 0.35 * inch),
@@ -612,7 +612,7 @@ def build_pdf() -> None:
                     ["Model", "Resolved model commit, trainable-parameter invariants, strategy fidelity labels, and environment versions."],
                     ["Resume", "Checkpointed LoRA state, optimizer state, and random-generator state; complete classification runs are idempotent."],
                     ["Regeneration", "Metrics and web derivatives rebuild deterministically from saved outputs without retraining."],
-                    ["Validation", "39 Python checks, web interaction tests, TypeScript, manifest checks, responsive QA, and production budgets."],
+                    ["Validation", "41 Python checks, web interaction tests, TypeScript, manifest checks, responsive QA, and production budgets."],
                     ["Deployment", "Core charts use precomputed artifacts; no GPU or inference service is required for the public experience."],
                 ],
                 colWidths=[1.2 * inch, 5.7 * inch],

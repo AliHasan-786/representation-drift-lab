@@ -61,7 +61,7 @@ Generated research outputs remain under ignored `artifacts/`. The reviewed smoke
 make test
 ```
 
-The Python suite contains 39 tests covering configuration identity, deterministic and disjoint splits, revision-aware caching, duplicate-caption-safe supervision, task/geometry/layerwise metrics, rank-deficient covariance, gradient projection, post-hoc interpolation, weight-space ensembling, independent-run aggregation, held-out early warning, smoke execution, resume safety, and provenance. The web suite covers core loading, checkpoint synchronization, lazy detail exploration, view switching, and failure recovery.
+The Python suite contains 41 tests covering configuration identity, deterministic and disjoint splits, revision-aware caching, duplicate-caption-safe supervision, task/geometry/layerwise metrics, rank-deficient covariance, gradient projection, post-hoc interpolation, weight-space ensembling, independent-run aggregation, held-out early warning, smoke execution, resume safety, and provenance. The web suite covers core loading, checkpoint synchronization, lazy detail exploration, view switching, and failure recovery.
 
 ## Commands
 

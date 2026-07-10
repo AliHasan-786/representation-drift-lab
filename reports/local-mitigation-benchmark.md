@@ -28,8 +28,8 @@ Canonical public derivative: `public/data/method-comparison-local.json`. Every r
 | Zero-shot initialized FT | Initializes the 101-way head from CLIP's scaled text prototypes, then jointly tunes the full vision model for 200 steps | Compatible WiSE-FT source baseline |
 | WiSE-FT, alpha 0.5 | Interpolates the frozen and zero-shot-initialized fine-tuned vision model and compatible classifier weights | Adapted full-weight-space ensemble |
 | Standard LoRA | Rank-8 LoRA on every vision-attention query and value projection; 294,912 trainable parameters | Corrected local pipeline validation |
-| Retention distillation | Standard LoRA plus KL distillation from frozen baseline CIFAR-10 logits sampled during adaptation | Inspired baseline, not an exact ZSCL reproduction |
-| Gradient null-space | Projects each adaptation gradient tensor into the orthogonal complement of a retained classification-gradient tensor before each update | Inspired first-order gradient-projection baseline |
+| Retention distillation | Standard LoRA plus KL distillation from frozen baseline CIFAR-10 logits on a disjoint 30-image reference split | Inspired baseline, not an exact ZSCL reproduction |
+| Gradient null-space | Projects each adaptation gradient tensor into the orthogonal complement of a gradient computed on the same disjoint retained reference split | Inspired first-order gradient-projection baseline |
 | Selective LoRA | Rank-8 LoRA on value projections only; 147,456 trainable parameters | Selective parameter-efficient baseline |
 
 The distillation design is motivated by [ZSCL](https://openaccess.thecvf.com/content/ICCV2023/html/Zheng_Preventing_Zero-Shot_Transfer_Degradation_in_Continual_Learning_of_Vision-Language_Models_ICCV_2023_paper.html), but this small reference-replay implementation does not reproduce the full paper. The classification initialization experiment follows the feature-distortion motivation behind [LP-FT](https://arxiv.org/abs/2202.10054), and the compatible full-weight interpolation adapts [WiSE-FT](https://openaccess.thecvf.com/content/CVPR2022/html/Wortsman_Robust_Fine-Tuning_of_Zero-Shot_Models_CVPR_2022_paper.html). Standard LoRA follows the parameter-efficient construction introduced by [Hu et al.](https://arxiv.org/abs/2106.09685). No row is labeled as an exact end-to-end paper reproduction.
@@ -46,8 +46,8 @@ Values are means with 95% intervals in brackets.
 | Zero-shot initialized FT | 0.9167 [0.7097, 1.1237] | +0.0972 [-0.1418, 0.3363] | 0.6000 [0.1390, 1.0610] | -0.1333 [-0.5944, 0.3277] | 0.1778 [0.0043, 0.3514] | 87,901,029 |
 | WiSE-FT, alpha 0.5 | 0.9028 [0.7833, 1.0223] | +0.0833 [-0.1237, 0.2903] | 0.7667 [0.6839, 0.8495] | +0.0333 [-0.0495, 0.1161] | 0.0948 [-0.0385, 0.2281] | 87,901,029 |
 | Standard LoRA | 0.8889 [0.8291, 0.9486] | +0.0694 [0.0097, 0.1292] | 0.7000 [0.6172, 0.7828] | -0.0333 [-0.1161, 0.0495] | 0.0126 [0.0105, 0.0147] | 294,912 |
-| Retention distillation | 0.8889 [0.8291, 0.9486] | +0.0694 [-0.0887, 0.2276] | 0.7333 [0.6505, 0.8161] | 0.0000 [-0.0828, 0.0828] | 0.0124 [0.0020, 0.0227] | 294,912 |
-| Gradient null-space | 0.9167 [0.8132, 1.0202] | +0.0972 [-0.0609, 0.2553] | 0.6889 [0.6411, 0.7367] | -0.0444 [-0.0923, 0.0034] | 0.0098 [0.0031, 0.0165] | 294,912 |
+| Retention distillation | 0.8750 [0.8750, 0.8750] | +0.0556 [-0.0640, 0.1751] | 0.7333 [0.7333, 0.7333] | 0.0000 [0.0000, 0.0000] | 0.0036 [0.0026, 0.0045] | 294,912 |
+| Gradient null-space | 0.9167 [0.8132, 1.0202] | +0.0972 [-0.0609, 0.2553] | 0.6778 [0.6300, 0.7256] | -0.0556 [-0.1034, -0.0077] | 0.0097 [0.0060, 0.0135] | 294,912 |
 | Selective LoRA | 0.9028 [0.8430, 0.9625] | +0.0833 [-0.0202, 0.1868] | 0.7111 [0.5027, 0.9195] | -0.0222 [-0.2306, 0.1862] | 0.0086 [0.0064, 0.0108] | 147,456 |
 
 ## What the local evidence says
@@ -56,14 +56,14 @@ Values are means with 95% intervals in brackets.
 2. Full fine-tuning from a random 101-way head failed to exceed the zero-shot adaptation baseline after 200 joint steps and produced by far the largest representation change. This is an initialization and sparse-supervision failure case, not a universal indictment of full fine-tuning.
 3. LP-FT inherited the probe's perfect tiny-subset separation and changed the encoder negligibly during its 20-step joint phase. This is consistent with the feature-distortion motivation for LP-FT, but the ceiling effect prevents a meaningful general method claim.
 4. The zero-shot-initialized full fine-tune adapted well on average but had the worst mean retention and high seed variance. The adapted WiSE-FT ensemble recovered 16.7 retained-accuracy points relative to that source while preserving most of its adaptation mean.
-5. Retention distillation had the strongest mean retained accuracy among LoRA encoder-changing methods without sacrificing mean adapted accuracy relative to standard LoRA. Its interval remains wide and includes substantial loss and gain.
+5. On the corrected disjoint-reference rerun, retention distillation had the strongest mean retained accuracy among LoRA encoder-changing methods, while giving up 1.4 adaptation-accuracy points versus standard LoRA. It is a resource trade-off: it receives retained reference images that plain LoRA does not.
 6. Gradient null-space adaptation had the highest mean adapted accuracy among LoRA methods and lower mean CKA loss than standard LoRA, yet the worst mean retained accuracy of those methods.
 7. Selective LoRA cut trainable parameters in half and produced the lowest nonzero mean CKA loss among LoRA methods, but its retained-accuracy interval was the widest.
-8. Geometric drift did not reliably rank methods by retained performance. Across nine intervention means, CKA loss versus mean forgetting had Pearson r = 0.5447, Spearman rho = 0.2594, and a 95% paired-bootstrap Pearson interval of [-0.7896, 0.9695]. This is a negative diagnostic—not evidence of a stable relationship.
+8. Geometric drift did not reliably rank methods by retained performance. Across nine intervention means, CKA loss versus mean forgetting had Pearson r = 0.5226, Spearman rho = 0.4577, and a 95% paired-bootstrap Pearson interval of [-0.7646, 0.9635]. This is a negative diagnostic—not evidence of a stable relationship.
 
 ## Failure cases worth publishing
 
-- **Drift without mean forgetting:** retention distillation returned mean retained accuracy to baseline while retained representations still moved.
+- **Drift without mean forgetting:** retention distillation returned mean retained accuracy to baseline while retained representations still moved, even after the reference data was separated from evaluation data.
 - **Lower drift with worse retention:** gradient null-space adaptation reduced mean CKA loss relative to standard LoRA but had lower mean retained accuracy.
 - **Metric disagreement:** selective LoRA ranked best on mean CKA preservation but not on retained accuracy.
 

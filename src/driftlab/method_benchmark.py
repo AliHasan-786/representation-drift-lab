@@ -19,6 +19,25 @@ from .provenance import ARTIFACT_SCHEMA_VERSION, environment_snapshot, git_revis
 from .metrics import association_with_bootstrap
 
 
+def comparable_fingerprints(fingerprints: Mapping[str, Any]) -> dict[str, Any]:
+    """Return the splits that must match for a fair score comparison.
+
+    Some retention-aware strategies consume a disjoint ``retained_reference``
+    split during training.  That split is deliberately absent from plain
+    baselines, so it must not make their shared train/evaluation selections
+    look inconsistent.  It is still published separately as a resource
+    difference below.
+    """
+    return {
+        str(seed): {
+            str(split): value
+            for split, value in selection.items()
+            if str(split) != "retained_reference"
+        }
+        for seed, selection in fingerprints.items()
+    }
+
+
 def complement_interval(interval: Mapping[str, Any]) -> dict[str, Any]:
     """Transform an uncertainty interval for x into the interval for 1-x."""
     return {
@@ -50,10 +69,11 @@ def build_method_comparison(config_path: str | Path) -> Path:
             str(source["seed"]): fingerprints_by_run[source["run_id"]]
             for source in artifact["runs"]
         }
+        score_fingerprints = comparable_fingerprints(fingerprints)
         if reference_fingerprints is None:
-            reference_fingerprints = fingerprints
-        elif fingerprints != reference_fingerprints:
-            raise ValueError("method artifacts do not use identical dataset selections")
+            reference_fingerprints = score_fingerprints
+        elif score_fingerprints != reference_fingerprints:
+            raise ValueError("method artifacts do not use identical score-bearing dataset selections")
         baseline = artifact["checkpoints"][0]
         final = artifact["checkpoints"][-1]
         strategy = artifact["experiment"]["method"].get("strategy", "standard")
@@ -108,6 +128,17 @@ def build_method_comparison(config_path: str | Path) -> Path:
                     "artifact_path": str(artifact_path),
                     "artifact_sha256": sha256_file(artifact_path),
                     "manifest": artifact["source_manifest"],
+                },
+                "retained_reference": {
+                    "used": any(
+                        "retained_reference" in selection
+                        for selection in fingerprints.values()
+                    ),
+                    "fingerprints_by_seed": {
+                        seed: selection["retained_reference"]
+                        for seed, selection in fingerprints.items()
+                        if "retained_reference" in selection
+                    },
                 },
                 "limitations": (
                     [

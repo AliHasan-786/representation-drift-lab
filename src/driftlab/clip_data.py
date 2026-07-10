@@ -290,15 +290,6 @@ def _server_dataset(
     records = _decode_server_records(
         rows, image_field=image_field, label_field=label_field, revision=revision
     )
-
-
-def _ranges_overlap(left_start: int, left_size: int, right_start: int, right_size: int) -> bool:
-    """Return whether two half-open row ranges share at least one example."""
-    if min(left_size, right_size) < 0:
-        raise ValueError("dataset range sizes must be non-negative")
-    return max(left_start, right_start) < min(
-        left_start + left_size, right_start + right_size
-    )
     selection = dict(selection)
     selection["row_indices"] = [record["row_idx"] for record in records]
     return _from_records(
@@ -310,6 +301,15 @@ def _ranges_overlap(left_start: int, left_size: int, right_start: int, right_siz
         records=records,
         class_names=class_names,
         selection=selection,
+    )
+
+
+def _ranges_overlap(left_start: int, left_size: int, right_start: int, right_size: int) -> bool:
+    """Return whether two half-open row ranges share at least one example."""
+    if min(left_size, right_size) < 0:
+        raise ValueError("dataset range sizes must be non-negative")
+    return max(left_start, right_start) < min(
+        left_start + left_size, right_start + right_size
     )
 
 

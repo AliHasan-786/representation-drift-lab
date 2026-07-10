@@ -9,10 +9,32 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
-from driftlab.clip_data import _dataset_server_rows, _ranges_overlap, _server_class_names
+from driftlab.clip_data import (
+    _dataset_server_rows,
+    _ranges_overlap,
+    _server_class_names,
+    _server_dataset,
+)
 
 
 class DatasetServerCacheTests(unittest.TestCase):
+    def test_server_dataset_returns_constructed_dataset(self) -> None:
+        decoded = [{"image": object(), "label": 1, "row_idx": 7}]
+        expected = object()
+        with (
+            patch("driftlab.clip_data._decode_server_records", return_value=decoded),
+            patch("driftlab.clip_data._from_records", return_value=expected) as construct,
+        ):
+            actual = _server_dataset(
+                spec={"repository": "example/data", "split": "test", "image_field": "image"},
+                revision="abc123",
+                rows=[{"row_idx": 7, "row": {}}],
+                class_names=("zero", "one"),
+                selection={"role": "eval"},
+            )
+        self.assertIs(actual, expected)
+        self.assertEqual(construct.call_args.kwargs["selection"]["row_indices"], [7])
+
     def test_reference_and_evaluation_ranges_must_be_disjoint(self) -> None:
         self.assertFalse(_ranges_overlap(0, 30, 1000, 30))
         self.assertTrue(_ranges_overlap(0, 30, 29, 30))

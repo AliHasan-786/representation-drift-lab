@@ -3,13 +3,13 @@
     "caveat": "Exploratory association across 9 interventions on one bounded scenario; it is neither causal nor a general predictor validation.",
     "retained_cka_loss_vs_mean_forgetting": {
       "bootstrap_samples": 2000,
-      "pearson": 0.5446797004575799,
-      "pearson_ci_high": 0.9695274599675437,
-      "pearson_ci_low": -0.7895757870348195,
-      "spearman": 0.25941649671427414
+      "pearson": 0.5226315997768102,
+      "pearson_ci_high": 0.9635037493636015,
+      "pearson_ci_low": -0.764598833265558,
+      "spearman": 0.45769286494404704
     }
   },
-  "config_hash": "56c5c70d05bce18b",
+  "config_hash": "695c2e602115d144",
   "dataset_fingerprints": {
     "41": {
       "adaptation_eval": "485b9854ae8c521ee0670502660c55c4f2692376726ec73b2cd040b60c88e73b",
@@ -127,6 +127,10 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
+      },
       "seeds": [
         41,
         42,
@@ -236,6 +240,10 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
+      },
       "seeds": [
         41,
         42,
@@ -342,6 +350,10 @@
           "n": 3,
           "standard_deviation": 0.0
         }
+      },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
       },
       "seeds": [
         41,
@@ -450,6 +462,10 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
+      },
       "seeds": [
         41,
         42,
@@ -556,6 +572,10 @@
           "n": 3,
           "standard_deviation": 0.0
         }
+      },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
       },
       "seeds": [
         41,
@@ -666,6 +686,10 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
+      },
       "seeds": [
         41,
         42,
@@ -703,20 +727,20 @@
       "limitations": [],
       "metrics": {
         "adaptation_accuracy_change": {
-          "ci_high": 0.22755207084430945,
-          "ci_low": -0.08866318195542054,
+          "ci_high": 0.17507368693748515,
+          "ci_low": -0.06396257582637399,
           "confidence": 0.95,
-          "mean": 0.06944444444444446,
+          "mean": 0.05555555555555558,
           "n": 3,
-          "standard_deviation": 0.06364688465216445
+          "standard_deviation": 0.048112522432468836
         },
         "adapter_l2_delta": {
-          "ci_high": 1.8880251590160861,
-          "ci_low": 1.2114173516632192,
+          "ci_high": 1.6698234918606514,
+          "ci_low": 1.3722776556520215,
           "confidence": 0.95,
-          "mean": 1.5497212553396527,
+          "mean": 1.5210505737563365,
           "n": 3,
-          "standard_deviation": 0.13618564787137494
+          "standard_deviation": 0.059889158882214
         },
         "baseline_adaptation_accuracy": {
           "ci_high": 0.9389625758263739,
@@ -735,36 +759,36 @@
           "standard_deviation": 0.0
         },
         "final_adaptation_accuracy": {
-          "ci_high": 0.9486479545798535,
-          "ci_low": 0.8291298231979242,
+          "ci_high": 0.875,
+          "ci_low": 0.875,
           "confidence": 0.95,
-          "mean": 0.8888888888888888,
+          "mean": 0.875,
           "n": 3,
-          "standard_deviation": 0.024056261216234387
+          "standard_deviation": 0.0
         },
         "final_retained_accuracy": {
-          "ci_high": 0.8161379237250111,
-          "ci_low": 0.6505287429416556,
+          "ci_high": 0.7333333333333333,
+          "ci_low": 0.7333333333333333,
           "confidence": 0.95,
-          "mean": 0.7333333333333334,
+          "mean": 0.7333333333333333,
           "n": 3,
-          "standard_deviation": 0.03333333333333338
+          "standard_deviation": 0.0
         },
         "retained_accuracy_change": {
-          "ci_high": 0.08280459039167784,
-          "ci_low": -0.08280459039167776,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
           "confidence": 0.95,
-          "mean": 3.700743415417188e-17,
+          "mean": 0.0,
           "n": 3,
-          "standard_deviation": 0.03333333333333338
+          "standard_deviation": 0.0
         },
         "retained_cka_loss": {
-          "ci_high": 0.022732513442294766,
-          "ci_low": 0.0020173898722467554,
+          "ci_high": 0.004498728980270927,
+          "ci_low": 0.0026127753201317105,
           "confidence": 0.95,
-          "mean": 0.01237495165727076,
+          "mean": 0.003555752150201319,
           "n": 3,
-          "standard_deviation": 0.004169479709611598
+          "standard_deviation": 0.00037959925716242503
         },
         "trainable_parameters": {
           "ci_high": 294912.0,
@@ -775,6 +799,14 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {
+          "41": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d",
+          "42": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d",
+          "43": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d"
+        },
+        "used": true
+      },
       "seeds": [
         41,
         42,
@@ -782,13 +814,13 @@
       ],
       "source": {
         "artifact_path": "public/data/benchmark-distillation-local.json",
-        "artifact_sha256": "a2ded0dea796c7f6dd7a4b102562a7281364adf93caa814f706adb4b84ac8138",
-        "benchmark_config_hash": "eded6b7c559d3815",
-        "benchmark_run_id": "clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815",
+        "artifact_sha256": "593f1c640df0aa9fb1fb1c46e1f6be79c99a3c470eb8492a381a2fecacb93806",
+        "benchmark_config_hash": "0eee25b2dbf1f798",
+        "benchmark_run_id": "clip-food101-cifar10-distillation-local-multiseed-0eee25b2dbf1f798",
         "manifest": {
-          "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815.json",
-          "run_id": "clip-food101-cifar10-distillation-local-multiseed-eded6b7c559d3815",
-          "sha256": "6b1d9a76bcd5bac695af5f5b3c7e3178ddf31a307a953d723ec3e5a93de017da"
+          "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-multiseed-0eee25b2dbf1f798.json",
+          "run_id": "clip-food101-cifar10-distillation-local-multiseed-0eee25b2dbf1f798",
+          "sha256": "7381dc01a4699cb4f2b0fcbeb18ac084687312be51cf0a00971b0fa70193382f"
         }
       },
       "strategy": "zscl-inspired-distillation",
@@ -820,12 +852,12 @@
           "standard_deviation": 0.0636468846521645
         },
         "adapter_l2_delta": {
-          "ci_high": 2.116893921307822,
-          "ci_low": 1.8492302092783854,
+          "ci_high": 2.1199485793699444,
+          "ci_low": 1.8475407896665281,
           "confidence": 0.95,
-          "mean": 1.983062065293104,
+          "mean": 1.9837446845182363,
           "n": 3,
-          "standard_deviation": 0.05387457200205707
+          "standard_deviation": 0.054829446132331525
         },
         "baseline_adaptation_accuracy": {
           "ci_high": 0.9389625758263739,
@@ -852,28 +884,28 @@
           "standard_deviation": 0.041666666666666685
         },
         "final_retained_accuracy": {
-          "ci_high": 0.7366961414416606,
-          "ci_low": 0.6410816363361169,
+          "ci_high": 0.7255850303305496,
+          "ci_low": 0.6299705252250059,
           "confidence": 0.95,
-          "mean": 0.6888888888888888,
+          "mean": 0.6777777777777777,
           "n": 3,
           "standard_deviation": 0.01924500897298752
         },
         "retained_accuracy_change": {
-          "ci_high": 0.003362808108327363,
-          "ci_low": -0.09225169699721622,
+          "ci_high": -0.0077483030027837504,
+          "ci_low": -0.10336280810832735,
           "confidence": 0.95,
-          "mean": -0.04444444444444443,
+          "mean": -0.055555555555555546,
           "n": 3,
           "standard_deviation": 0.01924500897298752
         },
         "retained_cka_loss": {
-          "ci_high": 0.01652607617236035,
-          "ci_low": 0.0030767464745758977,
+          "ci_high": 0.013496680856675214,
+          "ci_low": 0.00596597460422732,
           "confidence": 0.95,
-          "mean": 0.009801411323468123,
+          "mean": 0.009731327730451267,
           "n": 3,
-          "standard_deviation": 0.0027070418910689147
+          "standard_deviation": 0.001515758610488161
         },
         "trainable_parameters": {
           "ci_high": 294912.0,
@@ -884,6 +916,14 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {
+          "41": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d",
+          "42": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d",
+          "43": "7d1fa18f4f7667f07a0841e0042ee1c38a95a4b636b36a5b7024f7a1a4b3cc3d"
+        },
+        "used": true
+      },
       "seeds": [
         41,
         42,
@@ -891,13 +931,13 @@
       ],
       "source": {
         "artifact_path": "public/data/benchmark-nullspace-local.json",
-        "artifact_sha256": "470cde63d38c98464d24f7165e82519c554bb32bc0d536ef8fe16321be493430",
-        "benchmark_config_hash": "ee2e9c2e1aaadce6",
-        "benchmark_run_id": "clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6",
+        "artifact_sha256": "9975c96bf866575b6ee6a6015ef233f41ade5f8fad2f6315db7fd0560d9b05c0",
+        "benchmark_config_hash": "b5d0f83c102d399e",
+        "benchmark_run_id": "clip-food101-cifar10-nullspace-local-multiseed-b5d0f83c102d399e",
         "manifest": {
-          "public_path": "/data/manifests/clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6.json",
-          "run_id": "clip-food101-cifar10-nullspace-local-multiseed-ee2e9c2e1aaadce6",
-          "sha256": "91897b2528d5cc7715a2dd04bffa9345714b25fdc859ab3e7a00fb8b3512d1a6"
+          "public_path": "/data/manifests/clip-food101-cifar10-nullspace-local-multiseed-b5d0f83c102d399e.json",
+          "run_id": "clip-food101-cifar10-nullspace-local-multiseed-b5d0f83c102d399e",
+          "sha256": "10404181b9e43c4bb73c012c64b8ec4263efb9b3b8f69896fc6a4ca257ba07ae"
         }
       },
       "strategy": "retention-gradient-nullspace",
@@ -993,6 +1033,10 @@
           "standard_deviation": 0.0
         }
       },
+      "retained_reference": {
+        "fingerprints_by_seed": {},
+        "used": false
+      },
       "seeds": [
         41,
         42,
@@ -1018,11 +1062,11 @@
     }
   ],
   "publication_caveat": "Small local subsets and three seeds validate comparison machinery; they do not establish general method rankings.",
-  "run_id": "clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b",
+  "run_id": "clip-food101-cifar10-method-comparison-local-695c2e602115d144",
   "schema_version": "1.0.0",
   "source_manifest": {
-    "public_path": "/data/manifests/clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b.json",
-    "run_id": "clip-food101-cifar10-method-comparison-local-56c5c70d05bce18b",
-    "sha256": "9ac6b060f935a0417456a872ce032be254d8df104dae8319bac0b8027fcd2d17"
+    "public_path": "/data/manifests/clip-food101-cifar10-method-comparison-local-695c2e602115d144.json",
+    "run_id": "clip-food101-cifar10-method-comparison-local-695c2e602115d144",
+    "sha256": "c01c20630b26b77783f3d23ea5d2f9090db308578f7038839ff101a724d83387"
   }
 }

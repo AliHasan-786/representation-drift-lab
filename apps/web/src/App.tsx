@@ -186,7 +186,7 @@ function CodeArchaeology() {
       label: "What I rebuilt",
       title: "The extension converts useful ideas into claims that can be checked",
       body: "The new system pins model and dataset revisions, records exact rows and seeds, rebuilds adapter topology before loading, uses same-class multi-positive supervision, separates performance from geometry, fits visual projections once, reports uncertainty, tests held-out warning logic, and rejects artifacts whose fingerprints change.",
-      evidence: "39 Python checks · 3 independent seeds · 9 interventions · 3 published dataset pairs",
+      evidence: "41 Python checks · 3 independent seeds · 9 interventions · 3 published dataset pairs",
       status: "measured extension",
     },
   ];
@@ -843,7 +843,7 @@ function App() {
         <section className="section dark" id="reproduce">
           <div className="section-heading"><div><p className="eyebrow">08 · Engineering and reproducibility</p><h2>Evidence that can be rerun</h2></div><p>This is a research system, not only a notebook. Each setup gets an identity; interrupted runs can resume safely; dataset selections are recorded; outputs can regenerate metrics without retraining; and public files are checked against fingerprints that expose accidental changes.</p></div>
           <div className="engineering-grid">
-            <article><strong>39</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
+            <article><strong>41</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
             <article><strong>294,912</strong><span>trainable parameters</span><p>All non-LoRA parameters are frozen and the invariant is checked at runtime.</p></article>
             <article><strong>Byte-stable</strong><span>metric regeneration</span><p>Saved embeddings reproduce the same public derivative without retraining.</p></article>
           </div>

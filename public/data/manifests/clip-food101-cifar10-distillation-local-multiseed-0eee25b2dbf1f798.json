@@ -1,0 +1,150 @@
+{
+  "completed_steps": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "config": {
+    "base_config": "reproduction-local-distillation.yaml",
+    "base_scientific_payload": {
+      "analysis": {
+        "collect_vision_hidden_states": true,
+        "covariance_projection_dim": 16,
+        "diagnostics_version": "layerwise-cross-modal-v1"
+      },
+      "datasets": {
+        "adaptation": {
+          "class_count": 6,
+          "config": "default",
+          "eval_per_class": 4,
+          "image_field": "image",
+          "repository": "ethz/food101",
+          "server_window": 64,
+          "split": "train",
+          "train_per_class": 4
+        },
+        "loading_mode": "dataset-server-stratified",
+        "retained": {
+          "config": "plain_text",
+          "eval_size": 30,
+          "eval_start": 0,
+          "image_field": "img",
+          "reference_size": 30,
+          "reference_start": 1000,
+          "repository": "uoft-cs/cifar10",
+          "split": "test"
+        }
+      },
+      "method": {
+        "alpha": 16,
+        "distillation_temperature": 2.0,
+        "dropout": 0.1,
+        "expected_trainable_parameters": 294912,
+        "fidelity": "inspired-baseline-not-exact-zscl",
+        "name": "zscl-inspired-distillation",
+        "rank": 8,
+        "retention_weight": 1.0,
+        "strategy": "zscl-inspired-distillation",
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "model": {
+        "family": "openai-clip-vit-b-32",
+        "revision": "openai/clip-vit-base-patch32"
+      },
+      "name": "clip-food101-cifar10-distillation-local",
+      "runtime": {
+        "device": "auto"
+      },
+      "seed": 42,
+      "tier": "research",
+      "training": {
+        "batch_size": 4,
+        "checkpoint_steps": [
+          0,
+          5,
+          10,
+          20
+        ],
+        "evaluation_batch_size": 8,
+        "learning_rate": 0.0005,
+        "total_steps": 20
+      }
+    },
+    "name": "clip-food101-cifar10-distillation-local-multiseed",
+    "seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "config_hash": "0eee25b2dbf1f798",
+  "environment": {
+    "accelerator": "mps",
+    "architecture": "arm64",
+    "packages": {
+      "Pillow": "12.3.0",
+      "PyYAML": "6.0.3",
+      "accelerate": "1.14.0",
+      "datasets": "5.0.0",
+      "huggingface-hub": "1.22.0",
+      "numpy": "2.4.3",
+      "peft": "0.19.1",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformers": "5.13.0"
+    },
+    "platform": "Darwin",
+    "platform_release": "24.6.0",
+    "python": "3.14.0"
+  },
+  "git": {
+    "commit": "a556621b412f8f998d4ed43117bb658ba8570d8f",
+    "dirty": true
+  },
+  "run_id": "clip-food101-cifar10-distillation-local-multiseed-0eee25b2dbf1f798",
+  "schema_version": "1.0.0",
+  "source_runs": [
+    {
+      "config_hash": "9ee0da204c0083bf",
+      "run_id": "clip-food101-cifar10-distillation-local-9ee0da204c0083bf-s41",
+      "seed": 41,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-9ee0da204c0083bf-s41.json",
+        "run_id": "clip-food101-cifar10-distillation-local-9ee0da204c0083bf-s41",
+        "sha256": "cd0efd2c662377c4c0c81a8544c0eef18076c2d2233dfc1bfbd29d5f156bbbdf"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-distillation-local-9ee0da204c0083bf-s41.json",
+      "web_artifact_sha256": "f67b388b84d1e9242b5c0822e0b9eb6cd8df5732bb64dde479f0d3ba854fc0c5"
+    },
+    {
+      "config_hash": "a583b2510aa77bd8",
+      "run_id": "clip-food101-cifar10-distillation-local-a583b2510aa77bd8-s42",
+      "seed": 42,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-a583b2510aa77bd8-s42.json",
+        "run_id": "clip-food101-cifar10-distillation-local-a583b2510aa77bd8-s42",
+        "sha256": "1ad3e6fd57fb7b4186b8d15a323797cd5b5ed58aa9a8eb5b73f8449b4298ac7f"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-distillation-local-a583b2510aa77bd8-s42.json",
+      "web_artifact_sha256": "e8a90b8e745f724c2dcf9997a37c37964b93d2244593cc2447619c70e6e97434"
+    },
+    {
+      "config_hash": "600bb40f58493d7d",
+      "run_id": "clip-food101-cifar10-distillation-local-600bb40f58493d7d-s43",
+      "seed": 43,
+      "source_manifest": {
+        "public_path": "/data/manifests/clip-food101-cifar10-distillation-local-600bb40f58493d7d-s43.json",
+        "run_id": "clip-food101-cifar10-distillation-local-600bb40f58493d7d-s43",
+        "sha256": "f11ceda86b94fa4ac3bb0d34b5e00f117454c6ff3b7801987217b887aed41908"
+      },
+      "web_artifact": "public/data/runs/clip-food101-cifar10-distillation-local-600bb40f58493d7d-s43.json",
+      "web_artifact_sha256": "f650e54db0e9d2bffd842a72dc0611b15e154c14860ab11d1b41692cf1e40b3d"
+    }
+  ],
+  "started_at": "2026-07-06T22:45:43.401835Z",
+  "status": "complete"
+}
