@@ -404,6 +404,17 @@ pre { overflow-x: auto; margin: 1rem 0 0; padding: 1.5rem; border: 1px solid var
 .then-now span { color: var(--acid); font: .67rem "DM Mono", monospace; text-transform: uppercase; }
 .then-now strong { display: block; margin: .8rem 0; font-size: 1.2rem; }
 .then-now p { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.evaluation-firewall { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(1.25rem, 3vw, 3rem); margin: 1rem 0 4rem; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--line); background: #f2f7ea; }
+.evaluation-firewall h3 { max-width: 540px; margin: .5rem 0 1rem; font-size: clamp(1.6rem, 3vw, 2.6rem); letter-spacing: -.045em; }
+.evaluation-firewall p { color: var(--muted); line-height: 1.7; }
+.firewall-flow { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.firewall-flow li { display: grid; grid-template-columns: 2rem 1fr; gap: .75rem; padding: .9rem; border: 1px solid rgba(16,32,25,.16); background: rgba(255,255,255,.72); }
+.firewall-flow span { display: grid; width: 2rem; height: 2rem; place-items: center; color: #fff; background: #126452; font: .72rem "DM Mono", monospace; }
+.firewall-flow strong { display: block; font-size: .9rem; }
+.firewall-flow p { margin: .25rem 0 0; font-size: .78rem; line-height: 1.5; }
+.evaluation-firewall details { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid rgba(16,32,25,.18); }
+.evaluation-firewall summary { cursor: pointer; color: #126452; font-weight: 700; }
+.evaluation-firewall details p { max-width: 900px; margin: .75rem 0 0; font-size: .84rem; }
 footer { display: grid; grid-template-columns: 1fr 1fr auto; gap: 2rem; align-items: center; padding: 2rem clamp(1.25rem, 7vw, 8rem); color: var(--muted); background: #030a08; font-size: .72rem; }
 footer strong, footer span { display: block; }
 footer p { margin: 0; }
@@ -425,7 +436,7 @@ footer p { margin: 0; }
   .metric-primer { grid-template-columns: repeat(2, 1fr); }
   .failure-grid { grid-template-columns: 1fr; }
   .concept-grid, .domain-grid { grid-template-columns: repeat(2, 1fr); }
-  .clip-copy, .lora-explainer, .work-walkthrough, .project-guide, .report-library { grid-template-columns: 1fr; }
+  .clip-copy, .lora-explainer, .evaluation-firewall, .work-walkthrough, .project-guide, .report-library { grid-template-columns: 1fr; }
   .code-audit { grid-template-columns: 1fr 1fr; }
   .audit-tabs { grid-column: 1 / -1; grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .audit-tabs button { grid-template-columns: 1fr; gap: .3rem; }

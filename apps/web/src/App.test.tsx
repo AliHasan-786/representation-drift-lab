@@ -42,6 +42,8 @@ describe("portfolio visitor flow", () => {
     render(<App />);
     expect(await screen.findByText(/Assume nothing/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /CLIP connects pictures with words/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /model cannot practice on its final exam/i })).toBeInTheDocument();
+    expect(screen.getByText(/Locked final check/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /What are Food-101, CIFAR/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Does the same pattern hold/i })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /Technical depth/i })).not.toBeInTheDocument();

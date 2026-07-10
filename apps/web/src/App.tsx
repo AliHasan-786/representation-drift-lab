@@ -103,6 +103,27 @@ function LoraExplainer() {
   );
 }
 
+function EvaluationFirewall() {
+  return (
+    <aside className="evaluation-firewall" aria-labelledby="firewall-title">
+      <div className="firewall-copy">
+        <p className="eyebrow">A fairness rule behind every score</p>
+        <h3 id="firewall-title">The model cannot practice on its final exam</h3>
+        <p>Imagine teaching from flashcards and then grading with the very same cards. A high score could mean real learning—or simply remembering the answers. This project keeps three image groups separate so the final score remains meaningful.</p>
+      </div>
+      <ol className="firewall-flow">
+        <li><span>1</span><div><strong>New-skill practice</strong><p>Food, satellite, or pet images update the small LoRA adapters.</p></div></li>
+        <li><span>2</span><div><strong>Optional memory reminder</strong><p>Two methods can use a separate everyday-object reference set to protect older knowledge.</p></div></li>
+        <li><span>3</span><div><strong>Locked final check</strong><p>A different held-out object set measures retention. It is never used for an update or reminder.</p></div></li>
+      </ol>
+      <details>
+        <summary>Why does this matter for this project?</summary>
+        <p>An earlier version used the same retained images as both a training reference and an evaluation score for two methods. I treated that as a leakage risk, rebuilt those experiments with a disjoint reference split, and published the corrected runs. The method chart labels this as a resource trade-off rather than a free improvement.</p>
+      </details>
+    </aside>
+  );
+}
+
 function DatasetCard({ dataset }: { dataset: DatasetRecord }) {
   return (
     <article className="dataset-card">
@@ -740,6 +761,7 @@ function App() {
           </div>
           <ClipExplainer gallery={datasetGallery} />
           <LoraExplainer />
+          <EvaluationFirewall />
           <div className="section-heading compact-heading"><div><p className="eyebrow">What I actually did</p><h2>The project as eight concrete actions</h2></div><p>This is the complete workflow stripped of research vocabulary. Select each step to see where training, testing, measurement, and the later extension fit.</p></div>
           <WorkWalkthrough />
           <div className="plain-callout"><strong>The key distinction:</strong><p><strong>drift</strong> means the model's internal numeric descriptions changed. <strong>Forgetting</strong> means its measured performance became worse. They can happen together, separately, or while another capability improves.</p></div>
