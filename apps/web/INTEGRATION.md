@@ -4,7 +4,7 @@ The application can ship independently or under an existing portfolio route.
 
 ## Option A — standalone deployment
 
-Build `apps/web`, deploy `dist/`, and link to it from the portfolio project card. Preserve `/data/*`, `/datasets/*`, and `/report/*` paths at the deployment root or set a Vite base path and rewrite the asset URLs consistently.
+Build `apps/web`, deploy `dist/`, and link to it from the portfolio project card. Preserve the `data/`, `datasets/`, and `report/` directories within the deployed app. The application is base-aware: to host it under a portfolio path, build with `VITE_BASE_PATH=/projects/representation-drift-lab/ npm run build` (or run `npm run build:subpath`). This prefixes public JSON, images, and PDFs automatically.
 
 ## Option B — route integration
 

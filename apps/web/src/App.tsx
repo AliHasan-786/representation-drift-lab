@@ -17,6 +17,10 @@ import type {
 
 const pct = (value: number, digits = 1) => `${(value * 100).toFixed(digits)}%`;
 const fixed = (value: number, digits = 3) => value.toFixed(digits);
+const staticAsset = (path: string) => {
+  if (/^https?:\/\//.test(path)) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+};
 const usesAdapterPath = (method: MethodRecord) => [
   "standard-lora",
   "zscl-inspired-distillation",
@@ -71,7 +75,7 @@ function ClipExplainer({ gallery }: { gallery: DatasetGalleryArtifact }) {
         </div>
       </div>
       <div className="clip-machine" aria-live="polite">
-        <figure><img src={current.example.src} alt={current.example.alt} /><figcaption>Dataset label: <strong>{current.example.label}</strong></figcaption></figure>
+        <figure><img src={staticAsset(current.example.src)} alt={current.example.alt} /><figcaption>Dataset label: <strong>{current.example.label}</strong></figcaption></figure>
         <div className="machine-arrow" aria-hidden="true">→</div>
         <div className="encoder-box"><span>Image encoder</span><strong>picture → numeric representation</strong><small>A representation is the model's internal description of what it sees.</small></div>
         <div className="machine-arrow" aria-hidden="true">↔</div>
@@ -135,7 +139,7 @@ function DatasetCard({ dataset }: { dataset: DatasetRecord }) {
   return (
     <article className="dataset-card">
       <div className="dataset-card-heading"><div><span>{dataset.role}</span><h3>{dataset.name}</h3><p>{dataset.plain_name}</p></div><strong>{dataset.native_resolution}</strong></div>
-      <div className="dataset-images">{dataset.examples.map((example) => <figure key={example.src}><img src={example.src} alt={example.alt} loading="lazy" /><figcaption>{example.label}</figcaption></figure>)}</div>
+      <div className="dataset-images">{dataset.examples.map((example) => <figure key={example.src}><img src={staticAsset(example.src)} alt={example.alt} loading="lazy" /><figcaption>{example.label}</figcaption></figure>)}</div>
       <p>{dataset.role_explanation}</p>
       <dl><div><dt>Full public dataset</dt><dd>{dataset.full_size}</dd></div><div><dt>Used in these local experiments</dt><dd>{dataset.local_protocol}</dd></div></dl>
       <a href={dataset.source_url} target="_blank" rel="noreferrer">Open dataset source ↗</a>
@@ -313,8 +317,8 @@ function OriginalReportReader() {
   const [open, setOpen] = useState(false);
   return (
     <article className="original-report-card">
-      <div><span className="report-status historical">Original submission · December 2025</span><h3>Detecting and Characterizing Representation Drift in Multimodal Vision-Language Models</h3><p>12-page Cornell Tech CS 5787 group report by Sahil Mhatre, Ali Hasan, and Corey Chen. This is the exact class submission, including its original figures, wording, implementation appendix, and conclusions.</p><div className="report-actions"><button className="button primary" onClick={() => setOpen(!open)}>{open ? "Close embedded reader" : "Read the report here"}</button><a className="button ghost" href="/report/original-course-report.pdf" target="_blank" rel="noreferrer">Open in a new tab</a><a className="button ghost" href="/report/original-course-report.pdf" download>Save PDF</a></div></div>
-      {open && <iframe src="/report/original-course-report.pdf#view=FitH&toolbar=1" title="Original submitted class report" />}
+      <div><span className="report-status historical">Original submission · December 2025</span><h3>Detecting and Characterizing Representation Drift in Multimodal Vision-Language Models</h3><p>12-page Cornell Tech CS 5787 group report by Sahil Mhatre, Ali Hasan, and Corey Chen. This is the exact class submission, including its original figures, wording, implementation appendix, and conclusions.</p><div className="report-actions"><button className="button primary" onClick={() => setOpen(!open)}>{open ? "Close embedded reader" : "Read the report here"}</button><a className="button ghost" href={staticAsset("report/original-course-report.pdf")} target="_blank" rel="noreferrer">Open in a new tab</a><a className="button ghost" href={staticAsset("report/original-course-report.pdf")} download>Save PDF</a></div></div>
+      {open && <iframe src={`${staticAsset("report/original-course-report.pdf")}#view=FitH&toolbar=1`} title="Original submitted class report" />}
     </article>
   );
 }
@@ -647,27 +651,27 @@ function App() {
   const loadCore = () => {
     setError(null);
     Promise.all([
-      fetch("/data/benchmark-local.json").then((response) => {
+      fetch(staticAsset("data/benchmark-local.json")).then((response) => {
         if (!response.ok) throw new Error("Benchmark artifact unavailable");
         return response.json();
       }),
-      fetch("/data/early-warning-methodology.json").then((response) => {
+      fetch(staticAsset("data/early-warning-methodology.json")).then((response) => {
         if (!response.ok) throw new Error("Early-warning artifact unavailable");
         return response.json();
       }),
-      fetch("/data/method-comparison-local.json").then((response) => {
+      fetch(staticAsset("data/method-comparison-local.json")).then((response) => {
         if (!response.ok) throw new Error("Method artifact unavailable");
         return response.json();
       }),
-      fetch("/data/interpolation-local.json").then((response) => {
+      fetch(staticAsset("data/interpolation-local.json")).then((response) => {
         if (!response.ok) throw new Error("Interpolation artifact unavailable");
         return response.json();
       }),
-      fetch("/data/domain-comparison-local.json").then((response) => {
+      fetch(staticAsset("data/domain-comparison-local.json")).then((response) => {
         if (!response.ok) throw new Error("Domain artifact unavailable");
         return response.json();
       }),
-      fetch("/data/dataset-gallery.json").then((response) => {
+      fetch(staticAsset("data/dataset-gallery.json")).then((response) => {
         if (!response.ok) throw new Error("Dataset gallery unavailable");
         return response.json();
       }),
@@ -687,7 +691,7 @@ function App() {
 
   const loadDetail = () => {
     setDetailLoading(true);
-    fetch("/data/reproduction-local.json")
+    fetch(staticAsset("data/reproduction-local.json"))
       .then((response) => {
         if (!response.ok) throw new Error("Detailed artifact unavailable");
         return response.json();
@@ -724,7 +728,7 @@ function App() {
         <nav aria-label="Project sections">
           <a href="#foundations">Start at zero</a><a href="#datasets">See the data</a><a href="#explore">Experiment</a><a href="#guide">Ask</a><a href="#reports">Reports</a>
         </nav>
-        <a className="report-link" href="/report/original-course-report.pdf" target="_blank" rel="noreferrer">Class report · PDF</a>
+        <a className="report-link" href={staticAsset("report/original-course-report.pdf")} target="_blank" rel="noreferrer">Class report · PDF</a>
       </header>
 
       <main id="main">
@@ -897,7 +901,7 @@ function App() {
           <div className="section-heading"><div><p className="eyebrow">10 · The written record</p><h2>The submitted class report and the independent extension</h2></div><p>These are deliberately separate. The original PDF is preserved exactly as submitted by the three-person course team. The extension report documents the later audit, rebuilt system, added experiments, contradictions, and limitations.</p></div>
           <div className="report-library">
             <OriginalReportReader />
-            <article className="extension-report-card"><span className="report-status extension">Independent extension · 2026</span><h3>Representation Drift Lab</h3><p>A generated evidence report backed by the same checksummed artifacts used by this website. It explains the code audit, corrected methods, nine interventions, three domain pairs, failure cases, reproducibility system, limitations, and next research gates.</p><a className="button primary" href="/report/representation-drift-lab-report.pdf" target="_blank" rel="noreferrer">Open extension report</a></article>
+            <article className="extension-report-card"><span className="report-status extension">Independent extension · 2026</span><h3>Representation Drift Lab</h3><p>A generated evidence report backed by the same checksummed artifacts used by this website. It explains the code audit, corrected methods, nine interventions, three domain pairs, failure cases, reproducibility system, limitations, and next research gates.</p><a className="button primary" href={staticAsset("report/representation-drift-lab-report.pdf")} target="_blank" rel="noreferrer">Open extension report</a></article>
           </div>
           <div className="then-now"><div><span>Original report</span><strong>Asked whether drift could reveal forgetting.</strong><p>One backbone, one main dataset pair, one LoRA setup, and stronger claims from a smaller evidence base.</p></div><i aria-hidden="true">→</i><div><span>Independent extension</span><strong>Asked where that story fails.</strong><p>Rebuilt provenance, corrected supervision and geometry, three seeds, nine interventions, three pairs, negative results, tests, and an interactive explanation.</p></div></div>
         </section>
