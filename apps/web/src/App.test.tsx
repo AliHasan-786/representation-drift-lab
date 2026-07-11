@@ -74,6 +74,18 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText(/works offline/i)).toBeInTheDocument();
   });
 
+  it("keeps apparent sensitive input in the browser instead of sending it to the guide", async () => {
+    render(<App />);
+    await screen.findByRole("heading", { name: /Can teaching an AI/i });
+    const callsBefore = vi.mocked(fetch).mock.calls.length;
+    const question = screen.getByLabelText("Your question");
+    fireEvent.change(question, { target: { value: "My email is ali@example.com. Explain LoRA." } });
+    fireEvent.click(screen.getByRole("button", { name: "Ask the project" }));
+    expect(screen.getByText(/Potential an email address detected/i)).toBeInTheDocument();
+    expect(screen.getByText(/kept on this device/i)).toBeInTheDocument();
+    expect(vi.mocked(fetch).mock.calls).toHaveLength(callsBefore);
+  });
+
   it("explains the recovered source scaffold without presenting it as new results", async () => {
     render(<App />);
     expect(await screen.findByRole("heading", { name: /newly recovered source folder/i })).toBeInTheDocument();

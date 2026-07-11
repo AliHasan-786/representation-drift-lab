@@ -117,7 +117,7 @@ The build verifies artifact schemas and manifest checksums before TypeScript/Vit
 
 The evidence-gated expansion plan is in [`reports/research-roadmap.md`](reports/research-roadmap.md). It distinguishes local methodology results from the experiments required before a broader claim is warranted.
 
-The project guide always has a deterministic, browser-only beginner mode. To enable grounded generative answers in a serverless deployment, copy `.env.example` to the deployment environment and set `OPENAI_API_KEY`; the key is read only by `api/project-guide.js` and never sent to the browser.
+The project guide always has a deterministic, browser-only beginner mode. To enable grounded generative answers in a serverless deployment, copy `.env.example` to the deployment environment and set `OPENAI_API_KEY`; the key is read only by `api/project-guide.js` and never sent to the browser. The browser and endpoint both reject apparent personal information or access credentials before provider use; the rule is a data-minimization backstop, not a replacement for a privacy policy.
 
 ## Repository layout
 

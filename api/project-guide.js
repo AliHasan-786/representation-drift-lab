@@ -28,6 +28,18 @@ Ground truth:
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 10;
 const rateBuckets = new Map();
+const SENSITIVE_INPUT_PATTERNS = [
+  ["an email address", /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i],
+  ["a Social Security number", /\b\d{3}-\d{2}-\d{4}\b/],
+  ["a payment-card number", /\b(?:\d[ -]?){13,19}\b/],
+  ["a phone number", /(?:\+?\d[\s().-]*){10,15}/],
+  ["an access credential", /\b(?:sk|rk|pk)[_-][A-Za-z0-9_-]{16,}\b/],
+];
+
+export function sensitiveInputReason(text) {
+  const value = String(text ?? "");
+  return SENSITIVE_INPUT_PATTERNS.find(([, pattern]) => pattern.test(value))?.[0] ?? null;
+}
 
 function requestIdentity(request) {
   const forwarded = request.headers["x-forwarded-for"];
@@ -87,11 +99,17 @@ export default async function handler(request, response) {
     response.setHeader("Retry-After", String(Math.ceil((rateLimit.resetAt - Date.now()) / 1000)));
     return response.status(429).json({ error: "Too many questions. Please try again later." });
   }
+  const question = typeof request.body?.question === "string" ? request.body.question.trim().slice(0, 800) : "";
+  if (!question) return response.status(400).json({ error: "A question is required." });
+  const sensitiveReason = sensitiveInputReason(question);
+  if (sensitiveReason) {
+    return response.status(400).json({
+      error: `For privacy, do not enter ${sensitiveReason}. Ask the project question without personal or secret information.`,
+    });
+  }
   if (!process.env.OPENAI_API_KEY) {
     return response.status(503).json({ error: "The grounded GenAI guide is not configured; use the offline guide." });
   }
-  const question = typeof request.body?.question === "string" ? request.body.question.trim().slice(0, 800) : "";
-  if (!question) return response.status(400).json({ error: "A question is required." });
   try {
     const apiResponse = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",

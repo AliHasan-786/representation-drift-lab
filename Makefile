@@ -1,4 +1,4 @@
-.PHONY: smoke test validate reproduce-local benchmark-local methods-local early-warning web-test web-build
+.PHONY: smoke test api-test validate reproduce-local benchmark-local methods-local early-warning web-test web-build
 
 PYTHON ?= python3
 
@@ -7,6 +7,9 @@ smoke:
 
 test:
 	PYTHONPATH=src $(PYTHON) -m unittest discover -s tests -v
+
+api-test:
+	node --test api/project-guide.test.mjs
 
 validate:
 	PYTHONPATH=src $(PYTHON) -m driftlab validate-artifact public/data/smoke.json

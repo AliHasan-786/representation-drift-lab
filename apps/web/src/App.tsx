@@ -280,16 +280,36 @@ function localGuideAnswer(question: string) {
   return ranked[0].score ? ranked[0].answer : "Start with this mental model: the project teaches an already-trained image model a narrower new job, checks whether an older ability changes, and compares both visible performance and invisible internal representations. Try asking what CLIP, LoRA, a dataset, CKA, or the main result means.";
 }
 
+function localSensitiveInputReason(text: string) {
+  const patterns: Array<[string, RegExp]> = [
+    ["an email address", /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i],
+    ["a Social Security number", /\b\d{3}-\d{2}-\d{4}\b/],
+    ["a payment-card number", /\b(?:\d[ -]?){13,19}\b/],
+    ["a phone number", /(?:\+?\d[\s().-]*){10,15}/],
+    ["an access credential", /\b(?:sk|rk|pk)[_-][A-Za-z0-9_-]{16,}\b/],
+  ];
+  return patterns.find(([, pattern]) => pattern.test(text))?.[0] ?? null;
+}
+
 function ProjectGuide() {
   const prompts = ["What did Ali actually do?", "Explain CLIP like I am new", "Why use two datasets?", "What did the new code folder add?", "What did the project find?"];
   const [question, setQuestion] = useState(prompts[0]);
   const [answer, setAnswer] = useState(localGuideAnswer(prompts[0]));
   const [mode, setMode] = useState("Guided answer · works offline");
   const [loading, setLoading] = useState(false);
+  const [privacyNotice, setPrivacyNotice] = useState("");
   const ask = async (event?: React.FormEvent) => {
     event?.preventDefault();
     const cleanQuestion = question.trim().slice(0, 800);
     if (!cleanQuestion) return;
+    const sensitiveReason = localSensitiveInputReason(cleanQuestion);
+    if (sensitiveReason) {
+      setAnswer(`For privacy, please remove ${sensitiveReason} and ask the project question again. This text was kept in your browser and was not sent to the GenAI guide.`);
+      setMode("Guided answer · kept on this device");
+      setPrivacyNotice(`Potential ${sensitiveReason} detected. It was not sent to the guide.`);
+      return;
+    }
+    setPrivacyNotice("");
     setLoading(true);
     try {
       if (["localhost", "127.0.0.1"].includes(window.location.hostname)) throw new Error("local preview");
@@ -308,7 +328,7 @@ function ProjectGuide() {
   return (
     <div className="project-guide">
       <div className="guide-intro"><p className="eyebrow">Interactive project guide</p><h3>Ask the question you think you “should already know.”</h3><p>No prerequisite is expected. In a deployed environment, answers can come from a server-side GenAI endpoint grounded only in this project's facts. The local portfolio always retains a curated offline explanation.</p><div className="guide-prompts">{prompts.map((prompt) => <button onClick={() => { setQuestion(prompt); setAnswer(localGuideAnswer(prompt)); setMode("Guided answer · works offline"); }} key={prompt}>{prompt}</button>)}</div></div>
-      <div className="guide-console"><form onSubmit={ask}><label htmlFor="project-question">Your question</label><textarea id="project-question" value={question} onChange={(event) => setQuestion(event.target.value)} rows={3} maxLength={800} /><button disabled={loading}>{loading ? "Thinking…" : "Ask the project"}</button></form><div className="guide-answer" aria-live="polite"><span>{mode}</span><p>{answer}</p></div><small>No uploads, personal data, or conversation history are required.</small></div>
+      <div className="guide-console"><form onSubmit={ask}><label htmlFor="project-question">Your question</label><textarea id="project-question" value={question} onChange={(event) => setQuestion(event.target.value)} rows={3} maxLength={800} aria-describedby="guide-privacy-note" /><button disabled={loading}>{loading ? "Thinking…" : "Ask the project"}</button></form>{privacyNotice && <p className="guide-privacy-notice" role="status">{privacyNotice}</p>}<div className="guide-answer" aria-live="polite"><span>{mode}</span><p>{answer}</p></div><small id="guide-privacy-note">Keep questions about this project. Do not include personal information or access credentials; apparent sensitive input stays in your browser and is not sent to the guide.</small></div>
     </div>
   );
 }

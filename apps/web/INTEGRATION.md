@@ -31,7 +31,7 @@ OPENAI_API_KEY=...
 OPENAI_MODEL=gpt-5.4-mini
 ```
 
-Do not rename the key with a `VITE_` prefix: that would expose it to client code. The endpoint sends no conversation history, caps questions and answers, disables provider-side response storage, and restricts answers to the project facts embedded in the server function. If the route or provider is unavailable, the UI automatically uses the offline guide.
+Do not rename the key with a `VITE_` prefix: that would expose it to client code. The endpoint sends no conversation history, caps questions and answers, disables provider-side response storage, and restricts answers to the project facts embedded in the server function. The browser and server both reject apparent email addresses, phone numbers, Social Security numbers, payment-card patterns, and access credentials before provider use; this is a data-minimization backstop, not a privacy-policy substitute. If the route or provider is unavailable, the UI automatically uses the offline guide.
 
 ## Required host behavior
 
