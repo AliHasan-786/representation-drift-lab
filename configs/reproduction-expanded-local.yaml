@@ -1,5 +1,5 @@
 name: clip-food101-cifar10-expanded-local
-tier: expanded-local-preliminary
+tier: research
 seed: 42
 model:
   family: openai-clip-vit-b-32
