@@ -20,7 +20,7 @@ Fable characterized the repository as unusually disciplined for a research portf
 | --- | --- | --- |
 | Scientific claim support and leakage | Partial | Accepted. Two mitigation methods used the retained evaluation set as an optimization reference. A disjoint reference split was implemented and the affected suites must be rerun. |
 | Reproducibility and provenance | Partial | Accepted. Git was initialized but had no commits. The new repository establishes history; pre-VCS artifacts retain their `uncommitted` marker instead of being rewritten. |
-| Implementation correctness | Pass | Confirmed by 42 Python tests after remediation. |
+| Implementation correctness | Pass | Confirmed by 43 Python tests after remediation. |
 | Security and privacy | Pass with minor gaps | Rate limiting and same-origin enforcement were added to the optional paid GenAI endpoint. |
 | Accessibility and zero-assumption teaching | Pass with minor gaps | Arrow-key, Home, and End navigation plus tab/tabpanel linkage were added to interactive tab widgets. |
 | Website, reports, and code consistency | Partial | Counts were normalized to the executable suite. A fourth invalid exploratory run is now explicitly documented as excluded. |
@@ -91,7 +91,7 @@ Fable reported 36 tests based on static counting and could not execute them. Imm
 
 The following checks are the authoritative executable evidence for this sprint:
 
-- `make test`: 42 Python tests.
+- `make test`: 43 Python tests.
 - `npm test -- --run`: 6 web interaction tests.
 - `npm run build`: schema/checksum validation, TypeScript, Vite build, and bundle/data budgets.
 - `node --check api/project-guide.js`.
