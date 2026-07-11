@@ -61,6 +61,7 @@ describe("portfolio visitor flow", () => {
     fireEvent.change(retentionFloor, { target: { value: "0.72" } });
     expect(screen.getByText("At least one numeric gate failed")).toBeInTheDocument();
     expect(screen.getByText(/thresholds are illustrative—not a validated safety standard/i)).toBeInTheDocument();
+    expect(screen.getByText("Open the deterministic review brief")).toBeInTheDocument();
   });
 
   it("shows real dataset examples and answers beginner questions offline", async () => {

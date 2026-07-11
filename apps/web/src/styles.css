@@ -367,6 +367,10 @@ tbody th { font-size: .8rem; }
 .release-checklist span { margin-top: .1rem; color: var(--muted); font-size: .7rem; line-height: 1.45; }
 .release-checklist small { margin-top: .2rem; color: #bde6cd; font: .58rem "DM Mono", monospace; }
 .release-checklist .pass b { color: var(--cyan); }
+.release-brief { grid-column: 1 / -1; padding: 1rem 1.25rem; background: #0d211a; }
+.release-brief summary { cursor: pointer; color: var(--acid); font: .68rem "DM Mono", monospace; }
+.release-brief p { max-width: 920px; margin: .75rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+.release-brief pre { margin-bottom: 0; white-space: pre-wrap; }
 .release-note { grid-column: 1 / -1; margin: 0; padding: 1rem 1.25rem; background: #020806; }
 .release-note strong { color: #d9e8df; }
 .engineering-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }

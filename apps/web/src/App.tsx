@@ -669,6 +669,27 @@ function ReleaseGate({ benchmark }: { benchmark: BenchmarkArtifact }) {
   ];
   const numericGatesPass = gates.slice(0, 3).every((gate) => gate.passed);
   const approvalReady = gates.every((gate) => gate.passed);
+  const reviewOutcome = approvalReady ? "Eligible for recorded approval" : "Human review required";
+  const reviewBrief = [
+    "REPRESENTATION DRIFT LAB — RELEASE REVIEW BRIEF",
+    `Outcome: ${reviewOutcome}`,
+    `Evidence status: ${benchmark.evidence_status}`,
+    `Run: ${benchmark.run_id}`,
+    `Configuration: ${benchmark.config_hash}`,
+    `Checkpoint: step ${final.step}`,
+    "",
+    "Measured evidence",
+    `- Retained accuracy: ${pct(retainedAccuracy)}`,
+    `- Retained CKA loss: ${fixed(ckaLoss, 4)}`,
+    `- Independent runs: ${benchmark.experiment.run_count}`,
+    "",
+    "Gate outcomes",
+    ...gates.map((gate) => `- ${gate.label}: ${gate.passed ? "PASS" : "HOLD"} (${gate.observed}; ${gate.detail})`),
+    "",
+    approvalReady
+      ? "Next action: a named owner must record the deployment scope, monitoring plan, and rollback conditions."
+      : "Next action: retain human review; do not release automatically. Inspect scope, collect the missing evidence, and rerun the gate.",
+  ].join("\n");
   return (
     <section className="release-gate" aria-labelledby="release-gate-title">
       <div className="release-gate-copy">
@@ -692,6 +713,11 @@ function ReleaseGate({ benchmark }: { benchmark: BenchmarkArtifact }) {
           {gates.map((gate) => <li key={gate.label} className={gate.passed ? "pass" : "hold"}><i aria-hidden="true">{gate.passed ? "✓" : "!"}</i><div><strong>{gate.label}</strong><span>{gate.detail}</span><small>{gate.observed}</small></div><b>{gate.passed ? "pass" : "hold"}</b></li>)}
         </ul>
       </div>
+      <details className="release-brief">
+        <summary>Open the deterministic review brief</summary>
+        <p>This is the record a reviewer would inspect before recording a decision. It updates with the two illustrative thresholds above and deliberately omits a fake approval timestamp or signature.</p>
+        <pre aria-label="Deterministic release review brief">{reviewBrief}</pre>
+      </details>
       <p className="release-note"><strong>What this demonstrates:</strong> a deployment decision needs more than one accuracy number. It combines performance, internal change, repeatability, evidence quality, and accountable human review. The thresholds are illustrative—not a validated safety standard.</p>
     </section>
   );
