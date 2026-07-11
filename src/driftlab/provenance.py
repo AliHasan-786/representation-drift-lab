@@ -12,7 +12,7 @@ import torch
 
 
 ARTIFACT_SCHEMA_VERSION = "1.0.0"
-GENERATED_ARTIFACT_PREFIXES = ("artifacts/", "public/data/", "output/")
+GENERATED_ARTIFACT_PREFIXES = ("artifacts/", "public/data/", "public/report/", "output/")
 
 
 def utc_now() -> str:
