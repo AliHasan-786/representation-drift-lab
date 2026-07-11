@@ -105,6 +105,7 @@ def run_clip_benchmark_suite(
     run_artifacts: list[dict[str, Any]] = []
     run_sources: list[dict[str, Any]] = []
     started_at = utc_now()
+    suite_git = git_revision()
 
     for seed in seeds:
         config = replace(base, seed=seed)
@@ -156,7 +157,7 @@ def run_clip_benchmark_suite(
         "status": "complete",
         "config_hash": config_hash,
         "config": suite_identity,
-        "git": git_revision(),
+        "git": suite_git,
         "environment": environment_snapshot(),
         "started_at": started_at,
         "completed_at": utc_now(),

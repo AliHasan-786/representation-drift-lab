@@ -469,6 +469,7 @@ def run_clip_reproduction(
     web_output: str | Path = "public/data/reproduction-local.json",
 ) -> dict[str, Path]:
     invocation_started_at = utc_now()
+    source_git = git_revision()
     random.seed(config.seed)
     np.random.seed(config.seed)
     torch.manual_seed(config.seed)
@@ -748,7 +749,7 @@ def run_clip_reproduction(
         "status": "complete",
         "config_hash": config.config_hash,
         "config": config.scientific_payload(),
-        "git": git_revision(),
+        "git": source_git,
         "environment": environment_snapshot(),
         "model": {
             "requested_revision": config.model["revision"],

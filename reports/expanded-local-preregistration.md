@@ -22,6 +22,10 @@ This expanded run increases the fixed local evidence without changing the model 
 
 The exact executable definitions are `configs/reproduction-expanded-local.yaml` and `configs/reproduction-expanded-local-multiseed.yaml`. Their hashes, selected rows, model revision, environment, and output checksums will be published with the run.
 
+## Provenance correction before publication
+
+An initial execution created output files before its manifest captured Git status, causing the manifest to report a dirty tree even though the protocol was committed beforehand. That artifact is retained locally for debugging but is not used as public evidence. Before the publishable rerun, provenance capture was moved to invocation start and generated-output paths were excluded from the source-dirty check. The rerun keeps every scientific setting above unchanged; only its output directory changes so it cannot overwrite the diagnostic artifact.
+
 ## Questions and interpretation limits
 
 This run asks whether the direction of the original local story—new-task adaptation, retained-task change, and representational movement—survives a larger fixed local sample. It does **not** establish a broad model ranking, validate a deployment threshold, or test a second model family. Any comparison remains `expanded-local-preliminary` until the research-roadmap domain and confirmation gates are met.

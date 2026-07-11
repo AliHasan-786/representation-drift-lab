@@ -12,10 +12,17 @@ import torch
 
 
 ARTIFACT_SCHEMA_VERSION = "1.0.0"
+GENERATED_ARTIFACT_PREFIXES = ("artifacts/", "public/data/", "output/")
 
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def is_generated_artifact_path(path: str) -> bool:
+    """Identify output paths that must not make source provenance look dirty."""
+    normalized = path.replace("\\", "/").lstrip("./")
+    return normalized.startswith(GENERATED_ARTIFACT_PREFIXES)
 
 
 def git_revision(workdir: str | Path = ".") -> dict[str, Any]:
@@ -26,7 +33,12 @@ def git_revision(workdir: str | Path = ".") -> dict[str, Any]:
         return completed.stdout.strip() if completed.returncode == 0 else ""
 
     commit = run("rev-parse", "HEAD") or "uncommitted"
-    dirty = bool(run("status", "--porcelain"))
+    status_lines = run("status", "--porcelain", "--untracked-files=all").splitlines()
+    dirty = any(
+        not is_generated_artifact_path(line[3:].split(" -> ")[-1])
+        for line in status_lines
+        if len(line) >= 4
+    )
     return {"commit": commit, "dirty": dirty}
 
 
