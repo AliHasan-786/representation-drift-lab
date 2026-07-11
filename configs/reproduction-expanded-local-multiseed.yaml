@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-expanded-local-multiseed
+base_config: reproduction-expanded-local.yaml
+seeds: [101, 102, 103]
+web_output: public/data/benchmark-expanded-local.json
