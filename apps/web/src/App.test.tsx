@@ -53,6 +53,16 @@ describe("portfolio visitor flow", () => {
     expect(reportLinks.some((link) => link.getAttribute("href") === "/report/original-course-report.pdf")).toBe(true);
   });
 
+  it("keeps preliminary evidence behind a human release review gate", async () => {
+    render(<App />);
+    expect(await screen.findByRole("heading", { name: /score is evidence—not permission to ship/i })).toBeInTheDocument();
+    expect(screen.getByText("Needs human review")).toBeInTheDocument();
+    const retentionFloor = screen.getByLabelText(/Minimum retained accuracy/i);
+    fireEvent.change(retentionFloor, { target: { value: "0.72" } });
+    expect(screen.getByText("At least one numeric gate failed")).toBeInTheDocument();
+    expect(screen.getByText(/thresholds are illustrative—not a validated safety standard/i)).toBeInTheDocument();
+  });
+
   it("shows real dataset examples and answers beginner questions offline", async () => {
     render(<App />);
     expect((await screen.findAllByAltText(/real Food-101 example/i)).length).toBeGreaterThanOrEqual(4);

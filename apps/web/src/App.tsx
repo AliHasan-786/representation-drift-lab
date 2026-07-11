@@ -635,6 +635,68 @@ function Provenance({ benchmark, title }: { benchmark: BenchmarkArtifact; title:
   );
 }
 
+function ReleaseGate({ benchmark }: { benchmark: BenchmarkArtifact }) {
+  const [minimumRetention, setMinimumRetention] = useState(0.7);
+  const [maximumDrift, setMaximumDrift] = useState(0.02);
+  const final = benchmark.checkpoints.at(-1)!;
+  const retainedAccuracy = final.retained.top1_accuracy.mean;
+  const ckaLoss = 1 - final.geometry.retained.linear_cka.mean;
+  const gates = [
+    {
+      label: "Memory floor",
+      detail: `Retained accuracy must be at least ${pct(minimumRetention)}.`,
+      observed: `${pct(retainedAccuracy)} measured`,
+      passed: retainedAccuracy + 1e-9 >= minimumRetention,
+    },
+    {
+      label: "Change limit",
+      detail: `Internal CKA loss must be no more than ${fixed(maximumDrift, 3)}.`,
+      observed: `${fixed(ckaLoss, 4)} measured`,
+      passed: ckaLoss <= maximumDrift,
+    },
+    {
+      label: "Repeatability floor",
+      detail: "At least three independent seeds are required.",
+      observed: `${benchmark.experiment.run_count} independent runs`,
+      passed: benchmark.experiment.run_count >= 3,
+    },
+    {
+      label: "Evidence maturity",
+      detail: "Only confirmed, preregistered evidence may clear an update for use.",
+      observed: benchmark.evidence_status.replaceAll("-", " "),
+      passed: !benchmark.evidence_status.includes("preliminary"),
+    },
+  ];
+  const numericGatesPass = gates.slice(0, 3).every((gate) => gate.passed);
+  const approvalReady = gates.every((gate) => gate.passed);
+  return (
+    <section className="release-gate" aria-labelledby="release-gate-title">
+      <div className="release-gate-copy">
+        <p className="eyebrow">Human-in-the-loop deployment guardrail</p>
+        <h3 id="release-gate-title">A score is evidence—not permission to ship</h3>
+        <p>Try two hypothetical thresholds. The calculator evaluates them against a real saved checkpoint, but it cannot approve a release. The evidence is still preliminary, so this update remains in human review even if the numeric checks pass.</p>
+        <div className="release-controls">
+          <label htmlFor="retention-floor">Minimum retained accuracy <strong>{pct(minimumRetention)}</strong></label>
+          <input id="retention-floor" type="range" min="0.6" max="0.8" step="0.01" value={minimumRetention} onChange={(event) => setMinimumRetention(Number(event.target.value))} />
+          <label htmlFor="drift-ceiling">Maximum CKA loss <strong>{fixed(maximumDrift, 3)}</strong></label>
+          <input id="drift-ceiling" type="range" min="0.005" max="0.04" step="0.001" value={maximumDrift} onChange={(event) => setMaximumDrift(Number(event.target.value))} />
+        </div>
+      </div>
+      <div className="release-gate-panel" aria-live="polite">
+        <div className={`release-verdict ${approvalReady ? "approved" : "review"}`}>
+          <span>{approvalReady ? "Eligible for recorded approval" : "Needs human review"}</span>
+          <strong>{approvalReady ? "All release gates passed" : numericGatesPass ? "Evidence is not mature enough" : "At least one numeric gate failed"}</strong>
+          <p>{approvalReady ? "A designated owner would still record a release decision and monitoring plan." : "No automatic release: inspect the run, decide whether the thresholds make sense for the intended use, and collect stronger evidence."}</p>
+        </div>
+        <ul className="release-checklist" aria-label="Release gate checks">
+          {gates.map((gate) => <li key={gate.label} className={gate.passed ? "pass" : "hold"}><i aria-hidden="true">{gate.passed ? "✓" : "!"}</i><div><strong>{gate.label}</strong><span>{gate.detail}</span><small>{gate.observed}</small></div><b>{gate.passed ? "pass" : "hold"}</b></li>)}
+        </ul>
+      </div>
+      <p className="release-note"><strong>What this demonstrates:</strong> a deployment decision needs more than one accuracy number. It combines performance, internal change, repeatability, evidence quality, and accountable human review. The thresholds are illustrative—not a validated safety standard.</p>
+    </section>
+  );
+}
+
 function App() {
   const [benchmark, setBenchmark] = useState<BenchmarkArtifact | null>(null);
   const [earlyWarning, setEarlyWarning] = useState<EarlyWarningArtifact | null>(null);
@@ -875,6 +937,7 @@ function App() {
 
         <section className="section dark" id="reproduce">
           <div className="section-heading"><div><p className="eyebrow">08 · Engineering and reproducibility</p><h2>Evidence that can be rerun</h2></div><p>This is a research system, not only a notebook. Each setup gets an identity; interrupted runs can resume safely; dataset selections are recorded; outputs can regenerate metrics without retraining; and public files are checked against fingerprints that expose accidental changes.</p></div>
+          <ReleaseGate benchmark={benchmark} />
           <div className="engineering-grid">
             <article><strong>41</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
             <article><strong>294,912</strong><span>trainable parameters</span><p>All non-LoRA parameters are frozen and the invariant is checked at runtime.</p></article>
