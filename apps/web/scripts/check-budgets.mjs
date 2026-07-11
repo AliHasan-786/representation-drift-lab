@@ -30,6 +30,7 @@ const budgets = [
   ["JavaScript gzip", await gzipTotal(".js"), 180 * 1024],
   ["CSS gzip", await gzipTotal(".css"), 35 * 1024],
   ["initial benchmark data", (await stat(resolve(dist, "data/benchmark-local.json"))).size, 250 * 1024],
+  ["expanded benchmark data", (await stat(resolve(dist, "data/benchmark-expanded-local.json"))).size, 250 * 1024],
   ["early-warning data", (await stat(resolve(dist, "data/early-warning-methodology.json"))).size, 20 * 1024],
   ["method comparison data", (await stat(resolve(dist, "data/method-comparison-local.json"))).size, 60 * 1024],
   ["interpolation data", (await stat(resolve(dist, "data/interpolation-local.json"))).size, 30 * 1024],

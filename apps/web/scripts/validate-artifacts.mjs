@@ -32,8 +32,9 @@ const methods = await readJson("data/method-comparison-local.json");
 const interpolation = await readJson("data/interpolation-local.json");
 const domains = await readJson("data/domain-comparison-local.json");
 const gallery = await readJson("data/dataset-gallery.json");
+const expanded = await readJson("data/benchmark-expanded-local.json");
 
-for (const artifact of [benchmark, detail, warning, methods, interpolation, domains]) {
+for (const artifact of [benchmark, detail, warning, methods, interpolation, domains, expanded]) {
   if (artifact.schema_version !== "1.0.0") throw new Error("unsupported artifact schema");
   if (!/^[a-f0-9]{16}$/.test(artifact.config_hash)) throw new Error("invalid config hash");
   await validateSource(artifact);
@@ -53,6 +54,15 @@ for (const checkpoint of benchmark.checkpoints) {
       throw new Error(`invalid ${role} uncertainty at step ${checkpoint.step}`);
     }
   }
+}
+if (expanded.experiment.run_count < 3 || expanded.experiment.seeds.length < 3 || expanded.evidence_status !== "local-multiseed-preliminary") {
+  throw new Error("expanded benchmark lost its multi-seed preliminary status");
+}
+for (const run of expanded.runs) {
+  await validateSource({ run_id: run.run_id, source_manifest: run.source_manifest });
+}
+if (expanded.checkpoints.at(-1).retained.accuracy_change.mean >= 0) {
+  throw new Error("expanded benchmark no longer records the observed retained-score decline");
 }
 if (warning.evidence_status !== "synthetic-methodology-validation") {
   throw new Error("early-warning artifact lost its synthetic evidence label");
@@ -85,4 +95,4 @@ for (const dataset of gallery.datasets) {
 }
 await readFile(resolve(publicRoot, "report/original-course-report.pdf"));
 
-console.log(`validated ${benchmark.run_id}, ${detail.run_id}, ${warning.artifact_id}, ${methods.run_id}, ${interpolation.run_id}, ${domains.run_id}, the dataset gallery, and the original report`);
+console.log(`validated ${benchmark.run_id}, ${expanded.run_id}, ${detail.run_id}, ${warning.artifact_id}, ${methods.run_id}, ${interpolation.run_id}, ${domains.run_id}, the dataset gallery, and the original report`);

@@ -366,6 +366,11 @@ def _web_payload(
     public_manifest_path: Path,
     public_manifest_sha256: str,
 ) -> dict[str, Any]:
+    public_root = Path("public").resolve()
+    try:
+        public_url = "/" + public_manifest_path.resolve().relative_to(public_root).as_posix()
+    except ValueError as error:
+        raise ValueError("public manifest must be written below public/") from error
     return {
         "schema_version": ARTIFACT_SCHEMA_VERSION,
         "run_id": config.run_id,
@@ -373,7 +378,7 @@ def _web_payload(
         "evidence_status": "local-reproduction-preliminary",
         "source_manifest": {
             "run_id": config.run_id,
-            "public_path": f"/data/manifests/{public_manifest_path.name}",
+            "public_path": public_url,
             "sha256": public_manifest_sha256,
         },
         "experiment": {

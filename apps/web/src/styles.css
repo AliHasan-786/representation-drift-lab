@@ -332,6 +332,16 @@ tbody th { font-size: .8rem; }
 .domain-bar-track i.positive { background: var(--cyan); }
 .domain-bar-track i.negative { background: var(--orange); }
 .domain-foot { display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.expanded-validation { margin-top: 1rem; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--line); background: #10251e; }
+.expanded-validation h3 { max-width: 760px; margin: .55rem 0 1rem; font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.08; letter-spacing: -.05em; }
+.expanded-validation > div > p:not(.eyebrow), .expanded-read p { color: var(--muted); line-height: 1.7; }
+.expanded-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 1.5rem; background: var(--line); }
+.expanded-metrics article { padding: 1.2rem; background: #071612; }
+.expanded-metrics span, .expanded-metrics small { display: block; color: var(--muted); font: .63rem/1.45 "DM Mono", monospace; }
+.expanded-metrics strong { display: block; margin: .35rem 0; color: var(--acid); font-size: 1.55rem; letter-spacing: -.04em; }
+.expanded-read { display: grid; grid-template-columns: 150px 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.expanded-read p { margin: 0; font-size: .82rem; }
+.expanded-error { margin-top: 1rem; padding: 1rem; color: #512313; background: #f9e6dc; }
 
 .warning-banner { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; margin-bottom: 1rem; padding: 1rem 1.2rem; border-left: 4px solid var(--orange); background: rgba(255,138,76,.08); }
 .warning-banner strong { color: var(--orange); font: .7rem "DM Mono", monospace; text-transform: uppercase; }
@@ -467,6 +477,7 @@ footer p { margin: 0; }
   .metric-primer { grid-template-columns: repeat(2, 1fr); }
   .failure-grid { grid-template-columns: 1fr; }
   .concept-grid, .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .expanded-metrics { grid-template-columns: 1fr; }
   .clip-copy, .lora-explainer, .evaluation-firewall, .work-walkthrough, .project-guide, .report-library { grid-template-columns: 1fr; }
   .code-audit { grid-template-columns: 1fr 1fr; }
   .audit-tabs { grid-column: 1 / -1; grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -505,6 +516,7 @@ footer p { margin: 0; }
   .work-step-detail { min-height: 360px; }
   .dataset-images { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dataset-relationship { grid-template-columns: 1fr; padding: 1rem; }
+  .expanded-read { grid-template-columns: 1fr; }
   .chart-decoder { grid-template-columns: 1fr; }
   .decoder-tabs { grid-column: auto; grid-template-columns: repeat(2, 1fr); }
   .decoder-visual { min-height: 320px; border-right: 0; border-bottom: 1px solid var(--line); }

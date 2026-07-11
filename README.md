@@ -12,6 +12,7 @@ The original 2025 project was completed by Sahil Mhatre, Ali Hasan, and Corey Ch
 - Three domain pairs pass the current publication gate. A fourth exploratory Pets-to-EuroSAT artifact is preserved in `reports/excluded-runs.md` but excluded because its retained baseline was 0% in every seed.
 - Configuration, provenance, metric, artifact, resume, and CPU smoke foundations implemented.
 - A traceable CLIP/LoRA reproduction tier has completed against pinned Food-101 and CIFAR-10 revisions with final, layerwise, classwise, and cross-modal diagnostics.
+- A preregistered expanded Food-101 → CIFAR-10 confirmation completed across three new seeds, using 8 classes × 8 training images, 8 held-out evaluation images per class, a 100-image retained probe, and 50 updates. It reproduced the local adaptation/retention trade-off and remains explicitly preliminary; see `reports/expanded-local-preregistration.md`.
 - Nine local adaptation/mitigation methods have completed across three independent seeds with 95% Student-t intervals, spanning frozen probing, full fine-tuning, LP-FT, adapted WiSE-FT, LoRA, distillation, selective adaptation, and gradient projection.
 - The standalone portfolio application is implemented, tested responsively, artifact-gated, and production-built. It now includes a zero-assumption explainer, real examples from all six experiment datasets, an interactive output-reading tutorial, the exact original course report, and a grounded project Q&A guide with an offline fallback. Its current evidence remains explicitly preliminary while broader model/domain experiments continue.
 
@@ -61,7 +62,7 @@ Generated research outputs remain under ignored `artifacts/`. The reviewed smoke
 make test
 ```
 
-The Python suite contains 41 tests covering configuration identity, deterministic and disjoint splits, revision-aware caching, duplicate-caption-safe supervision, task/geometry/layerwise metrics, rank-deficient covariance, gradient projection, post-hoc interpolation, weight-space ensembling, independent-run aggregation, held-out early warning, smoke execution, resume safety, and provenance. The web suite covers core loading, checkpoint synchronization, lazy detail exploration, view switching, and failure recovery.
+The Python suite contains 42 tests covering configuration identity, deterministic and disjoint splits, revision-aware caching, duplicate-caption-safe supervision, task/geometry/layerwise metrics, rank-deficient covariance, gradient projection, post-hoc interpolation, weight-space ensembling, independent-run aggregation, held-out early warning, smoke execution, resume safety, provenance, and source-versus-generated-output capture. The web suite covers core loading, checkpoint synchronization, lazy detail exploration, view switching, and failure recovery.
 
 ## Commands
 

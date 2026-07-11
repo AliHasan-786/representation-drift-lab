@@ -7,6 +7,7 @@ import methods from "../../../public/data/method-comparison-local.json";
 import interpolation from "../../../public/data/interpolation-local.json";
 import domains from "../../../public/data/domain-comparison-local.json";
 import gallery from "../../../public/data/dataset-gallery.json";
+import expanded from "../../../public/data/benchmark-expanded-local.json";
 import App from "./App";
 
 const response = (payload: unknown) =>
@@ -22,6 +23,7 @@ describe("portfolio visitor flow", () => {
       if (url.includes("interpolation-local")) return response(interpolation);
       if (url.includes("domain-comparison")) return response(domains);
       if (url.includes("dataset-gallery")) return response(gallery);
+      if (url.includes("benchmark-expanded-local")) return response(expanded);
       if (url.includes("reproduction-local")) return response(detail);
       return Promise.resolve({ ok: false } as Response);
     }));
@@ -62,6 +64,14 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText("At least one numeric gate failed")).toBeInTheDocument();
     expect(screen.getByText(/thresholds are illustrative—not a validated safety standard/i)).toBeInTheDocument();
     expect(screen.getByText("Open the deterministic review brief")).toBeInTheDocument();
+  });
+
+  it("loads the preregistered expanded confirmation check only on request", async () => {
+    render(<App />);
+    expect(await screen.findByRole("button", { name: "Load expanded confirmation" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Load expanded confirmation" }));
+    expect(await screen.findByRole("heading", { name: /larger local probe reproduced the trade-off/i })).toBeInTheDocument();
+    expect(screen.getByText(/one backbone, one domain pair, and three seeds/i)).toBeInTheDocument();
   });
 
   it("shows real dataset examples and answers beginner questions offline", async () => {

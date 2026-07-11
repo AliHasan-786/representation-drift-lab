@@ -218,7 +218,7 @@ function CodeArchaeology() {
       label: "What I rebuilt",
       title: "The extension converts useful ideas into claims that can be checked",
       body: "The new system pins model and dataset revisions, records exact rows and seeds, rebuilds adapter topology before loading, uses same-class multi-positive supervision, separates performance from geometry, fits visual projections once, reports uncertainty, tests held-out warning logic, and rejects artifacts whose fingerprints change.",
-      evidence: "41 Python checks · 3 independent seeds · 9 interventions · 3 published dataset pairs",
+      evidence: "42 Python checks · 3 independent seeds · 9 interventions · 3 published dataset pairs",
       status: "measured extension",
     },
   ];
@@ -639,6 +639,28 @@ function DomainStressTest({ artifact }: { artifact: DomainArtifact }) {
   );
 }
 
+function ExpandedValidation({ artifact }: { artifact: BenchmarkArtifact }) {
+  const baseline = artifact.checkpoints[0];
+  const final = artifact.checkpoints.at(-1)!;
+  const ckaLoss = 1 - final.geometry.retained.linear_cka.mean;
+  return (
+    <div className="expanded-validation">
+      <div>
+        <p className="eyebrow">Expanded confirmation check · 3 new seeds</p>
+        <h3>The larger local probe reproduced the trade-off—not a universal rule</h3>
+        <p>This preregistered check kept the same CLIP model and LoRA adapter, while increasing the Food-101 sample from 6 classes × 4 training images to 8 × 8, the retained CIFAR-10 check from 30 to 100 images, and the schedule from 20 to 50 updates.</p>
+      </div>
+      <div className="expanded-metrics">
+        <article><span>New-task change</span><strong>+{pct(final.adaptation.accuracy_change.mean)}</strong><small>95% CI {pct(final.adaptation.accuracy_change.ci_low)}–{pct(final.adaptation.accuracy_change.ci_high)}</small></article>
+        <article><span>Retained-task change</span><strong>{pct(final.retained.accuracy_change.mean)}</strong><small>95% CI {pct(final.retained.accuracy_change.ci_low)}–{pct(final.retained.accuracy_change.ci_high)}</small></article>
+        <article><span>Internal change</span><strong>{fixed(ckaLoss, 4)}</strong><small>1 − CKA at step {final.step}</small></article>
+      </div>
+      <div className="expanded-read"><strong>How to read it:</strong><p>At step {final.step}, adaptation rose from {pct(baseline.adaptation.top1_accuracy.mean)} to {pct(final.adaptation.top1_accuracy.mean)} while retained accuracy fell from {pct(baseline.retained.top1_accuracy.mean)} to {pct(final.retained.top1_accuracy.mean)}. That supports the original local forgetting pattern under a larger fixed probe, but one backbone, one domain pair, and three seeds still do not establish a general law.</p></div>
+      <Provenance benchmark={artifact} title="the expanded confirmation check" />
+    </div>
+  );
+}
+
 function Provenance({ benchmark, title }: { benchmark: BenchmarkArtifact; title: string }) {
   return (
     <details className="provenance">
@@ -749,11 +771,14 @@ function App() {
   const [methods, setMethods] = useState<MethodArtifact | null>(null);
   const [interpolation, setInterpolation] = useState<InterpolationArtifact | null>(null);
   const [domains, setDomains] = useState<DomainArtifact | null>(null);
+  const [expandedValidation, setExpandedValidation] = useState<BenchmarkArtifact | null>(null);
   const [datasetGallery, setDatasetGallery] = useState<DatasetGalleryArtifact | null>(null);
   const [detail, setDetail] = useState<DetailedArtifact | null>(null);
   const [selected, setSelected] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [expandedLoading, setExpandedLoading] = useState(false);
+  const [expandedError, setExpandedError] = useState<string | null>(null);
   const [driftThreshold, setDriftThreshold] = useState(0.008);
 
   const loadCore = () => {
@@ -807,6 +832,19 @@ function App() {
       .then(setDetail)
       .catch((reason: Error) => setError(reason.message))
       .finally(() => setDetailLoading(false));
+  };
+
+  const loadExpandedValidation = () => {
+    setExpandedLoading(true);
+    setExpandedError(null);
+    fetch(staticAsset("data/benchmark-expanded-local.json"))
+      .then((response) => {
+        if (!response.ok) throw new Error("Expanded validation artifact unavailable");
+        return response.json();
+      })
+      .then(setExpandedValidation)
+      .catch((reason: Error) => setExpandedError(reason.message))
+      .finally(() => setExpandedLoading(false));
   };
 
   const stoppingCheckpoint = useMemo(() => {
@@ -961,6 +999,9 @@ function App() {
           <div className="section-heading"><div><p className="eyebrow">06 · Stress-test the story</p><h2>Does the same pattern hold on different kinds of images?</h2></div><p>I repeated the same LoRA adaptation protocol across the three dataset pairs shown earlier. These small three-seed probes do not establish universal behavior; they are designed to find where an appealing explanation breaks.</p></div>
           <DomainStressTest artifact={domains} />
           <div className="plain-callout"><strong>What changed after adding more domains:</strong><p>the original “drift predicts forgetting” story became less convincing. Across these scenarios, similar concepts behaved differently, so drift is best treated as diagnostic evidence—not a verdict.</p></div>
+          {!expandedValidation && <div className="lazy-panel expanded-loader"><div><p className="eyebrow">Expanded fixed-split validation · 204 KB on demand</p><h3>Check the larger Food-101 → CIFAR-10 probe</h3><p>The original local run is intentionally small. This preregistered three-seed confirmation check increases both the adaptation and retained evaluation samples without changing the model family or adapter method.</p></div><button onClick={loadExpandedValidation} disabled={expandedLoading}>{expandedLoading ? "Loading…" : "Load expanded confirmation"}</button></div>}
+          {expandedError && <p className="expanded-error" role="status">The expanded artifact could not load: {expandedError}</p>}
+          {expandedValidation && <ExpandedValidation artifact={expandedValidation} />}
           <details className="provenance"><summary>Inspect evidence behind the domain stress test</summary><dl><div><dt>Evidence status</dt><dd>{domains.evidence_status}</dd></div><div><dt>Run</dt><dd><code>{domains.run_id}</code></dd></div><div><dt>Config</dt><dd><code>{domains.config_hash}</code></dd></div><div><dt>Scenarios</dt><dd>{domains.scenarios.length} × 3 seeds</dd></div><div><dt>Publication caveat</dt><dd>{domains.publication_caveat}</dd></div><div><dt>Manifest SHA-256</dt><dd><code>{domains.source_manifest.sha256}</code></dd></div></dl></details>
         </section>
 
@@ -985,7 +1026,7 @@ function App() {
           <div className="section-heading"><div><p className="eyebrow">08 · Engineering and reproducibility</p><h2>Evidence that can be rerun</h2></div><p>This is a research system, not only a notebook. Each setup gets an identity; interrupted runs can resume safely; dataset selections are recorded; outputs can regenerate metrics without retraining; and public files are checked against fingerprints that expose accidental changes.</p></div>
           <ReleaseGate benchmark={benchmark} />
           <div className="engineering-grid">
-            <article><strong>41</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
+            <article><strong>42</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
             <article><strong>294,912</strong><span>trainable parameters</span><p>All non-LoRA parameters are frozen and the invariant is checked at runtime.</p></article>
             <article><strong>Byte-stable</strong><span>metric regeneration</span><p>Saved embeddings reproduce the same public derivative without retraining.</p></article>
           </div>

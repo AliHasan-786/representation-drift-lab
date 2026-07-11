@@ -298,8 +298,10 @@ def build_pdf() -> None:
     interpolation = read_json("public/data/interpolation-local.json")
     warning = read_json("public/data/early-warning-methodology.json")
     benchmark = read_json("public/data/benchmark-local.json")
+    expanded = read_json("public/data/benchmark-expanded-local.json")
     methods = method_data["methods"]
     scenarios = domain_data["scenarios"]
+    expanded_final = expanded["checkpoints"][-1]
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     document = SimpleDocTemplate(
@@ -331,7 +333,7 @@ def build_pdf() -> None:
                 [
                     ("Measured methods", "9", "Each run across 3 independent seeds"),
                     ("Domain scenarios", "3", "Food, satellite, pet, object, and digit data"),
-                    ("Automated checks", "41", "Research, artifact, and web tests"),
+                    ("Automated checks", "42", "Research, artifact, and web tests"),
                 ]
             ),
             Spacer(1, 0.35 * inch),
@@ -459,6 +461,11 @@ def build_pdf() -> None:
             paragraph("Scientific controls", STYLES["h2"]),
             paragraph(
                 "All same-class captions in a batch are positives, avoiding false negatives from repeated labels. Dimensionality reduction is fit once on baseline embeddings and reused, so plotted lines are real paired movement rather than independent t-SNE layouts. Frechet-style distance uses baseline-fixed PCA and covariance regularization. Undefined statistics, such as CKA on constant text prototypes, are published as null with an explicit definition flag.",
+                STYLES["body"],
+            ),
+            paragraph("Expanded confirmation check", STYLES["h2"]),
+            paragraph(
+                f"A preregistered Food-101 to CIFAR-10 confirmation uses three new seeds, 8 classes with 8 train and 8 held-out evaluation images per class, a 100-image retained probe, and 50 updates. At step {expanded_final['step']}, mean adaptation changed by +{pct(expanded_final['adaptation']['accuracy_change']['mean'])}, retained accuracy changed by {pct(expanded_final['retained']['accuracy_change']['mean'])}, and retained CKA loss was {1 - expanded_final['geometry']['retained']['linear_cka']['mean']:.4f}. This reproduces the local trade-off under a larger fixed probe; it remains local multi-seed preliminary evidence, not a general model claim.",
                 STYLES["body"],
             ),
             paragraph("The evidence ladder", STYLES["h2"]),
@@ -612,7 +619,7 @@ def build_pdf() -> None:
                     ["Model", "Resolved model commit, trainable-parameter invariants, strategy fidelity labels, and environment versions."],
                     ["Resume", "Checkpointed LoRA state, optimizer state, and random-generator state; complete classification runs are idempotent."],
                     ["Regeneration", "Metrics and web derivatives rebuild deterministically from saved outputs without retraining."],
-                    ["Validation", "41 Python checks, web interaction tests, TypeScript, manifest checks, responsive QA, and production budgets."],
+                    ["Validation", "42 Python checks, web interaction tests, TypeScript, manifest checks, responsive QA, and production budgets."],
                     ["Deployment", "Core charts use precomputed artifacts; no GPU or inference service is required for the public experience."],
                 ],
                 colWidths=[1.2 * inch, 5.7 * inch],
