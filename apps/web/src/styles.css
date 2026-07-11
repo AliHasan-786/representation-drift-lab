@@ -396,6 +396,7 @@ pre { overflow-x: auto; margin: 1rem 0 0; padding: 1.5rem; border: 1px solid var
 .report-status { display: inline-block; padding: .4rem .55rem; font: .62rem "DM Mono", monospace; text-transform: uppercase; }
 .report-status.historical { color: #6b4128; background: #f3dfd3; }
 .report-status.extension { color: #126452; background: #d9e8df; }
+.method-resource { display: block; margin-top: .3rem; color: #126452; font: .6rem "DM Mono", monospace; line-height: 1.45; }
 .report-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.3rem; }
 .reports-section .button.primary { color: white; border-color: #126452; background: #126452; }
 .reports-section .button.ghost { color: #126452; border-color: rgba(16,32,25,.25); }

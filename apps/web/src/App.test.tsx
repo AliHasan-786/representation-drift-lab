@@ -46,6 +46,7 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText(/Locked final check/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /What are Food-101, CIFAR/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Does the same pattern hold/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/separate memory-reference set/i)).toHaveLength(2);
     expect(screen.queryByRole("button", { name: /Technical depth/i })).not.toBeInTheDocument();
     const reportLinks = screen.getAllByRole("link", { name: /report/i });
     expect(reportLinks.some((link) => link.getAttribute("href") === "/report/representation-drift-lab-report.pdf")).toBe(true);

@@ -12,10 +12,17 @@ import type {
   Interval,
   InterpolationArtifact,
   MethodArtifact,
+  MethodRecord,
 } from "./types";
 
 const pct = (value: number, digits = 1) => `${(value * 100).toFixed(digits)}%`;
 const fixed = (value: number, digits = 3) => value.toFixed(digits);
+const usesAdapterPath = (method: MethodRecord) => [
+  "standard-lora",
+  "zscl-inspired-distillation",
+  "retention-gradient-nullspace",
+  "selective-v-lora",
+].includes(method.id);
 
 function metric(value: Interval) {
   return (
@@ -831,7 +838,7 @@ function App() {
             <table><thead><tr><th>Method</th><th>Adapted accuracy</th><th>Retained accuracy</th><th>CKA loss</th><th>Trainable params</th><th>Train cost</th><th>Inference cost</th><th>Status</th></tr></thead>
               <tbody>
                 <tr><th>Frozen zero-shot</th><td>{pct(benchmark.checkpoints[0].adaptation.top1_accuracy.mean)}</td><td>{pct(benchmark.checkpoints[0].retained.top1_accuracy.mean)}</td><td>0</td><td>0</td><td>evaluation only</td><td>1× encoder</td><td><span className="tag complete">measured</span></td></tr>
-                {methods.methods.map((method) => <tr key={method.id}><th>{method.label}<small className="method-fidelity">{method.fidelity}</small></th><td>{pct(method.metrics.final_adaptation_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_adaptation_accuracy.ci_low)}–{pct(method.metrics.final_adaptation_accuracy.ci_high)}</small></td><td>{pct(method.metrics.final_retained_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_retained_accuracy.ci_low)}–{pct(method.metrics.final_retained_accuracy.ci_high)}</small></td><td>{fixed(method.metrics.retained_cka_loss.mean, 4)}</td><td>{Math.round(method.metrics.trainable_parameters.mean).toLocaleString()}</td><td>{method.training_budget.probe_steps ? `${method.training_budget.probe_steps} probe + ` : ""}{method.training_budget.joint_or_adaptation_steps} joint/adapt</td><td>{method.strategy.includes("lora") || method.id.includes("lora") ? "adapter path" : "task head"}</td><td><span className="tag complete">3 seeds</span></td></tr>)}
+                {methods.methods.map((method) => <tr key={method.id}><th>{method.label}<small className="method-fidelity">{method.fidelity}</small>{method.retained_reference.used && <small className="method-resource">uses a separate memory-reference set</small>}</th><td>{pct(method.metrics.final_adaptation_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_adaptation_accuracy.ci_low)}–{pct(method.metrics.final_adaptation_accuracy.ci_high)}</small></td><td>{pct(method.metrics.final_retained_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_retained_accuracy.ci_low)}–{pct(method.metrics.final_retained_accuracy.ci_high)}</small></td><td>{fixed(method.metrics.retained_cka_loss.mean, 4)}</td><td>{Math.round(method.metrics.trainable_parameters.mean).toLocaleString()}</td><td>{method.training_budget.probe_steps ? `${method.training_budget.probe_steps} probe + ` : ""}{method.training_budget.joint_or_adaptation_steps} joint/adapt</td><td>{usesAdapterPath(method) ? "adapter path" : "task head"}</td><td><span className="tag complete">3 seeds</span></td></tr>)}
                 <tr><th>Scaled LoRA · α 0.5<small className="method-fidelity">WiSE-FT-inspired adapter-output interpolation</small></th><td>{pct(interpolation.curve[2].adaptation.top1_accuracy.mean)}</td><td>{pct(interpolation.curve[2].retained.top1_accuracy.mean)}</td><td>{fixed(1 - interpolation.curve[2].geometry.linear_cka.mean, 4)}</td><td>0 additional</td><td>post-hoc</td><td>scaled adapter</td><td><span className="tag exploratory">exploratory</span></td></tr>
               </tbody>
             </table>

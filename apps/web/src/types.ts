@@ -105,6 +105,10 @@ export type MethodRecord = {
     joint_or_adaptation_steps: number;
     total_optimizer_steps: number;
   };
+  retained_reference: {
+    used: boolean;
+    fingerprints_by_seed: Record<string, string>;
+  };
   metrics: {
     baseline_adaptation_accuracy: Interval;
     final_adaptation_accuracy: Interval;
