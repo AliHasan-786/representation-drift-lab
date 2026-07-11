@@ -13,7 +13,7 @@ This expanded run increases the fixed local evidence without changing the model 
 | Model | `openai/clip-vit-base-patch32` |
 | Adapter | rank-8 LoRA, alpha 16, query/value projections |
 | Seeds | 101, 102, 103 |
-| Adaptation data | 8 Food-101 classes; 8 train + 8 held-out evaluation images per class and seed |
+| Adaptation data | 8 Food-101 classes; 8 train + 8 held-out evaluation images per class and seed, selected from a fixed 96-row dataset-server window |
 | Retained evaluation | 100 CIFAR-10 test images starting at row 200; no retained reference images are used |
 | Schedule | 50 updates; checkpoints 0, 10, 25, 50 |
 | Batch sizes | 8 training / 16 evaluation |

@@ -22,7 +22,7 @@ datasets:
     class_count: 8
     train_per_class: 8
     eval_per_class: 8
-    server_window: 128
+    server_window: 96
   retained:
     repository: uoft-cs/cifar10
     config: plain_text
