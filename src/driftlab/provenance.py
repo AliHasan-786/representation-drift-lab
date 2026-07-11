@@ -25,20 +25,24 @@ def is_generated_artifact_path(path: str) -> bool:
     return normalized.startswith(GENERATED_ARTIFACT_PREFIXES)
 
 
+def source_status_is_dirty(status_output: str) -> bool:
+    """Return whether porcelain output includes a non-generated source change."""
+    return any(
+        not is_generated_artifact_path(line[3:].split(" -> ")[-1])
+        for line in status_output.splitlines()
+        if len(line) >= 4
+    )
+
+
 def git_revision(workdir: str | Path = ".") -> dict[str, Any]:
     def run(*args: str) -> str:
         completed = subprocess.run(
             ["git", *args], cwd=workdir, check=False, capture_output=True, text=True
         )
-        return completed.stdout.strip() if completed.returncode == 0 else ""
+        return completed.stdout.rstrip() if completed.returncode == 0 else ""
 
     commit = run("rev-parse", "HEAD") or "uncommitted"
-    status_lines = run("status", "--porcelain", "--untracked-files=all").splitlines()
-    dirty = any(
-        not is_generated_artifact_path(line[3:].split(" -> ")[-1])
-        for line in status_lines
-        if len(line) >= 4
-    )
+    dirty = source_status_is_dirty(run("status", "--porcelain", "--untracked-files=all"))
     return {"commit": commit, "dirty": dirty}
 
 
