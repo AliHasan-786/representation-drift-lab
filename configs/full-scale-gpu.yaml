@@ -1,0 +1,50 @@
+# Full-scale GPU tier — preregistered in reports/full-scale-preregistration.md.
+# Runs on a free Kaggle/Colab GPU via kaggle/full-scale-benchmark.ipynb.
+# Scale-up over the expanded local tier: 4x classes, 2x images per class,
+# 5x retained probe, 4x training steps. Publication gate: all five seeds
+# complete, manifests validate, frozen/zero-shot controls reproduce.
+name: clip-food101-cifar10-full-scale-gpu
+tier: research
+seed: 201
+model:
+  family: openai-clip-vit-b-32
+  revision: openai/clip-vit-base-patch32
+method:
+  name: lora
+  fidelity: preregistered-full-scale-gpu
+  rank: 8
+  alpha: 16
+  dropout: 0.1
+  target_modules: [q_proj, v_proj]
+  expected_trainable_parameters: 294912
+datasets:
+  loading_mode: dataset-server-stratified
+  adaptation:
+    repository: ethz/food101
+    config: default
+    split: train
+    image_field: image
+    class_count: 32
+    train_per_class: 16
+    eval_per_class: 16
+    server_window: 192
+  retained:
+    repository: uoft-cs/cifar10
+    config: plain_text
+    split: test
+    image_field: img
+    eval_start: 1000
+    eval_size: 500
+training:
+  total_steps: 200
+  checkpoint_steps: [0, 50, 100, 200]
+  batch_size: 16
+  evaluation_batch_size: 32
+  learning_rate: 0.0005
+analysis:
+  covariance_projection_dim: 32
+  diagnostics_version: layerwise-cross-modal-v1
+  collect_vision_hidden_states: true
+runtime:
+  device: auto
+output_dir: artifacts/runs-full-scale-gpu

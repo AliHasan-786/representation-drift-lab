@@ -1,5 +1,7 @@
 # Representation Drift Lab
 
+[![CI](https://github.com/AliHasan-786/representation-drift-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/AliHasan-786/representation-drift-lab/actions/workflows/ci.yml)
+
 Representation Drift Lab extends the original Cornell Tech CS 5787 project on catastrophic forgetting in CLIP into a reproducible benchmark, mitigation laboratory, and interactive portfolio experience.
 
 The original 2025 project was completed by Sahil Mhatre, Ali Hasan, and Corey Chen. This repository is Ali Hasan's independent post-course extension. Historical results are preserved as historical evidence; new claims must pass the provenance and validation gates defined in the project specification.
@@ -17,6 +19,10 @@ The original 2025 project was completed by Sahil Mhatre, Ali Hasan, and Corey Ch
 - The standalone portfolio application is implemented, tested responsively, artifact-gated, and production-built. It now includes a zero-assumption explainer, real examples from all six experiment datasets, an interactive output-reading tutorial, the exact original course report, and a grounded project Q&A guide with an offline fallback. Its current evidence remains explicitly preliminary while broader model/domain experiments continue.
 
 The authoritative requirements are in `specs/representation-drift-lab.md`.
+
+## Full-scale GPU tier (preregistered, free compute)
+
+The next evidence tier is locked in [`reports/full-scale-preregistration.md`](reports/full-scale-preregistration.md): 32 Food-101 classes × 16/16 images, a 500-image CIFAR-10 retention probe, 200 LoRA steps, and five independent seeds — designed to escape the documented small-sample ceiling effects without paid infrastructure. [`kaggle/full-scale-benchmark.ipynb`](kaggle/full-scale-benchmark.ipynb) runs the whole suite on Kaggle's free GPU tier (roughly 1.5–3 GPU-hours) and validates the public artifact before it can be committed. Results publish through the preregistration gate whether or not they preserve the current ranking.
 
 ## Environment
 

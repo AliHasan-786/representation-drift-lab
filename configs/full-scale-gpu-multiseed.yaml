@@ -1,0 +1,4 @@
+name: clip-food101-cifar10-full-scale-gpu-multiseed
+base_config: full-scale-gpu.yaml
+seeds: [201, 202, 203, 204, 205]
+web_output: public/data/benchmark-full-scale-gpu.json
