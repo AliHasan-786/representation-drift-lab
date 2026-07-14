@@ -765,6 +765,28 @@ function ReleaseGate({ benchmark }: { benchmark: BenchmarkArtifact }) {
   );
 }
 
+function ImpactScopeAudit() {
+  return (
+    <section className="impact-scope-audit" aria-labelledby="impact-scope-title">
+      <div>
+        <p className="eyebrow">Scope and impact audit</p>
+        <h3 id="impact-scope-title">This project tests models—not people</h3>
+        <p>The experiments use public image datasets labeled mostly with objects, food, places, pets, and digits. They do not simulate a real decision about a person or service. That means a clean benchmark is useful evidence about model behavior, but it is not proof of fairness in a human setting.</p>
+      </div>
+      <div className="impact-scope-grid">
+        <article><span>Checked here</span><strong>Evidence quality</strong><p>Separate image splits, repeat runs, transparent uncertainty, and a human release review help establish whether the measured benchmark result is trustworthy.</p></article>
+        <article><span>Not assessed here</span><strong>Fairness across people</strong><p>There are no appropriate demographic labels, affected-user outcomes, or real decision context. Reporting a fairness score anyway would create false precision.</p></article>
+        <article><span>Required in real use</span><strong>Human-impact review</strong><p>Define who is affected, test suitable outcome slices, keep meaningful decisions human-owned, watch feedback loops, and plan monitoring, appeals, and rollback.</p></article>
+      </div>
+      <details>
+        <summary>Read the full fairness and feedback-loop scope audit</summary>
+        <p>This interactive guide does not learn from visitor input. It is offline-first, and sensitive-looking questions are stopped in the browser before a provider request. Any future fairness claim needs a real decision context, appropriate consented evaluation data, an outcome measure, and a stated limit—not a borrowed benchmark metric.</p>
+        <p>A real deployment review would also name the decision owner, identify who could be affected, preserve an appeal or correction path, prohibit automatic learning from complaints or overrides by default, and define monitoring and rollback before a trial begins.</p>
+      </details>
+    </section>
+  );
+}
+
 function App() {
   const [benchmark, setBenchmark] = useState<BenchmarkArtifact | null>(null);
   const [earlyWarning, setEarlyWarning] = useState<EarlyWarningArtifact | null>(null);
@@ -1025,6 +1047,7 @@ function App() {
         <section className="section dark" id="reproduce">
           <div className="section-heading"><div><p className="eyebrow">08 · Engineering and reproducibility</p><h2>Evidence that can be rerun</h2></div><p>This is a research system, not only a notebook. Each setup gets an identity; interrupted runs can resume safely; dataset selections are recorded; outputs can regenerate metrics without retraining; and public files are checked against fingerprints that expose accidental changes.</p></div>
           <ReleaseGate benchmark={benchmark} />
+          <ImpactScopeAudit />
           <div className="engineering-grid">
             <article><strong>43</strong><span>automated Python checks</span><p>Metrics, disjoint splits, caching, loss semantics, resume safety, provenance, and artifact aggregation.</p></article>
             <article><strong>294,912</strong><span>trainable parameters</span><p>All non-LoRA parameters are frozen and the invariant is checked at runtime.</p></article>

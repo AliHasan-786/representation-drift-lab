@@ -17,6 +17,7 @@ The original 2025 project was completed by Sahil Mhatre, Ali Hasan, and Corey Ch
 - A preregistered expanded Food-101 → CIFAR-10 confirmation completed across three new seeds, using 8 classes × 8 training images, 8 held-out evaluation images per class, a 100-image retained probe, and 50 updates. It reproduced the local adaptation/retention trade-off and remains explicitly preliminary; see `reports/expanded-local-preregistration.md`.
 - Nine local adaptation/mitigation methods have completed across three independent seeds with 95% Student-t intervals, spanning frozen probing, full fine-tuning, LP-FT, adapted WiSE-FT, LoRA, distillation, selective adaptation, and gradient projection.
 - The standalone portfolio application is implemented, tested responsively, artifact-gated, and production-built. It now includes a zero-assumption explainer, real examples from all six experiment datasets, an interactive output-reading tutorial, the exact original course report, and a grounded project Q&A guide with an offline fallback. Its current evidence remains explicitly preliminary while broader model/domain experiments continue.
+- The public experience now separates experimental validity from human-impact claims. [`reports/fairness-feedback-loop-scope-audit.md`](reports/fairness-feedback-loop-scope-audit.md) records what this image-benchmark setting can check, why no demographic fairness score is claimed, and what a real deployment would need before such an audit is meaningful.
 
 The authoritative requirements are in `specs/representation-drift-lab.md`.
 

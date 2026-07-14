@@ -383,6 +383,17 @@ tbody th { font-size: .8rem; }
 .release-brief pre { margin-bottom: 0; white-space: pre-wrap; }
 .release-note { grid-column: 1 / -1; margin: 0; padding: 1rem 1.25rem; background: #020806; }
 .release-note strong { color: #d9e8df; }
+.impact-scope-audit { margin: 1rem 0; padding: clamp(1.4rem, 3vw, 2.5rem); border: 1px solid var(--line); background: #0d211a; }
+.impact-scope-audit h3 { max-width: 620px; margin: .55rem 0 1rem; color: #d9e8df; font-size: clamp(1.45rem, 2.5vw, 2.35rem); line-height: 1.05; letter-spacing: -.045em; }
+.impact-scope-audit > div > p:not(.eyebrow), .impact-scope-audit details p { max-width: 880px; color: var(--muted); font-size: .84rem; line-height: 1.7; }
+.impact-scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 1.5rem; background: var(--line); }
+.impact-scope-grid article { padding: 1.25rem; background: #071612; }
+.impact-scope-grid span, .impact-scope-grid strong { display: block; }
+.impact-scope-grid span { color: var(--acid); font: .62rem "DM Mono", monospace; text-transform: uppercase; }
+.impact-scope-grid strong { margin-top: .6rem; color: #d9e8df; font-size: .95rem; }
+.impact-scope-grid p { margin: .65rem 0 0; color: var(--muted); font-size: .74rem; line-height: 1.6; }
+.impact-scope-audit details { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.impact-scope-audit summary { cursor: pointer; color: var(--acid); font: .68rem "DM Mono", monospace; }
 .guide-privacy-notice { margin: 1rem 0; padding: .75rem; border-left: 3px solid var(--orange); color: #8c3f1d; background: #f9e6dc; font-size: .75rem; line-height: 1.5; }
 .engineering-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .engineering-grid article { padding: 2rem; background: #071612; }
@@ -478,7 +489,7 @@ footer p { margin: 0; }
   .failure-grid { grid-template-columns: 1fr; }
   .concept-grid, .domain-grid { grid-template-columns: repeat(2, 1fr); }
   .expanded-metrics { grid-template-columns: 1fr; }
-  .clip-copy, .lora-explainer, .evaluation-firewall, .work-walkthrough, .project-guide, .report-library { grid-template-columns: 1fr; }
+  .clip-copy, .lora-explainer, .evaluation-firewall, .work-walkthrough, .project-guide, .report-library, .impact-scope-grid { grid-template-columns: 1fr; }
   .code-audit { grid-template-columns: 1fr 1fr; }
   .audit-tabs { grid-column: 1 / -1; grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .audit-tabs button { grid-template-columns: 1fr; gap: .3rem; }

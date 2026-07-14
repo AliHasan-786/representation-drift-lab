@@ -66,6 +66,14 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText("Open the deterministic review brief")).toBeInTheDocument();
   });
 
+  it("distinguishes benchmark checks from fairness claims about people", async () => {
+    render(<App />);
+    expect(await screen.findByRole("heading", { name: /This project tests models—not people/i })).toBeInTheDocument();
+    expect(screen.getByText(/not proof of fairness in a human setting/i)).toBeInTheDocument();
+    expect(screen.getByText(/Reporting a fairness score anyway would create false precision/i)).toBeInTheDocument();
+    expect(screen.getByText(/Read the full fairness and feedback-loop scope audit/i)).toBeInTheDocument();
+  });
+
   it("loads the preregistered expanded confirmation check only on request", async () => {
     render(<App />);
     expect(await screen.findByRole("button", { name: "Load expanded confirmation" })).toBeInTheDocument();
