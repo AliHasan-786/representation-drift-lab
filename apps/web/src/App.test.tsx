@@ -66,6 +66,15 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText("Open the deterministic review brief")).toBeInTheDocument();
   });
 
+  it("labels interactive evidence with its tier and keeps internal method identifiers out of view", async () => {
+    render(<App />);
+    expect((await screen.findAllByRole("link", { name: /Local tier · 20 updates · 3 seeds/i })).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByRole("link", { name: /Method-comparison tier · 200 updates · 3 seeds/i })).toBeInTheDocument();
+    expect(screen.getByText(/ZSCL-inspired distillation · not a reproduction/i)).toBeInTheDocument();
+    expect(screen.queryByText("inspired-baseline-not-exact-zscl")).not.toBeInTheDocument();
+    expect(screen.getAllByText(/95% t-interval \(unclipped\)/i).length).toBeGreaterThan(0);
+  });
+
   it("distinguishes benchmark checks from fairness claims about people", async () => {
     render(<App />);
     expect(await screen.findByRole("heading", { name: /This project tests models—not people/i })).toBeInTheDocument();

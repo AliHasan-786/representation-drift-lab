@@ -305,6 +305,10 @@ table { width: 100%; border-collapse: collapse; font-size: .76rem; }
 th, td { padding: .85rem .75rem; border-bottom: 1px solid rgba(16,32,25,.13); text-align: left; white-space: nowrap; }
 tbody th { font-size: .8rem; }
 .method-fidelity, .table-interval { display: block; margin-top: .25rem; color: #68776f; font: .58rem/1.35 "DM Mono", monospace; white-space: normal; }
+.evidence-chip { display: inline-flex; gap: .4rem; align-items: center; margin: .85rem 0 .15rem; padding: .38rem .55rem; border: 1px solid rgba(18,100,82,.32); color: #126452; background: rgba(18,100,82,.06); font: .58rem/1.2 "DM Mono", monospace; text-decoration: none; }
+.evidence-chip:hover, .evidence-chip:focus-visible { border-color: #126452; color: #0c4e40; background: rgba(18,100,82,.12); }
+.dark .evidence-chip, .expanded-validation .evidence-chip, .hero .evidence-chip { border-color: rgba(191,240,106,.38); color: var(--acid); background: rgba(191,240,106,.06); }
+.dark .evidence-chip:hover, .dark .evidence-chip:focus-visible, .expanded-validation .evidence-chip:hover, .expanded-validation .evidence-chip:focus-visible, .hero .evidence-chip:hover, .hero .evidence-chip:focus-visible { border-color: var(--acid); background: rgba(191,240,106,.12); }
 .pending-row { color: #68776f; }
 .tag { padding: .3rem .45rem; border-radius: 3px; font: .62rem "DM Mono", monospace; }
 .tag.complete { color: #114b3d; background: #c8e8d8; }

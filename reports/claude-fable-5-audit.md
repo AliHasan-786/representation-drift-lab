@@ -1,5 +1,10 @@
 # Claude Fable 5 External Audit
 
+> **Historical audit (July 6, 2026).** This document preserves the original
+> third-party findings and their then-current dispositions. Later work is
+> tracked separately; consult `reports/README.md` for the current reading
+> order rather than treating this snapshot as a live status dashboard.
+
 ## Audit provenance
 
 - Auditor: Anthropic Claude Fable 5, invoked through Claude Code 1.0.35 with the explicit model identifier `claude-fable-5`.

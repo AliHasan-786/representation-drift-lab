@@ -27,14 +27,30 @@ const usesAdapterPath = (method: MethodRecord) => [
   "retention-gradient-nullspace",
   "selective-v-lora",
 ].includes(method.id);
+const fidelityLabel = (fidelity: string) => ({
+  "exact-frozen-encoder-linear-classification-probe": "Frozen-encoder probe · exact",
+  "joint-full-vision-encoder-and-random-head-baseline": "Full encoder + new head · baseline",
+  "adapted-lp-ft-classification-baseline": "Linear-probe then fine-tune · adapted baseline",
+  "compatible-wise-ft-source-baseline": "Source model for WiSE-FT comparison",
+  "adapted-wise-ft-full-weight-space-ensemble": "Weight-space ensemble · WiSE-FT adapted",
+  "corrected-local-pipeline-validation": "Corrected local pipeline validation",
+  "inspired-baseline-not-exact-zscl": "ZSCL-inspired distillation · not a reproduction",
+  "inspired-first-order-gradient-projection-baseline": "First-order gradient projection · inspired baseline",
+  "selective-parameter-efficient-baseline": "Selective parameter-efficient baseline",
+}[fidelity] ?? fidelity.replaceAll("-", " "));
+const intervalText = (value: Interval) => `95% t-interval (unclipped): ${pct(value.ci_low)}–${pct(value.ci_high)} · n=${value.n}`;
 
 function metric(value: Interval) {
   return (
     <>
       <strong>{pct(value.mean)}</strong>
-      <span className="interval">95% CI {pct(value.ci_low)}–{pct(value.ci_high)} · n={value.n}</span>
+      <span className="interval">{intervalText(value)}</span>
     </>
   );
+}
+
+function EvidenceChip({ children, manifestPath }: { children: React.ReactNode; manifestPath: string }) {
+  return <a className="evidence-chip" href={staticAsset(manifestPath)} target="_blank" rel="noreferrer">{children}<span aria-hidden="true">↗</span></a>;
 }
 
 function Definition({ children }: { children: React.ReactNode }) {
@@ -327,7 +343,7 @@ function ProjectGuide() {
   };
   return (
     <div className="project-guide">
-      <div className="guide-intro"><p className="eyebrow">Interactive project guide</p><h3>Ask the question you think you “should already know.”</h3><p>No prerequisite is expected. In a deployed environment, answers can come from a server-side GenAI endpoint grounded only in this project's facts. The local portfolio always retains a curated offline explanation.</p><div className="guide-prompts">{prompts.map((prompt) => <button onClick={() => { setQuestion(prompt); setAnswer(localGuideAnswer(prompt)); setMode("Guided answer · works offline"); }} key={prompt}>{prompt}</button>)}</div></div>
+      <div className="guide-intro"><p className="eyebrow">Interactive project guide</p><h3>Ask the question you think you “should already know.”</h3><p>No prerequisite is expected. The guide always has a curated, project-specific explanation available offline, so understanding the work never depends on an account, a model response, or a network connection.</p><div className="guide-prompts">{prompts.map((prompt) => <button onClick={() => { setQuestion(prompt); setAnswer(localGuideAnswer(prompt)); setMode("Guided answer · works offline"); }} key={prompt}>{prompt}</button>)}</div></div>
       <div className="guide-console"><form onSubmit={ask}><label htmlFor="project-question">Your question</label><textarea id="project-question" value={question} onChange={(event) => setQuestion(event.target.value)} rows={3} maxLength={800} aria-describedby="guide-privacy-note" /><button disabled={loading}>{loading ? "Thinking…" : "Ask the project"}</button></form>{privacyNotice && <p className="guide-privacy-notice" role="status">{privacyNotice}</p>}<div className="guide-answer" aria-live="polite"><span>{mode}</span><p>{answer}</p></div><small id="guide-privacy-note">Keep questions about this project. Do not include personal information or access credentials; apparent sensitive input stays in your browser and is not sent to the guide.</small></div>
     </div>
   );
@@ -347,10 +363,12 @@ function AccuracyChart({
   checkpoints,
   selected,
   onSelect,
+  manifestPath,
 }: {
   checkpoints: AggregateCheckpoint[];
   selected: number;
   onSelect: (index: number) => void;
+  manifestPath: string;
 }) {
   const width = 720;
   const height = 280;
@@ -382,6 +400,7 @@ function AccuracyChart({
           <span><i className="line adapted" /> Adapted Food-101</span>
         </div>
       </div>
+      <EvidenceChip manifestPath={manifestPath}>Local tier · 20 updates · 3 seeds</EvidenceChip>
       <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby="accuracy-title accuracy-desc">
         <title id="accuracy-title">Retained and adapted accuracy by checkpoint</title>
         <desc id="accuracy-desc">{summary}</desc>
@@ -422,7 +441,7 @@ function AccuracyChart({
   );
 }
 
-function LayerMap({ checkpoint }: { checkpoint: AggregateCheckpoint }) {
+function LayerMap({ checkpoint, manifestPath }: { checkpoint: AggregateCheckpoint; manifestPath: string }) {
   const layers = Object.entries(checkpoint.layerwise.retained)
     .filter(([, values]) => values.linear_cka)
     .sort(([left], [right]) => left.localeCompare(right));
@@ -431,6 +450,7 @@ function LayerMap({ checkpoint }: { checkpoint: AggregateCheckpoint }) {
     <figure className="chart-card">
       <p className="eyebrow">Where change emerges</p>
       <h3>Vision encoder drift by layer</h3>
+      <EvidenceChip manifestPath={manifestPath}>Local tier · selected checkpoint · 3 seeds</EvidenceChip>
       <div className="layer-map" role="list" aria-label={`Layer drift at step ${checkpoint.step}`}>
         {layers.map(([name, values], index) => {
           const loss = 1 - values.linear_cka.mean;
@@ -495,7 +515,8 @@ function ParetoPlot({ benchmark, methods, interpolation }: { benchmark: Benchmar
       <div className="pareto-key" aria-label="Pareto point values">
         {points.map((point, index) => <div key={point.label}><i style={{ background: index ? colors[index] : "transparent", borderColor: colors[index] }}>{index + 1}</i><span><strong>{point.label}</strong><small>retained {pct(point.x)} · adapted {pct(point.y)}</small></span></div>)}
       </div>
-      <Definition>Both axes are mean accuracy across the same three seed-specific subsets; upper-right is better. Method ranks remain preliminary because the probes are small.</Definition>
+      <EvidenceChip manifestPath={methods.source_manifest.public_path}>Method-comparison tier · 200 updates · 3 seeds</EvidenceChip>
+      <Definition>Both axes are mean accuracy across the same three seed-specific subsets; upper-right is better. 100% scores are tiny-subset ceiling effects, not perfect general performance. Method ranks remain preliminary because the probes are small.</Definition>
     </figure>
   );
 }
@@ -509,12 +530,13 @@ function RecoveryCurve({ interpolation }: { interpolation: InterpolationArtifact
         <div><p className="eyebrow">Post-hoc recovery · 3 seeds</p><h3>Scale the trained LoRA update</h3></div>
         <span className="status-chip">WiSE-FT-inspired</span>
       </div>
+      <EvidenceChip manifestPath={interpolation.source_manifest.public_path}>Post-hoc local tier · 200 updates · 3 seeds</EvidenceChip>
       <label htmlFor="alpha-scale">Adapter output scale <strong>α = {point.alpha.toFixed(2)}</strong></label>
       <input id="alpha-scale" type="range" min="0" max={interpolation.curve.length - 1} step="1" value={index} onChange={(event) => setIndex(Number(event.target.value))} />
       <div className="ticks">{interpolation.curve.map((item) => <span key={item.alpha}>{item.alpha.toFixed(2)}</span>)}</div>
       <div className="recovery-metrics">
-        <div><span>Retained</span><strong>{pct(point.retained.top1_accuracy.mean)}</strong><small>{pct(point.retained.top1_accuracy.ci_low)}–{pct(point.retained.top1_accuracy.ci_high)}</small></div>
-        <div><span>Adapted</span><strong>{pct(point.adaptation.top1_accuracy.mean)}</strong><small>{pct(point.adaptation.top1_accuracy.ci_low)}–{pct(point.adaptation.top1_accuracy.ci_high)}</small></div>
+        <div><span>Retained</span><strong>{pct(point.retained.top1_accuracy.mean)}</strong><small>{intervalText(point.retained.top1_accuracy)}</small></div>
+        <div><span>Adapted</span><strong>{pct(point.adaptation.top1_accuracy.mean)}</strong><small>{intervalText(point.adaptation.top1_accuracy)}</small></div>
         <div><span>CKA loss</span><strong>{fixed(1 - point.geometry.linear_cka.mean, 4)}</strong><small>baseline = 0</small></div>
       </div>
       <Definition>{interpolation.publication_caveat} Alpha was inspected on the same local evaluation scenario, so this is a recovery curve—not a held-out model-selection result.</Definition>
@@ -615,8 +637,10 @@ function DomainStressTest({ artifact }: { artifact: DomainArtifact }) {
     );
   };
   return (
-    <div className="domain-grid">
-      {artifact.scenarios.map((scenario) => {
+    <>
+      <EvidenceChip manifestPath={artifact.source_manifest.public_path}>Three local domain pairs · 20 updates · 3 seeds each</EvidenceChip>
+      <div className="domain-grid">
+        {artifact.scenarios.map((scenario) => {
         const interpretation = interpretations[scenario.id];
         return (
           <article className="domain-card" key={scenario.id}>
@@ -634,8 +658,9 @@ function DomainStressTest({ artifact }: { artifact: DomainArtifact }) {
             <div className="domain-foot"><span>Internal change (1 − CKA)</span><strong>{fixed(scenario.metrics.retained_cka_loss.mean, 4)}</strong></div>
           </article>
         );
-      })}
-    </div>
+        })}
+      </div>
+    </>
   );
 }
 
@@ -650,9 +675,10 @@ function ExpandedValidation({ artifact }: { artifact: BenchmarkArtifact }) {
         <h3>The larger local probe reproduced the trade-off—not a universal rule</h3>
         <p>This preregistered check kept the same CLIP model and LoRA adapter, while increasing the Food-101 sample from 6 classes × 4 training images to 8 × 8, the retained CIFAR-10 check from 30 to 100 images, and the schedule from 20 to 50 updates.</p>
       </div>
+      <EvidenceChip manifestPath={artifact.source_manifest.public_path}>Expanded local tier · 50 updates · 3 seeds</EvidenceChip>
       <div className="expanded-metrics">
-        <article><span>New-task change</span><strong>+{pct(final.adaptation.accuracy_change.mean)}</strong><small>95% CI {pct(final.adaptation.accuracy_change.ci_low)}–{pct(final.adaptation.accuracy_change.ci_high)}</small></article>
-        <article><span>Retained-task change</span><strong>{pct(final.retained.accuracy_change.mean)}</strong><small>95% CI {pct(final.retained.accuracy_change.ci_low)}–{pct(final.retained.accuracy_change.ci_high)}</small></article>
+        <article><span>New-task change</span><strong>+{pct(final.adaptation.accuracy_change.mean)}</strong><small>{intervalText(final.adaptation.accuracy_change)}</small></article>
+        <article><span>Retained-task change</span><strong>{pct(final.retained.accuracy_change.mean)}</strong><small>{intervalText(final.retained.accuracy_change)}</small></article>
         <article><span>Internal change</span><strong>{fixed(ckaLoss, 4)}</strong><small>1 − CKA at step {final.step}</small></article>
       </div>
       <div className="expanded-read"><strong>How to read it:</strong><p>At step {final.step}, adaptation rose from {pct(baseline.adaptation.top1_accuracy.mean)} to {pct(final.adaptation.top1_accuracy.mean)} while retained accuracy fell from {pct(baseline.retained.top1_accuracy.mean)} to {pct(final.retained.top1_accuracy.mean)}. That supports the original local forgetting pattern under a larger fixed probe, but one backbone, one domain pair, and three seeds still do not establish a general law.</p></div>
@@ -918,6 +944,7 @@ function App() {
             <div className="result-number negative">{pct(finalCheckpoint.retained.accuracy_change.mean)}</div>
             <span>worse at the retained everyday-object task</span>
             <small>Later sections explain Food-101, CIFAR-10, LoRA, “training steps,” and exactly how these percentages were produced.</small>
+            <EvidenceChip manifestPath={benchmark.source_manifest.public_path}>Local tier · 20 updates · 3 seeds</EvidenceChip>
           </div>
         </section>
 
@@ -969,7 +996,7 @@ function App() {
           <div className="metric-primer" aria-label="How to read the experiment numbers">
             <article><strong>Δ means “change”</strong><p>A positive value went up from the starting model; a negative value went down.</p></article>
             <article><strong>n = 3 means three runs</strong><p>The experiment was repeated with three different controlled random starting conditions, called seeds.</p></article>
-            <article><strong>95% CI shows uncertainty</strong><p>The interval summarizes how much the three run results varied. A wider interval means less certainty about the average.</p></article>
+            <article><strong>Unclipped t-interval shows uncertainty</strong><p>Each 95% interval summarizes variation across three runs. It is intentionally not clipped to 0–100%, so a bound can exceed those limits when the sample is small; the mean is still an accuracy percentage.</p></article>
             <article><strong>CKA compares internals</strong><p>Centered Kernel Alignment compares two sets of internal representations. Here, 1.0 means identical and a lower value means more change.</p></article>
           </div>
           <div className="timeline-control">
@@ -983,7 +1010,7 @@ function App() {
             <article><span>Internal similarity (CKA)</span><strong>{fixed(checkpoint.geometry.retained.linear_cka.mean, 4)}</strong><span className="interval">1.0 means unchanged · n=3</span></article>
             <article><span>Image–word match change (Δ)</span><strong>{fixed(checkpoint.cross_modal.retained.alignment_change.mean, 4)}</strong><span className="interval">average paired similarity change · n=3</span></article>
           </div>
-          <div className="visual-grid"><AccuracyChart checkpoints={benchmark.checkpoints} selected={selected} onSelect={setSelected} /><LayerMap checkpoint={checkpoint} /></div>
+          <div className="visual-grid"><AccuracyChart checkpoints={benchmark.checkpoints} selected={selected} onSelect={setSelected} manifestPath={benchmark.source_manifest.public_path} /><LayerMap checkpoint={checkpoint} manifestPath={benchmark.source_manifest.public_path} /></div>
           <div className="insight-callout"><span>How to read step {checkpoint.step}</span><p>The new Food-101 task changed by <strong>{checkpoint.adaptation.accuracy_change.mean >= 0 ? "+" : ""}{pct(checkpoint.adaptation.accuracy_change.mean)}</strong>; retained CIFAR-10 accuracy changed by <strong>{checkpoint.retained.accuracy_change.mean >= 0 ? "+" : ""}{pct(checkpoint.retained.accuracy_change.mean)}</strong>; and internal CKA similarity is <strong>{fixed(checkpoint.geometry.retained.linear_cka.mean, 4)}</strong>. Read the accuracy and geometry together: one does not replace the other.</p></div>
           <Provenance benchmark={benchmark} title="the checkpoint explorer" />
 
@@ -1010,7 +1037,7 @@ function App() {
             <table><thead><tr><th>Method</th><th>Adapted accuracy</th><th>Retained accuracy</th><th>CKA loss</th><th>Trainable params</th><th>Train cost</th><th>Inference cost</th><th>Status</th></tr></thead>
               <tbody>
                 <tr><th>Frozen zero-shot</th><td>{pct(benchmark.checkpoints[0].adaptation.top1_accuracy.mean)}</td><td>{pct(benchmark.checkpoints[0].retained.top1_accuracy.mean)}</td><td>0</td><td>0</td><td>evaluation only</td><td>1× encoder</td><td><span className="tag complete">measured</span></td></tr>
-                {methods.methods.map((method) => <tr key={method.id}><th>{method.label}<small className="method-fidelity">{method.fidelity}</small>{method.retained_reference.used && <small className="method-resource">uses a separate memory-reference set</small>}</th><td>{pct(method.metrics.final_adaptation_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_adaptation_accuracy.ci_low)}–{pct(method.metrics.final_adaptation_accuracy.ci_high)}</small></td><td>{pct(method.metrics.final_retained_accuracy.mean)}<small className="table-interval">{pct(method.metrics.final_retained_accuracy.ci_low)}–{pct(method.metrics.final_retained_accuracy.ci_high)}</small></td><td>{fixed(method.metrics.retained_cka_loss.mean, 4)}</td><td>{Math.round(method.metrics.trainable_parameters.mean).toLocaleString()}</td><td>{method.training_budget.probe_steps ? `${method.training_budget.probe_steps} probe + ` : ""}{method.training_budget.joint_or_adaptation_steps} joint/adapt</td><td>{usesAdapterPath(method) ? "adapter path" : "task head"}</td><td><span className="tag complete">3 seeds</span></td></tr>)}
+                {methods.methods.map((method) => <tr key={method.id}><th>{method.label}<small className="method-fidelity" title={method.fidelity}>{fidelityLabel(method.fidelity)}</small>{method.retained_reference.used && <small className="method-resource">uses a separate memory-reference set</small>}</th><td>{pct(method.metrics.final_adaptation_accuracy.mean)}<small className="table-interval">{intervalText(method.metrics.final_adaptation_accuracy)}</small></td><td>{pct(method.metrics.final_retained_accuracy.mean)}<small className="table-interval">{intervalText(method.metrics.final_retained_accuracy)}</small></td><td>{fixed(method.metrics.retained_cka_loss.mean, 4)}</td><td>{Math.round(method.metrics.trainable_parameters.mean).toLocaleString()}</td><td>{method.training_budget.probe_steps ? `${method.training_budget.probe_steps} probe + ` : ""}{method.training_budget.joint_or_adaptation_steps} joint/adapt</td><td>{usesAdapterPath(method) ? "adapter path" : "task head"}</td><td><span className="tag complete">3 seeds</span></td></tr>)}
                 <tr><th>Scaled LoRA · α 0.5<small className="method-fidelity">WiSE-FT-inspired adapter-output interpolation</small></th><td>{pct(interpolation.curve[2].adaptation.top1_accuracy.mean)}</td><td>{pct(interpolation.curve[2].retained.top1_accuracy.mean)}</td><td>{fixed(1 - interpolation.curve[2].geometry.linear_cka.mean, 4)}</td><td>0 additional</td><td>post-hoc</td><td>scaled adapter</td><td><span className="tag exploratory">exploratory</span></td></tr>
               </tbody>
             </table>
@@ -1080,7 +1107,7 @@ function App() {
         </section>
       </main>
 
-      <footer><div><strong>Representation Drift Lab</strong><span>Ali Hasan · 2026</span></div><p>Core interactions and guided explanations work without a GPU, account, upload, or API key.</p><span className="service-status"><i /> GenAI guide: server-ready with offline fallback</span></footer>
+      <footer><div><strong>Representation Drift Lab</strong><span>Ali Hasan · 2026</span></div><p>Core interactions and guided explanations work without a GPU, account, upload, or API key.</p><span className="service-status"><i /> Interactive guide · no sign-in required</span></footer>
     </>
   );
 }
