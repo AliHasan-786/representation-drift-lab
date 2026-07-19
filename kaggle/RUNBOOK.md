@@ -7,21 +7,21 @@ not permission to alter its design.
 
 ## Locked experiment identity
 
-- **Commit:** `689dc42d339ab92bb7425070e6ba8494b3618780`
+- **Pinned revision:** the immutable commit printed by the notebook setup cell
 - **Configs:** `configs/full-scale-gpu.yaml` and
   `configs/full-scale-gpu-multiseed.yaml`
 - **Seeds:** 201, 202, 203, 204, 205
 - **Compute rule:** Kaggle free GPU only; no paid accelerator, no parameter
   changes, no configuration edits between seeds.
 
-If a correction to this committed code is needed, stop. Record the reason,
+If a correction to the pinned code is needed, stop. Record the reason,
 make a new preregistration/commit, and run the new identity; do not silently
 patch a live benchmark session.
 
 ## Before opening Kaggle
 
-1. Confirm the repository worktree is clean and the commit above is available
-   on GitHub.
+1. Confirm the repository worktree is clean and the commit printed in the
+   notebook setup cell is available on GitHub.
 2. Read the preregistration once. The expected design is 32 Food-101 classes,
    16 training and 16 held-out evaluation images per class, a 500-image
    CIFAR-10 retained probe, 200 updates, and five seeds.
@@ -38,7 +38,7 @@ patch a live benchmark session.
 4. Turn **Internet** on only if Kaggle requests it for the one-time GitHub and
    model/dataset downloads. The notebook does not need any credentials or
    secret tokens.
-5. Upload `kaggle/full-scale-benchmark.ipynb` from commit `689dc42…`, or paste
+5. Upload `kaggle/full-scale-benchmark.ipynb` from the commit above, or paste
    its cells into the new notebook unchanged.
 6. Run the setup cell. It must print the pinned commit before any benchmark
    command runs.
