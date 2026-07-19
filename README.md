@@ -23,7 +23,14 @@ The authoritative requirements are in `specs/representation-drift-lab.md`.
 
 ## Full-scale GPU tier (preregistered, free compute)
 
-The next evidence tier is locked in [`reports/full-scale-preregistration.md`](reports/full-scale-preregistration.md): 32 Food-101 classes × 16/16 images, a 500-image CIFAR-10 retention probe, 200 LoRA steps, and five independent seeds — designed to escape the documented small-sample ceiling effects without paid infrastructure. [`kaggle/full-scale-benchmark.ipynb`](kaggle/full-scale-benchmark.ipynb) runs the whole suite on Kaggle's free GPU tier (roughly 1.5–3 GPU-hours) and validates the public artifact before it can be committed. Results publish through the preregistration gate whether or not they preserve the current ranking.
+The next evidence tier is locked in [`reports/full-scale-preregistration.md`](reports/full-scale-preregistration.md): 32 Food-101 classes × 16/16 images, a 500-image CIFAR-10 retention probe, 200 LoRA steps, and five independent seeds — designed to escape the documented small-sample ceiling effects without paid infrastructure. [`kaggle/full-scale-benchmark.ipynb`](kaggle/full-scale-benchmark.ipynb) and the pinned [`kaggle/RUNBOOK.md`](kaggle/RUNBOOK.md) run the suite on Kaggle's free GPU tier and validate the public artifact before it can be committed. Results publish through the preregistration gate whether or not they preserve the current ranking.
+
+## Deployment
+
+[`vercel.json`](vercel.json) prepares a root-level Vercel deployment for the
+Vite site and optional same-origin API route. Follow
+[`docs/deploy-vercel.md`](docs/deploy-vercel.md) for the account-bound import
+and deploy steps; the first release requires no model-provider key.
 
 ## Environment
 

@@ -22,6 +22,7 @@ apps/web/node_modules/
 apps/web/.next/
 apps/web/out/
 apps/web/dist/
+.vercel/
 *.tsbuildinfo
 tmp/
 output/

@@ -920,7 +920,7 @@ function App() {
       <header className="site-header">
         <a className="wordmark" href="#top"><span>RD</span> Representation Drift Lab</a>
         <nav aria-label="Project sections">
-          <a href="#foundations">Start at zero</a><a href="#datasets">See the data</a><a href="#explore">Experiment</a><a href="#guide">Ask</a><a href="#reports">Reports</a>
+          <a href="#foundations">Start at zero</a><a href="#datasets">See the data</a><a href="#explore">Experiment</a><a href="#twist">The twist</a><a href="#guide">Ask</a><a href="#reports">Reports</a>
         </nav>
         <a className="report-link" href={staticAsset("report/original-course-report.pdf")} target="_blank" rel="noreferrer">Class report · PDF</a>
       </header>
@@ -1018,8 +1018,19 @@ function App() {
           {detailedCheckpoint && <div className="visual-grid detail-grid"><EmbeddingMap checkpoint={detailedCheckpoint} /><ClassMicroscope checkpoint={detailedCheckpoint} /></div>}
         </section>
 
+        <section className="section domain-section twist-section" id="twist">
+          <div className="section-heading"><div><p className="eyebrow">05 · The twist</p><h2>The first result was real. The simple explanation was not.</h2></div><p>The Food-101 → CIFAR-10 experiment showed one familiar trade-off: the model learned a new skill while its old score slipped. The next question was whether internal change reliably explained that pattern. I tested that assumption before treating it as a conclusion.</p></div>
+          <div className="twist-statement"><div><span>What one pair suggested</span><strong>“More internal change may mean more forgetting.”</strong></div><i aria-hidden="true">→</i><div><span>What three pairs showed</span><strong>Change could accompany forgetting, little performance loss, or improvement.</strong></div></div>
+          <DomainStressTest artifact={domains} />
+          <div className="plain-callout"><strong>What changed after adding more domains:</strong><p>the original “drift predicts forgetting” story became less convincing. Across these scenarios, similar concepts behaved differently, so drift is best treated as diagnostic evidence—not a verdict.</p></div>
+          {!expandedValidation && <div className="lazy-panel expanded-loader"><div><p className="eyebrow">Expanded fixed-split validation · 204 KB on demand</p><h3>Check the larger Food-101 → CIFAR-10 probe</h3><p>The original local run is intentionally small. This preregistered three-seed confirmation check increases both the adaptation and retained evaluation samples without changing the model family or adapter method.</p></div><button onClick={loadExpandedValidation} disabled={expandedLoading}>{expandedLoading ? "Loading…" : "Load expanded confirmation"}</button></div>}
+          {expandedError && <p className="expanded-error" role="status">The expanded artifact could not load: {expandedError}</p>}
+          {expandedValidation && <ExpandedValidation artifact={expandedValidation} />}
+          <details className="provenance"><summary>Inspect evidence behind the domain stress test</summary><dl><div><dt>Evidence status</dt><dd>{domains.evidence_status}</dd></div><div><dt>Run</dt><dd><code>{domains.run_id}</code></dd></div><div><dt>Config</dt><dd><code>{domains.config_hash}</code></dd></div><div><dt>Scenarios</dt><dd>{domains.scenarios.length} × 3 seeds</dd></div><div><dt>Publication caveat</dt><dd>{domains.publication_caveat}</dd></div><div><dt>Manifest SHA-256</dt><dd><code>{domains.source_manifest.sha256}</code></dd></div></dl></details>
+        </section>
+
         <section className="section tinted" id="methods">
-          <div className="section-heading"><div><p className="eyebrow">05 · Compare interventions</p><h2>There is no single “best” way to adapt</h2></div><p>An intervention is simply a different choice for what to train or how to protect the older capability. The upper-right of the chart means better performance on both tasks. The detailed names are introduced here only after the basic experiment is established.</p></div>
+          <div className="section-heading"><div><p className="eyebrow">06 · Compare interventions</p><h2>There is no single “best” way to adapt</h2></div><p>After the twist, the trade-off space becomes more useful: an intervention is a different choice for what to train or how to protect the older capability. The upper-right of the chart means better performance on both tasks. The detailed names are introduced only after the basic finding and its limit are established.</p></div>
           <div className="decision-grid">
             <ParetoPlot benchmark={benchmark} methods={methods} interpolation={interpolation} />
             <div className="chart-card simulator">
@@ -1042,16 +1053,6 @@ function App() {
               </tbody>
             </table>
           </div>
-        </section>
-
-        <section className="section domain-section" id="domains">
-          <div className="section-heading"><div><p className="eyebrow">06 · Stress-test the story</p><h2>Does the same pattern hold on different kinds of images?</h2></div><p>I repeated the same LoRA adaptation protocol across the three dataset pairs shown earlier. These small three-seed probes do not establish universal behavior; they are designed to find where an appealing explanation breaks.</p></div>
-          <DomainStressTest artifact={domains} />
-          <div className="plain-callout"><strong>What changed after adding more domains:</strong><p>the original “drift predicts forgetting” story became less convincing. Across these scenarios, similar concepts behaved differently, so drift is best treated as diagnostic evidence—not a verdict.</p></div>
-          {!expandedValidation && <div className="lazy-panel expanded-loader"><div><p className="eyebrow">Expanded fixed-split validation · 204 KB on demand</p><h3>Check the larger Food-101 → CIFAR-10 probe</h3><p>The original local run is intentionally small. This preregistered three-seed confirmation check increases both the adaptation and retained evaluation samples without changing the model family or adapter method.</p></div><button onClick={loadExpandedValidation} disabled={expandedLoading}>{expandedLoading ? "Loading…" : "Load expanded confirmation"}</button></div>}
-          {expandedError && <p className="expanded-error" role="status">The expanded artifact could not load: {expandedError}</p>}
-          {expandedValidation && <ExpandedValidation artifact={expandedValidation} />}
-          <details className="provenance"><summary>Inspect evidence behind the domain stress test</summary><dl><div><dt>Evidence status</dt><dd>{domains.evidence_status}</dd></div><div><dt>Run</dt><dd><code>{domains.run_id}</code></dd></div><div><dt>Config</dt><dd><code>{domains.config_hash}</code></dd></div><div><dt>Scenarios</dt><dd>{domains.scenarios.length} × 3 seeds</dd></div><div><dt>Publication caveat</dt><dd>{domains.publication_caveat}</dd></div><div><dt>Manifest SHA-256</dt><dd><code>{domains.source_manifest.sha256}</code></dd></div></dl></details>
         </section>
 
         <section className="section" id="research">
