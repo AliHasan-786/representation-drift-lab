@@ -358,6 +358,10 @@ tbody th { font-size: .8rem; }
 .warning-banner strong { color: var(--orange); font: .7rem "DM Mono", monospace; text-transform: uppercase; }
 .warning-banner span { color: var(--muted); font-size: .8rem; line-height: 1.5; }
 .warning-metrics { margin-top: 1rem; }
+.synthetic-evaluator { margin-top: 1rem; padding: 1.15rem 1.25rem; border: 1px dashed rgba(16,32,25,.4); background: repeating-linear-gradient(-45deg, rgba(18,100,82,.035), rgba(18,100,82,.035) 8px, transparent 8px, transparent 16px); }
+.synthetic-evaluator summary { cursor: pointer; color: #126452; font: 700 .74rem/1.5 "DM Mono", monospace; }
+.synthetic-evaluator > p { max-width: 900px; margin: 1rem 0; color: #53645b; font-size: .84rem; line-height: 1.7; }
+.section:not(.narrative):not(.reports-section) { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 .failure-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem; }
 .failure-grid article { min-height: 280px; padding: 1.7rem; border: 1px solid var(--line); background: var(--panel); }
 .failure-grid h3 { margin: 2.2rem 0 1rem; font-size: 1.3rem; }

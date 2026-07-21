@@ -1056,20 +1056,24 @@ function App() {
         </section>
 
         <section className="section" id="research">
-          <div className="section-heading"><div><p className="eyebrow">07 · Test the hypothesis honestly</p><h2>Can early drift forecast final forgetting?</h2></div><p>A useful warning system must work on scenarios it never saw during training. I built that held-out evaluation protocol—including simple comparison rules and checks for whether predictions match reality—but the current predictor data is synthetic. It proves the evaluator works, not that real forgetting is predictable.</p></div>
-          <div className="warning-banner"><strong>{earlyWarning.evidence_status.replaceAll("-", " ")}</strong><span>{earlyWarning.publication_caveat}</span></div>
-          <div className="metric-grid warning-metrics">
-            <article><span>Held-out model RMSE</span><strong>{fixed(warningMetrics.early_warning_model.rmse, 3)}</strong><span className="interval">final forgetting units</span></article>
-            <article><span>Train-mean baseline RMSE</span><strong>{fixed(warningMetrics.train_mean_baseline.rmse, 3)}</strong><span className="interval">naive baseline</span></article>
-            <article><span>Persistence baseline RMSE</span><strong>{fixed(warningMetrics.early_forgetting_persistence_baseline.rmse, 3)}</strong><span className="interval">early = final assumption</span></article>
-            <article><span>Test calibration slope</span><strong>{fixed(warningMetrics.early_warning_model.calibration_slope ?? 0, 2)}</strong><span className="interval">ideal = 1.0</span></article>
-          </div>
+          <div className="section-heading"><div><p className="eyebrow">07 · Test the hypothesis honestly</p><h2>The prediction idea failed its first test</h2></div><p>I explored whether early internal change could warn about later forgetting. The measured cases below show why a single drift score is not enough. Separately, I built a held-out evaluator for a future warning system—but its current inputs are synthetic, so it demonstrates evaluation machinery, not real prediction.</p></div>
           <div className="failure-grid">
             <article><span className="case-number">01</span><h3>Geometry moved; accuracy did not</h3><p>In seed 42, retained accuracy returned to its {pct(0.7333)} baseline at step 20 while retained CKA fell to 0.9882. Drift and forgetting are not interchangeable.</p><small>Observed local case · config a3410b237d0c5b79</small></article>
             <article><span className="case-number">02</span><h3>Performance briefly improved during drift</h3><p>At step 10, the same run's retained accuracy rose by 3.3 points even as its representation departed from baseline. A scalar drift alarm can miss sign and task relevance.</p><small>Observed local case · seed 42</small></article>
             <article><span className="case-number">03</span><h3>The legacy forecast failed</h3><p>The original step-8,000 forecast predicted final cosine drift of 0.6647. The saved artifact ended at 0.3055—an absolute error of 0.3592.</p><small>Historical negative result · source bundle registered</small></article>
             <article><span className="case-number">04</span><h3>A fourth pair failed its validity check</h3><p>An exploratory Pets-to-EuroSAT run began at 0% retained accuracy in all three seeds. Because a floor cannot reveal further forgetting, I preserved the artifact but excluded it from the three-scenario comparison.</p><small>Excluded run · zero-score floor · no scientific claim</small></article>
           </div>
+          <details className="synthetic-evaluator">
+            <summary>Inspect the synthetic evaluator—not a real forecasting result</summary>
+            <p>The evaluator holds out scenarios, compares a proposed warning model with simple baselines, and checks calibration. Those are the right mechanics for a future forecast study. Its current predictor observations are synthetic by design, so the numbers below do not claim that real forgetting can be predicted.</p>
+            <div className="warning-banner"><strong>{earlyWarning.evidence_status.replaceAll("-", " ")}</strong><span>{earlyWarning.publication_caveat}</span></div>
+            <div className="metric-grid warning-metrics">
+              <article><span>Held-out model RMSE</span><strong>{fixed(warningMetrics.early_warning_model.rmse, 3)}</strong><span className="interval">synthetic final-forgetting units</span></article>
+              <article><span>Train-mean baseline RMSE</span><strong>{fixed(warningMetrics.train_mean_baseline.rmse, 3)}</strong><span className="interval">synthetic comparison baseline</span></article>
+              <article><span>Persistence baseline RMSE</span><strong>{fixed(warningMetrics.early_forgetting_persistence_baseline.rmse, 3)}</strong><span className="interval">synthetic early = final rule</span></article>
+              <article><span>Test calibration slope</span><strong>{fixed(warningMetrics.early_warning_model.calibration_slope ?? 0, 2)}</strong><span className="interval">synthetic evaluator · ideal = 1.0</span></article>
+            </div>
+          </details>
         </section>
 
         <section className="section dark" id="reproduce">

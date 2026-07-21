@@ -87,6 +87,14 @@ describe("portfolio visitor flow", () => {
     expect(screen.getByText(/Read the full fairness and feedback-loop scope audit/i)).toBeInTheDocument();
   });
 
+  it("keeps synthetic early-warning diagnostics subordinate to measured failure cases", async () => {
+    render(<App />);
+    expect(await screen.findByRole("heading", { name: /The prediction idea failed its first test/i })).toBeInTheDocument();
+    expect(screen.getByText(/Geometry moved; accuracy did not/i)).toBeInTheDocument();
+    expect(screen.getByText(/Inspect the synthetic evaluator—not a real forecasting result/i)).toBeInTheDocument();
+    expect(screen.getByText(/synthetic methodology validation/i)).toBeInTheDocument();
+  });
+
   it("loads the preregistered expanded confirmation check only on request", async () => {
     render(<App />);
     expect(await screen.findByRole("button", { name: "Load expanded confirmation" })).toBeInTheDocument();
