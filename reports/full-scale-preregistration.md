@@ -51,6 +51,13 @@ the finding and both tables stay published.
 ## Status
 
 - [x] Design locked and committed before execution
+- [x] Operational amendment recorded before rerun: the first Kaggle attempt
+  reached the pinned code and verified a Tesla P100, but stopped before seed
+  201 when the public Hugging Face dataset-server rejected the configured
+  192-row retrieval window (its current per-request limit is 100). The rerun
+  uses a committed transport-only adapter that reconstructs the same
+  contiguous 192-row window from compliant requests; it does not change the
+  config, selected sample counts, seeds, model, or scoring protocol.
 - [ ] Seeds 201–205 executed (Kaggle notebook)
 - [ ] Manifests validated, controls reproduced
 - [ ] Results published to `public/data/benchmark-full-scale-gpu.json`

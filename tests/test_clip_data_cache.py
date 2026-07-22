@@ -80,6 +80,37 @@ class DatasetServerCacheTests(unittest.TestCase):
             finally:
                 os.chdir(previous)
 
+    def test_wide_row_request_is_reconstructed_from_api_compliant_chunks(self) -> None:
+        def response_for(params: dict[str, object]) -> Mock:
+            offset = int(params["offset"])
+            length = int(params["length"])
+            response = Mock(status_code=200)
+            response.raise_for_status.return_value = None
+            response.json.return_value = {
+                "features": [{"name": "label", "type": {"names": ["zero"]}}],
+                "rows": [{"row_idx": index, "row": {"label": 0}} for index in range(offset, offset + length)],
+                "num_rows_total": 1000,
+            }
+            return response
+
+        previous = Path.cwd()
+        with tempfile.TemporaryDirectory() as directory:
+            os.chdir(directory)
+            try:
+                request = Mock(side_effect=lambda _url, params, timeout: response_for(params))
+                fake_requests = SimpleNamespace(get=request)
+                with patch.dict(sys.modules, {"requests": fake_requests}):
+                    payload = _dataset_server_rows(
+                        "example/data", "train", config_name="default", offset=22596, length=192
+                    )
+                self.assertEqual([item["row_idx"] for item in payload["rows"]], list(range(22596, 22788)))
+                self.assertEqual(request.call_count, 2)
+                self.assertEqual(request.call_args_list[0].kwargs["params"]["length"], 100)
+                self.assertEqual(request.call_args_list[1].kwargs["params"]["offset"], 22696)
+                self.assertEqual(request.call_args_list[1].kwargs["params"]["length"], 92)
+            finally:
+                os.chdir(previous)
+
 
 if __name__ == "__main__":
     unittest.main()

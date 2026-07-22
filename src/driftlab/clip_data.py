@@ -198,6 +198,32 @@ def _dataset_server_rows(
 ) -> dict[str, Any]:
     import requests
 
+    # The public Hugging Face dataset-server ``rows`` endpoint accepts at most
+    # 100 rows per request.  Experiments intentionally work with wider local
+    # windows to find enough examples of a class, so reconstruct those exact
+    # contiguous windows from compliant requests instead of changing a study's
+    # sampling configuration to fit an API transport limit.
+    max_rows_per_request = 100
+    if length > max_rows_per_request:
+        chunks = [
+            _dataset_server_rows(
+                repository,
+                split,
+                config_name=config_name,
+                offset=offset + start,
+                length=min(max_rows_per_request, length - start),
+            )
+            for start in range(0, length, max_rows_per_request)
+        ]
+        total_rows = int(chunks[0]["num_rows_total"])
+        if any(int(chunk["num_rows_total"]) != total_rows for chunk in chunks):
+            raise RuntimeError("dataset server returned inconsistent row totals")
+        return {
+            **chunks[0],
+            "rows": [row for chunk in chunks for row in chunk["rows"]],
+            "num_rows_total": total_rows,
+        }
+
     params = {
         "dataset": repository,
         "config": config_name,
