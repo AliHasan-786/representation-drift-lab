@@ -7,7 +7,9 @@ not permission to alter its design.
 
 ## Locked experiment identity
 
-- **Pinned revision:** the immutable commit printed by the notebook setup cell
+- **Pinned revision:** `8966692d3121963ee288f8c695f2fd2ea3c8863a`
+  (the immutable transport-compatible rerun revision printed by the notebook
+  setup cell)
 - **Configs:** `configs/full-scale-gpu.yaml` and
   `configs/full-scale-gpu-multiseed.yaml`
 - **Seeds:** 201, 202, 203, 204, 205
