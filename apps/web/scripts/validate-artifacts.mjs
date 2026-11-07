@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const publicRoot = resolve(here, "../../../public");
+const stagedPublicRoot = resolve(here, "../.public");
 
 const readJson = async (relative) => {
   const source = await readFile(resolve(publicRoot, relative), "utf8");
@@ -25,6 +26,38 @@ const validateSource = async (artifact) => {
   }
 };
 
+const collectSourceManifests = (value, manifests = new Map()) => {
+  if (Array.isArray(value)) {
+    value.forEach((item) => collectSourceManifests(item, manifests));
+    return manifests;
+  }
+  if (!value || typeof value !== "object") return manifests;
+  const manifest = value.source_manifest;
+  if (manifest?.public_path && manifest?.sha256) {
+    manifests.set(manifest.public_path, manifest.sha256);
+  }
+  Object.values(value).forEach((item) => collectSourceManifests(item, manifests));
+  return manifests;
+};
+
+const validateStagedManifestClosure = async (artifacts) => {
+  const manifests = new Map();
+  artifacts.forEach((artifact) => collectSourceManifests(artifact, manifests));
+  for (const [publicPath, expectedDigest] of manifests) {
+    const stagedPath = resolve(stagedPublicRoot, publicPath.replace(/^\//, ""));
+    let content;
+    try {
+      content = await readFile(stagedPath);
+    } catch {
+      throw new Error(`staged bundle is missing referenced manifest: ${publicPath}`);
+    }
+    if (createHash("sha256").update(content).digest("hex") !== expectedDigest) {
+      throw new Error(`staged manifest checksum mismatch: ${publicPath}`);
+    }
+  }
+  console.log(`validated ${manifests.size} checksummed manifest references in the staged bundle`);
+};
+
 const benchmark = await readJson("data/benchmark-local.json");
 const detail = await readJson("data/reproduction-local.json");
 const warning = await readJson("data/early-warning-methodology.json");
@@ -39,6 +72,8 @@ for (const artifact of [benchmark, detail, warning, methods, interpolation, doma
   if (!/^[a-f0-9]{16}$/.test(artifact.config_hash)) throw new Error("invalid config hash");
   await validateSource(artifact);
 }
+
+await validateStagedManifestClosure([benchmark, detail, warning, methods, interpolation, domains, expanded]);
 
 const steps = benchmark.checkpoints.map((checkpoint) => checkpoint.step);
 if (steps.join(",") !== [...new Set(steps)].sort((a, b) => a - b).join(",")) {

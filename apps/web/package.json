@@ -7,7 +7,7 @@
     "dev": "npm run stage:static && vite",
     "validate:data": "node scripts/validate-artifacts.mjs",
     "stage:static": "node scripts/stage-static-assets.mjs",
-    "build": "npm run validate:data && npm run stage:static && tsc -b && vite build && npm run budget",
+    "build": "npm run stage:static && npm run validate:data && tsc -b && vite build && npm run budget",
     "build:subpath": "VITE_BASE_PATH=/projects/representation-drift-lab/ npm run build",
     "budget": "node scripts/check-budgets.mjs",
     "test": "vitest run"
