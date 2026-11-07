@@ -22,7 +22,9 @@ apps/web/node_modules/
 apps/web/.next/
 apps/web/out/
 apps/web/dist/
+apps/web/.public/
 .vercel/
+.playwright-cli/
 *.tsbuildinfo
 tmp/
 output/

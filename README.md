@@ -21,6 +21,14 @@ The original 2025 project was completed by Sahil Mhatre, Ali Hasan, and Corey Ch
 
 The authoritative requirements are in `specs/representation-drift-lab.md`.
 
+## Results and scope
+
+[`RESULTS.md`](RESULTS.md) is the short, evidence-linked reading of the
+published local results. It distinguishes completed three-seed local evidence
+from historical artifacts, synthetic methodology checks, and the unexecuted
+full-scale GPU tier. The interactive site is intentionally a public explanation
+of the preliminary evidence—not a claim that the next tier has completed.
+
 ## Full-scale GPU tier (preregistered, free compute)
 
 The next evidence tier is locked in [`reports/full-scale-preregistration.md`](reports/full-scale-preregistration.md): 32 Food-101 classes × 16/16 images, a 500-image CIFAR-10 retention probe, 200 LoRA steps, and five independent seeds — designed to escape the documented small-sample ceiling effects without paid infrastructure. [`kaggle/full-scale-benchmark.ipynb`](kaggle/full-scale-benchmark.ipynb) and the pinned [`kaggle/RUNBOOK.md`](kaggle/RUNBOOK.md) run the suite on Kaggle's free GPU tier and validate the public artifact before it can be committed. Results publish through the preregistration gate whether or not they preserve the current ranking.

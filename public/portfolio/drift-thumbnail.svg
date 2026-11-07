@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Representation Drift Lab</title>
+  <desc id="desc">A preliminary three-seed study of an AI model improving at a new task while declining on a retained task.</desc>
+  <rect width="1200" height="630" fill="#071612"/>
+  <path d="M0 470C180 390 310 550 500 465S790 330 1200 430V630H0Z" fill="#0f2b23"/>
+  <text x="80" y="110" fill="#e97936" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" letter-spacing="3">REPRESENTATION DRIFT LAB</text>
+  <text x="80" y="205" fill="#f5f1e8" font-family="Georgia, serif" font-size="70" font-weight="700">When learning changes</text>
+  <text x="80" y="280" fill="#f5f1e8" font-family="Georgia, serif" font-size="70" font-weight="700">what a model retains.</text>
+  <rect x="80" y="365" width="500" height="150" rx="12" fill="#f5f1e8"/>
+  <text x="115" y="412" fill="#567167" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="1">LOCAL PRELIMINARY EVIDENCE · 3 SEEDS</text>
+  <text x="115" y="475" fill="#126452" font-family="Arial, sans-serif" font-size="52" font-weight="700">+6.9%</text>
+  <text x="350" y="475" fill="#c04a3e" font-family="Arial, sans-serif" font-size="52" font-weight="700">−3.3%</text>
+  <text x="115" y="503" fill="#53645b" font-family="Arial, sans-serif" font-size="16">new task</text>
+  <text x="350" y="503" fill="#53645b" font-family="Arial, sans-serif" font-size="16">retained task</text>
+  <circle cx="910" cy="293" r="130" fill="none" stroke="#e97936" stroke-width="4" opacity=".8"/>
+  <circle cx="990" cy="240" r="74" fill="#126452" opacity=".88"/>
+  <circle cx="835" cy="380" r="50" fill="#f5f1e8" opacity=".92"/>
+  <path d="M800 293h210" stroke="#e97936" stroke-width="4" stroke-dasharray="10 12"/>
+  <text x="790" y="550" fill="#a8b9ae" font-family="Arial, sans-serif" font-size="20">Interactive evidence · uncertainty · failure cases</text>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "contractVersion": 1,
+  "id": "drift",
+  "title": "Representation Drift Lab",
+  "course": "Cornell Tech CS 5787 Deep Learning; independent post-course extension",
+  "semester": "Fall 2025–2026 extension",
+  "oneLine": "An interactive, reproducible study of how adapting a vision–language model can change what it retains—built around evidence, uncertainty, and failure cases.",
+  "themes": ["Machine learning", "Responsible AI", "Data visualization", "Product judgment"],
+  "role": "Ali Hasan: independent post-course extension, reproducibility system, interactive experience, and evidence audit. Original course report credits Sahil Mhatre, Ali Hasan, and Corey Chen.",
+  "status": "static-release-candidate",
+  "evidenceStage": "preliminary",
+  "primaryMetric": "Nine local adaptation approaches evaluated across three independent seeds with 95% Student-t intervals (preliminary evidence).",
+  "demoUrl": null,
+  "repoUrl": "https://github.com/AliHasan-786/representation-drift-lab",
+  "writeupUrl": "RESULTS.md",
+  "thumbnail": {
+    "src": "/portfolio/drift-thumbnail.svg",
+    "alt": "Representation Drift Lab thumbnail showing a new-task gain, a retained-task decline, and a preliminary three-seed evidence label."
+  },
+  "featured": false,
+  "release": {
+    "commit": "cc6f54739504085c3a35f31f45e5ccb008c6a8ec",
+    "checkedAt": "2026-11-07",
+    "publicationStatus": "pending-deployment"
+  },
+  "evidence": [
+    {
+      "metric": "Standard LoRA local adaptation and retention change",
+      "value": "+6.9 percentage points on Food-101; -3.3 percentage points on CIFAR-10",
+      "artifact": "public/data/benchmark-local.json",
+      "manifest": "public/data/manifests/clip-food101-cifar10-local-multiseed-13c5baa85a5a513c.json",
+      "sample": "3 independent seeds; 6 Food-101 classes with 24 train and 24 held-out evaluation images per seed; 30-image CIFAR-10 retained probe",
+      "scope": "Local preliminary evidence; not a general model-ranking claim."
+    },
+    {
+      "metric": "Method comparison",
+      "value": "9 interventions × 3 independent seeds with 95% Student-t intervals",
+      "artifact": "public/data/method-comparison-local.json",
+      "manifest": "public/data/manifests/clip-food101-cifar10-method-comparison-local-695c2e602115d144.json",
+      "sample": "One CLIP backbone and bounded local subsets",
+      "scope": "Preliminary local comparison; methods have different resource assumptions."
+    }
+  ]
+}

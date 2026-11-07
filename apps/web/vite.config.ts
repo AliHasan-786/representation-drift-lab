@@ -8,7 +8,11 @@ export default defineConfig(({ mode }) => {
   return {
     base: env.VITE_BASE_PATH ?? "/",
     plugins: [react()],
-    publicDir: fileURLToPath(new URL("../../public", import.meta.url)),
+    // The repository preserves every reviewed run artifact, but the deployed
+    // visitor experience needs only its evidence-backed web bundle. Staging is
+    // performed by `npm run stage:static` before dev/build so Vite does not
+    // copy unrelated multi-megabyte run dumps into the deployment.
+    publicDir: fileURLToPath(new URL("./.public", import.meta.url)),
     build: {
       target: "es2022",
       sourcemap: true,
