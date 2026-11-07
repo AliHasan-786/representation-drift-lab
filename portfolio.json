@@ -7,10 +7,10 @@
   "oneLine": "An interactive, reproducible study of how adapting a vision–language model can change what it retains—built around evidence, uncertainty, and failure cases.",
   "themes": ["Machine learning", "Responsible AI", "Data visualization", "Product judgment"],
   "role": "Ali Hasan: independent post-course extension, reproducibility system, interactive experience, and evidence audit. Original course report credits Sahil Mhatre, Ali Hasan, and Corey Chen.",
-  "status": "static-release-candidate",
+  "status": "published",
   "evidenceStage": "preliminary",
   "primaryMetric": "Nine local adaptation approaches evaluated across three independent seeds with 95% Student-t intervals (preliminary evidence).",
-  "demoUrl": null,
+  "demoUrl": "https://representation-drift-lab.vercel.app",
   "repoUrl": "https://github.com/AliHasan-786/representation-drift-lab",
   "writeupUrl": "RESULTS.md",
   "thumbnail": {
@@ -19,9 +19,16 @@
   },
   "featured": false,
   "release": {
-    "commit": "cc6f54739504085c3a35f31f45e5ccb008c6a8ec",
+    "commit": "472b5c97b3f26fe623c955b069816cdf157e443a",
     "checkedAt": "2026-11-07",
-    "publicationStatus": "pending-deployment"
+    "publicationStatus": "production-deployed",
+    "deployment": {
+      "provider": "Vercel",
+      "id": "dpl_2Eii1i7vLxiEn7hD6hQorcWtoJJs",
+      "target": "production",
+      "url": "https://representation-drift-ltjb6vljf-ali-hasans-projects-734a68d1.vercel.app",
+      "stableUrl": "https://representation-drift-lab.vercel.app"
+    }
   },
   "evidence": [
     {
