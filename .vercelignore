@@ -1,0 +1,12 @@
+# Research caches and checkpoints are intentionally retained locally for
+# reproducibility but are not deployment inputs. The Vite build stages the
+# compact, reviewed public derivatives it needs from `public/`.
+artifacts/
+.venv/
+apps/web/node_modules/
+apps/web/dist/
+apps/web/.public/
+.playwright-cli/
+output/
+tmp/
+.claude/
