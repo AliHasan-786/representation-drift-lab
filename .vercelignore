@@ -10,3 +10,5 @@ apps/web/.public/
 output/
 tmp/
 .claude/
+# Keep test modules local: Vercel maps files under api/ to public functions.
+api/**/*.test.mjs

@@ -8,8 +8,8 @@
   <text x="80" y="280" fill="#f5f1e8" font-family="Georgia, serif" font-size="70" font-weight="700">what a model retains.</text>
   <rect x="80" y="365" width="500" height="150" rx="12" fill="#f5f1e8"/>
   <text x="115" y="412" fill="#567167" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="1">LOCAL PRELIMINARY EVIDENCE · 3 SEEDS</text>
-  <text x="115" y="475" fill="#126452" font-family="Arial, sans-serif" font-size="52" font-weight="700">+6.9%</text>
-  <text x="350" y="475" fill="#c04a3e" font-family="Arial, sans-serif" font-size="52" font-weight="700">−3.3%</text>
+  <text x="115" y="475" fill="#126452" font-family="Arial, sans-serif" font-size="46" font-weight="700">+6.9 pp</text>
+  <text x="350" y="475" fill="#c04a3e" font-family="Arial, sans-serif" font-size="46" font-weight="700">−3.3 pp</text>
   <text x="115" y="503" fill="#53645b" font-family="Arial, sans-serif" font-size="16">new task</text>
   <text x="350" y="503" fill="#53645b" font-family="Arial, sans-serif" font-size="16">retained task</text>
   <circle cx="910" cy="293" r="130" fill="none" stroke="#e97936" stroke-width="4" opacity=".8"/>
