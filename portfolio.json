@@ -19,15 +19,21 @@
   },
   "featured": false,
   "release": {
-    "commit": "472b5c97b3f26fe623c955b069816cdf157e443a",
+    "commit": "5aa55c34081d78f82f6044a81f42fc08b7a2c3bf",
     "checkedAt": "2026-11-07",
     "publicationStatus": "production-deployed",
     "deployment": {
       "provider": "Vercel",
-      "id": "dpl_2Eii1i7vLxiEn7hD6hQorcWtoJJs",
+      "id": "dpl_BbfhLPK6P2S4AxTRMpfkxWJ2sKRz",
       "target": "production",
-      "url": "https://representation-drift-ltjb6vljf-ali-hasans-projects-734a68d1.vercel.app",
+      "url": "https://representation-drift-15uk3rlh2-ali-hasans-projects-734a68d1.vercel.app",
       "stableUrl": "https://representation-drift-lab.vercel.app"
+    },
+    "initialEvidenceDeployment": {
+      "commit": "472b5c97b3f26fe623c955b069816cdf157e443a",
+      "id": "dpl_2Eii1i7vLxiEn7hD6hQorcWtoJJs",
+      "url": "https://representation-drift-ltjb6vljf-ali-hasans-projects-734a68d1.vercel.app",
+      "note": "The original immutable evidence-release deployment. The stable alias subsequently advanced for metadata-only and packaging-only follow-ups; neither changed the preliminary evidence bundle."
     }
   },
   "evidence": [
